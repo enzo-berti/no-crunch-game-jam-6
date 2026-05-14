@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crsp0dtnykgrl"]
 
-[ext_resource type="Texture2D" uid="uid://c10h78la4qb4r" path="res://gui/title_screen/test_tablette.png" id="1_7boow"]
 [ext_resource type="Script" uid="uid://pvg04gopqocg" path="res://gui/title_screen/title_screen.gd" id="1_sdkmq"]
+[ext_resource type="Texture2D" uid="uid://b38pjs84r5l8q" path="res://gui/test_tablette.png" id="2_k7v1h"]
 [ext_resource type="Texture2D" uid="uid://bl2y6sn2iacej" path="res://gui/test_button.png" id="2_ojcfa"]
 [ext_resource type="AudioStream" uid="uid://cjdp0bv6jpqcd" path="res://gui/sfx_button_pressed.ogg" id="4_l754q"]
 [ext_resource type="PackedScene" uid="uid://ujcjlawgca8i" path="res://gui/credits.tscn" id="5_k7v1h"]
@@ -22,11 +22,15 @@ credits_button = NodePath("VBoxContainer/CreditsButton")
 credits_scene = NodePath("Credits")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2111250727]
-layout_mode = 0
-offset_right = 1925.0
-offset_bottom = 1080.0
-texture = ExtResource("1_7boow")
-expand_mode = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -586.0
+offset_right = 1920.0
+grow_vertical = 0
+texture = ExtResource("2_k7v1h")
+expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=920950858]
 layout_mode = 1
