@@ -8,12 +8,12 @@ extends Node
 func _ready() -> void:
 	for animation in animations:
 		animation.play()
-		var x: float = randf() * 1700 + 100
+		var x: float = randf() * 1500 + 200
 		animation.position.x = x
 	
 	animationPlayer.play("crowd")
 	
-	_on_bpm_changed(2)
+	_on_bpm_changed(50)
 
 
 func _process(delta: float) -> void:
@@ -21,6 +21,6 @@ func _process(delta: float) -> void:
 
 func _on_bpm_changed(bpm: float) -> void:
 	for animation in animations:
-		animation.speed_scale = bpm
+		animation.speed_scale = bpm / 60
 	
-	animationPlayer.speed_scale = bpm
+	animationPlayer.speed_scale = bpm / 60

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcb5i8ar1yl1l"
-path="res://.godot/imported/armsup_girl.png-f9266d51a220f2696e4a6ef5901cd46d.ctex"
+uid="uid://dakefa0j6vqti"
+path="res://.godot/imported/back_crowd_background.png-a08b2094e326437d351e81aff44859af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/armsup_girl.png"
-dest_files=["res://.godot/imported/armsup_girl.png-f9266d51a220f2696e4a6ef5901cd46d.ctex"]
+source_file="res://crowd/background/back_crowd_background.png"
+dest_files=["res://.godot/imported/back_crowd_background.png-a08b2094e326437d351e81aff44859af.ctex"]
 
 [params]
 

@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dvwnigme1oj1e"]
 
 [ext_resource type="Script" uid="uid://ivsmet4uhab0" path="res://crowd/crowd_excitement.gd" id="1_wtg0n"]
-[ext_resource type="Texture2D" uid="uid://dcb5i8ar1yl1l" path="res://crowd/armsup_girl.png" id="2_fxaw3"]
-[ext_resource type="Texture2D" uid="uid://cpqd0kp70yvuy" path="res://crowd/metal_guy.png" id="3_6jn55"]
-[ext_resource type="Texture2D" uid="uid://c2djpa0m0fws" path="res://crowd/middle_crowd_background.png" id="3_pj0wo"]
-[ext_resource type="Texture2D" uid="uid://cb8abks32ia8q" path="res://crowd/horn_guy.png" id="4_3m83f"]
-[ext_resource type="Texture2D" uid="uid://r5h63ugwx0bi" path="res://crowd/front_crowd_background.png" id="4_u55wb"]
-[ext_resource type="Texture2D" uid="uid://dakefa0j6vqti" path="res://crowd/back_crowd_background.png" id="5_a70a8"]
-[ext_resource type="PackedScene" uid="uid://bjhc6mbk2n4n1" path="res://game/mix_table/mix_table.tscn" id="6_liva3"]
+[ext_resource type="Texture2D" uid="uid://blk36fiqsdu1c" path="res://crowd/lights/decoration.png" id="2_fbvyp"]
+[ext_resource type="Texture2D" uid="uid://dcb5i8ar1yl1l" path="res://crowd/people/armsup_girl.png" id="2_fxaw3"]
+[ext_resource type="Texture2D" uid="uid://cpqd0kp70yvuy" path="res://crowd/people/metal_guy.png" id="3_6jn55"]
+[ext_resource type="Texture2D" uid="uid://c2djpa0m0fws" path="res://crowd/background/middle_crowd_background.png" id="3_pj0wo"]
+[ext_resource type="Texture2D" uid="uid://dy8vpi72jiko6" path="res://crowd/lights/Layer 71.png" id="3_qytba"]
+[ext_resource type="Texture2D" uid="uid://cb8abks32ia8q" path="res://crowd/people/horn_guy.png" id="4_3m83f"]
+[ext_resource type="Texture2D" uid="uid://r5h63ugwx0bi" path="res://crowd/background/front_crowd_background.png" id="4_u55wb"]
+[ext_resource type="Texture2D" uid="uid://dakefa0j6vqti" path="res://crowd/background/back_crowd_background.png" id="5_a70a8"]
+[ext_resource type="Texture2D" uid="uid://ccklp4j18f17d" path="res://crowd/lights/Layer 69.png" id="6_jqxed"]
+[ext_resource type="Texture2D" uid="uid://dhx1okripe5pc" path="res://crowd/lights/back_light.png" id="9_u55wb"]
+[ext_resource type="Texture2D" uid="uid://b1prixnvha08j" path="res://crowd/lights/fog.png" id="10_j83x0"]
 
 [sub_resource type="Animation" id="Animation_pj0wo"]
 length = 0.001
@@ -362,6 +366,16 @@ script = ExtResource("1_wtg0n")
 animations = [NodePath("ArmsupGirl"), NodePath("MetalGuy"), NodePath("HornGuy")]
 animationPlayer = NodePath("CrowdAnimationPlayer")
 
+[node name="Decoration" type="Sprite2D" parent="." unique_id=1352471857]
+position = Vector2(961, 173.96127)
+scale = Vector2(0.8201654, 0.8201654)
+texture = ExtResource("2_fbvyp")
+
+[node name="BackLight" type="Sprite2D" parent="." unique_id=798564723]
+position = Vector2(960.29114, 306.12665)
+scale = Vector2(0.74977267, 0.7509345)
+texture = ExtResource("9_u55wb")
+
 [node name="BackCrowdBackground" type="Sprite2D" parent="." unique_id=377845531]
 position = Vector2(960.0778, 484.0626)
 scale = Vector2(0.74999815, 0.7517954)
@@ -388,7 +402,7 @@ sprite_frames = SubResource("SpriteFrames_v14r1")
 frame_progress = 0.5406799
 
 [node name="ArmsupGirl" type="AnimatedSprite2D" parent="." unique_id=2030152269]
-position = Vector2(1508, 329.00003)
+position = Vector2(1508, 290.755)
 scale = Vector2(0.95723295, 0.9493039)
 sprite_frames = SubResource("SpriteFrames_qytba")
 frame_progress = 0.3625499
@@ -399,4 +413,17 @@ scale = Vector2(0.2741612, 0.27416116)
 sprite_frames = SubResource("SpriteFrames_q3r6j")
 frame_progress = 0.90815085
 
-[node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("6_liva3")]
+[node name="FrontLight" type="Sprite2D" parent="." unique_id=1937117617]
+position = Vector2(961, 539.9839)
+scale = Vector2(0.7506908, 0.7506909)
+texture = ExtResource("6_jqxed")
+
+[node name="FrontRoundLight" type="Sprite2D" parent="." unique_id=56153674]
+position = Vector2(960.9999, 265.46692)
+scale = Vector2(0.8971527, 0.89715266)
+texture = ExtResource("3_qytba")
+
+[node name="Fog" type="Sprite2D" parent="." unique_id=906545157]
+position = Vector2(959.99994, 679.7562)
+scale = Vector2(0.7537911, 0.7537911)
+texture = ExtResource("10_j83x0")

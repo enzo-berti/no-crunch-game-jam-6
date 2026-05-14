@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://r5h63ugwx0bi"
-path="res://.godot/imported/front_crowd_background.png-16fd2ff96ae7a268b59c372f0ae2ced9.ctex"
+path="res://.godot/imported/front_crowd_background.png-0708807a08ea28fae9aebe4d433f93d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/front_crowd_background.png"
-dest_files=["res://.godot/imported/front_crowd_background.png-16fd2ff96ae7a268b59c372f0ae2ced9.ctex"]
+source_file="res://crowd/background/front_crowd_background.png"
+dest_files=["res://.godot/imported/front_crowd_background.png-0708807a08ea28fae9aebe4d433f93d9.ctex"]
 
 [params]
 

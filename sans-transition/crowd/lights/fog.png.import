@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2djpa0m0fws"
-path="res://.godot/imported/middle_crowd_background.png-2d059a32cf9f5cb9347f7ab9584dc1b9.ctex"
+uid="uid://b1prixnvha08j"
+path="res://.godot/imported/fog.png-a0d9c72cd986700a12a5827be0122f0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/middle_crowd_background.png"
-dest_files=["res://.godot/imported/middle_crowd_background.png-2d059a32cf9f5cb9347f7ab9584dc1b9.ctex"]
+source_file="res://crowd/lights/fog.png"
+dest_files=["res://.godot/imported/fog.png-a0d9c72cd986700a12a5827be0122f0e.ctex"]
 
 [params]
 
