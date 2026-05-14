@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ujcjlawgca8i"]
+
+[node name="Credits" type="Control" unique_id=1293935610]
+layout_mode = 3
+anchors_preset = 0
