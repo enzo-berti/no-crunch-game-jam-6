@@ -1,30 +1,10 @@
-[gd_scene format=3 uid="uid://c8mtky32erftq"]
+[gd_scene format=3 uid="uid://cq3inuaup1vaf"]
 
-[ext_resource type="Script" uid="uid://kgd5nuh3hng8" path="res://game.gd" id="1_l1rk1"]
-[ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchorniser/audio_effects/public_low_pass_filter.tres" id="2_h7iqs"]
-[ext_resource type="AudioStream" uid="uid://cf8mwlihxdiet" path="res://game/Boucle_Techno.ogg" id="2_vasa2"]
-[ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchorniser/audio_effects/public_filter_panner.tres" id="3_dxrkv"]
-[ext_resource type="AudioStream" uid="uid://ccbci83ixai4f" path="res://game/Boucle_Paillarde.ogg" id="4_4fuuu"]
-[ext_resource type="AudioEffectPanner" uid="uid://gggq6123c31o" path="res://game/synchorniser/audio_effects/dj_ondly_panner.tres" id="4_dakft"]
+[ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="1_vasa2"]
+[ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="2_h7iqs"]
 
-[node name="Game" type="Node" unique_id=1921030261 node_paths=PackedStringArray("audio_stream_player_track_A", "audio_stream_player_track_B")]
-script = ExtResource("1_l1rk1")
-offset_window = 1.0
-audio_stream_player_track_A = NodePath("AudioStreamPlayerTrackA")
-audio_stream_player_track_B = NodePath("AudioStreamPlayerTrackB")
-public_filter = ExtResource("2_h7iqs")
-public_panner = ExtResource("3_dxrkv")
-djonly_panner = ExtResource("4_dakft")
-cuttof_value_enable = 2500
-cuttof_value_disable = 20500
+[node name="Game" type="Node" unique_id=61779973]
 
-[node name="AudioStreamPlayerTrackA" type="AudioStreamPlayer" parent="." unique_id=1617637127]
-stream = ExtResource("2_vasa2")
-bus = &"Public"
-parameters/looping = true
+[node name="TrackVisualizer" parent="." unique_id=1299234425 instance=ExtResource("1_vasa2")]
 
-[node name="AudioStreamPlayerTrackB" type="AudioStreamPlayer" parent="." unique_id=869155321]
-stream = ExtResource("4_4fuuu")
-volume_db = -80.0
-bus = &"DjOnly"
-parameters/looping = true
+[node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("2_h7iqs")]
