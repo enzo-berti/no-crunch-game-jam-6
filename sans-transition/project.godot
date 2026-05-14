@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Sans transition"
-run/main_scene="uid://crsp0dtnykgrl"
+run/main_scene="uid://c8mtky32erftq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://d2byo6knn3qkd"
 
 [display]
 
