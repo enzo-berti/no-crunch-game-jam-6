@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ThemeResource" format=3 uid="uid://db58ottdqtwqe"]
+
+[ext_resource type="PackedScene" uid="uid://b1gtfv4360bh5" path="res://public_scene/techno_public_scene.tscn" id="1_jorwo"]
+[ext_resource type="Script" uid="uid://qmk7t114ulqw" path="res://theme/theme_data.gd" id="1_lwx2t"]
+
+[resource]
+script = ExtResource("1_lwx2t")
+public_scene = ExtResource("1_jorwo")
+metadata/_custom_type_script = "uid://qmk7t114ulqw"

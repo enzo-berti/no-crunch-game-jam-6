@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c7y0hjw25o6ps"]
+
+[ext_resource type="Script" uid="uid://ivsmet4uhab0" path="res://public_scene/public_excitement.gd" id="1_wtg0n"]
+[ext_resource type="Resource" uid="uid://cc5r61ati7kvs" path="res://track/track_techno.tres" id="2_gelhv"]
+
+[node name="BasePublicScene" type="Node2D" unique_id=1393716545]
+script = ExtResource("1_wtg0n")
+track = ExtResource("2_gelhv")
