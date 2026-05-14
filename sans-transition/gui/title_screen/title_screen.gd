@@ -7,6 +7,8 @@ extends Control
 @export var start_button: BaseButton
 @export var credits_button: BaseButton
 
+@export var credits_scene: Control
+
 func _process(_delta: float) -> void:
 	btn_hovered(start_button)
 	btn_hovered(credits_button)
@@ -30,4 +32,4 @@ func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(load("uid://c8mtky32erftq"))
 
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	credits_scene.visible = true

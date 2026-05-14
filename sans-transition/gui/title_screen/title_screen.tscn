@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://crsp0dtnykgrl"]
 
-[ext_resource type="Texture2D" uid="uid://c10h78la4qb4r" path="res://gui/test_tablette.png" id="1_7boow"]
-[ext_resource type="Script" uid="uid://pvg04gopqocg" path="res://gui/title_screen.gd" id="1_sdkmq"]
+[ext_resource type="Texture2D" uid="uid://c10h78la4qb4r" path="res://gui/title_screen/test_tablette.png" id="1_7boow"]
+[ext_resource type="Script" uid="uid://pvg04gopqocg" path="res://gui/title_screen/title_screen.gd" id="1_sdkmq"]
 [ext_resource type="Texture2D" uid="uid://bl2y6sn2iacej" path="res://gui/test_button.png" id="2_ojcfa"]
 [ext_resource type="AudioStream" uid="uid://cjdp0bv6jpqcd" path="res://gui/sfx_button_pressed.ogg" id="4_l754q"]
+[ext_resource type="PackedScene" uid="uid://ujcjlawgca8i" path="res://gui/credits.tscn" id="5_k7v1h"]
 
-[node name="TitleScreen" type="Control" unique_id=1869998965 node_paths=PackedStringArray("sfx_button_pressed", "start_button", "credits_button")]
+[node name="TitleScreen" type="Control" unique_id=1869998965 node_paths=PackedStringArray("sfx_button_pressed", "start_button", "credits_button", "credits_scene")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,9 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_sdkmq")
 tween_intensity = 1.2
 tween_duration = 0.2
-sfx_button_pressed = NodePath("AudioStreamPlayer2D")
+sfx_button_pressed = NodePath("ButtonPressedAudio")
 start_button = NodePath("VBoxContainer/StartButton")
 credits_button = NodePath("VBoxContainer/CreditsButton")
+credits_scene = NodePath("Credits")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2111250727]
 layout_mode = 0
@@ -50,8 +52,12 @@ texture_normal = ExtResource("2_ojcfa")
 layout_mode = 2
 texture_normal = ExtResource("2_ojcfa")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=579407206]
+[node name="ButtonPressedAudio" type="AudioStreamPlayer2D" parent="." unique_id=579407206]
 stream = ExtResource("4_l754q")
+
+[node name="Credits" parent="." unique_id=1293935610 instance=ExtResource("5_k7v1h")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

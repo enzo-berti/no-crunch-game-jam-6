@@ -1,5 +1,120 @@
 [gd_scene format=3 uid="uid://ujcjlawgca8i"]
 
+[ext_resource type="FontFile" uid="uid://cgfbdjse0dath" path="res://gui/Micro5-Regular.ttf" id="1_t6a7l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c05bu"]
+font = ExtResource("1_t6a7l")
+font_size = 64
+
 [node name="Credits" type="Control" unique_id=1293935610]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1223600037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Names" type="VBoxContainer" parent="HBoxContainer" unique_id=257877260]
+layout_mode = 2
+
+[node name="Alois" type="LinkButton" parent="HBoxContainer/Names" unique_id=1735510964]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "ALOÏS DAGNEAUX"
+underline = 1
+uri = "https://linktr.ee/dagneauxalois"
+
+[node name="Cedric" type="LinkButton" parent="HBoxContainer/Names" unique_id=1978597126]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "Cédric"
+underline = 1
+uri = "https://nolkaloid.xyz/"
+
+[node name="Enzo" type="LinkButton" parent="HBoxContainer/Names" unique_id=1152583368]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "ENZO BERTI"
+underline = 1
+uri = "https://nolkaloid.xyz/"
+
+[node name="Maxime" type="LinkButton" parent="HBoxContainer/Names" unique_id=1451699333]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "Maxime"
+underline = 1
+uri = "https://nolkaloid.xyz/"
+
+[node name="Nella" type="LinkButton" parent="HBoxContainer/Names" unique_id=357531355]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "Nella"
+underline = 1
+uri = "https://nolkaloid.xyz/"
+
+[node name="Noe" type="LinkButton" parent="HBoxContainer/Names" unique_id=1126901523]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_t6a7l")
+theme_override_font_sizes/font_size = 64
+text = "Noe"
+underline = 1
+uri = "https://nolkaloid.xyz/"
+
+[node name="Roles" type="VBoxContainer" parent="HBoxContainer" unique_id=712179472]
+layout_mode = 2
+
+[node name="AloisRole" type="Label" parent="HBoxContainer/Roles" unique_id=1732685206]
+layout_mode = 2
+text = "GAME DESIGNER"
+label_settings = SubResource("LabelSettings_c05bu")
+
+[node name="CedricRole" type="Label" parent="HBoxContainer/Roles" unique_id=872982943]
+layout_mode = 2
+text = "Programmeur"
+label_settings = SubResource("LabelSettings_c05bu")
+
+[node name="EnzoRole" type="Label" parent="HBoxContainer/Roles" unique_id=319096493]
+layout_mode = 2
+text = "Programmeur"
+label_settings = SubResource("LabelSettings_c05bu")
+
+[node name="MaximeRole" type="Label" parent="HBoxContainer/Roles" unique_id=417897528]
+layout_mode = 2
+text = "Musicien"
+label_settings = SubResource("LabelSettings_c05bu")
+
+[node name="NellaRole" type="Label" parent="HBoxContainer/Roles" unique_id=316528951]
+layout_mode = 2
+text = "Artiste"
+label_settings = SubResource("LabelSettings_c05bu")
+
+[node name="NoeRole" type="Label" parent="HBoxContainer/Roles" unique_id=953526151]
+layout_mode = 2
+text = "Programmeur"
+label_settings = SubResource("LabelSettings_c05bu")
