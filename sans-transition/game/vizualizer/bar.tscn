@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfi42vris0qxw"]
+
+[ext_resource type="Texture2D" uid="uid://cdb0yg4qvs1q1" path="res://game/vizualizer/sprites/bar_marker.png" id="1_jrmq7"]
+
+[node name="BarMarker" type="Sprite2D" unique_id=231058459]
+scale = Vector2(1, 0.9635417)
+texture = ExtResource("1_jrmq7")
