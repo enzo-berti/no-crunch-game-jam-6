@@ -1,4 +1,4 @@
-class_name Track_Synchroniser
+class_name Synchroniser
 extends Node
 
 signal tracks_in_range_signal(in_range: bool)

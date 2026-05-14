@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bjhc6mbk2n4n1"]
+
+[ext_resource type="Texture2D" uid="uid://dgf3ehstk1u66" path="res://game/mix_table/sprites/tablette_ref.png" id="1_y51vw"]
+[ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="2_rphpj"]
+[ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="3_247ce"]
+[ext_resource type="Texture2D" uid="uid://bebnt0x4np4c1" path="res://game/mix_table/sprites/ecran base.png" id="3_rphpj"]
+[ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="5_wuq5k"]
+[ext_resource type="Script" uid="uid://1opklquswpf3" path="res://game/dj_input.gd" id="6_247ce"]
+
+[sub_resource type="GDScript" id="GDScript_kp4uu"]
+resource_name = "InputTest"
+script/source = "extends Node
+
+@export var track_visualizer_a: TrackVisualizer
+@export var track_visualizer_b: TrackVisualizer
+
+@export var dj_input_left: DJInput
+@export var dj_input_right: DJInput
+
+func _ready() -> void:
+	dj_input_left.input_shifted.connect(
+		func(value: float): track_visualizer_a.speed_scale += value
+	)
+	
+	dj_input_right.input_shifted.connect(
+		func(value: float): track_visualizer_b.speed_scale += value
+	)
+"
+
+[node name="MixTable" type="Node2D" unique_id=438255488]
+
+[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
+visible = false
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_y51vw")
+centered = false
+
+[node name="Visual" type="Node2D" parent="." unique_id=885483339]
+scale = Vector2(0.75, 0.75)
+
+[node name="Base" type="Sprite2D" parent="Visual" unique_id=1364645613]
+position = Vector2(1281.3334, 1112)
+texture = ExtResource("2_rphpj")
+
+[node name="Stand" type="Sprite2D" parent="Visual" unique_id=2092668068]
+position = Vector2(1290.6666, 904)
+texture = ExtResource("3_247ce")
+
+[node name="Screens" type="Sprite2D" parent="Visual/Stand" unique_id=1588145583]
+texture = ExtResource("3_rphpj")
+
+[node name="TrackVisualizerA" parent="Visual/Stand/Screens" unique_id=1299234425 instance=ExtResource("5_wuq5k")]
+position = Vector2(-1.3333327, -132.00003)
+track_duration = 5.0
+
+[node name="TrackVisualizerB" parent="Visual/Stand/Screens" unique_id=1443232581 instance=ExtResource("5_wuq5k")]
+position = Vector2(-9.333373, 148.00002)
+track_duration = 5.0
+
+[node name="Track" parent="Visual/Stand/Screens/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
+self_modulate = Color(0.69899964, 0.13999999, 1, 1)
+
+[node name="DJInputLeft" type="Node" parent="." unique_id=996665280]
+script = ExtResource("6_247ce")
+multiplier = -0.1
+
+[node name="DJInputRight" type="Node" parent="." unique_id=945628514]
+script = ExtResource("6_247ce")
+input_side = 1
+multiplier = -0.1
+
+[node name="Glue" type="Node" parent="." unique_id=253026878 node_paths=PackedStringArray("track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
+script = SubResource("GDScript_kp4uu")
+track_visualizer_a = NodePath("../Visual/Stand/Screens/TrackVisualizerA")
+track_visualizer_b = NodePath("../Visual/Stand/Screens/TrackVisualizerB")
+dj_input_left = NodePath("../DJInputLeft")
+dj_input_right = NodePath("../DJInputRight")
+
+[editable path="Visual/Stand/Screens/TrackVisualizerA"]
+[editable path="Visual/Stand/Screens/TrackVisualizerB"]

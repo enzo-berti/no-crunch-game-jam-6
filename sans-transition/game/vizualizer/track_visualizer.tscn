@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdw4luwg2yhdq"]
 
 [ext_resource type="Script" uid="uid://d0gbroyp3yy4r" path="res://game/vizualizer/track_visualizer.gd" id="1_qpb78"]
-[ext_resource type="Texture2D" uid="uid://db2q7xug6r42a" path="res://game/vizualizer/sprites/temp.png" id="2_gnhaj"]
+[ext_resource type="Texture2D" uid="uid://d0cnfvobkyy2p" path="res://game/mix_table/sprites/masque.png" id="2_qfvwl"]
 [ext_resource type="Texture2D" uid="uid://dvrgx7xglyh4x" path="res://game/vizualizer/sprites/placeholder_track.png" id="3_lyss6"]
 [ext_resource type="Texture2D" uid="uid://igdh84ttxki4" path="res://game/vizualizer/sprites/cursor.png" id="4_gnhaj"]
 [ext_resource type="Texture2D" uid="uid://cdb0yg4qvs1q1" path="res://game/vizualizer/sprites/bar_marker.png" id="4_lyss6"]
@@ -15,13 +15,13 @@ _bars_sprite = NodePath("ScreenMask/Track/Bars")
 [node name="ScreenMask" type="Sprite2D" parent="." unique_id=1414859341]
 clip_children = 1
 position = Vector2(6, -8)
-texture = ExtResource("2_gnhaj")
+texture = ExtResource("2_qfvwl")
 
 [node name="Track" type="Sprite2D" parent="ScreenMask" unique_id=1840377646]
 self_modulate = Color(0.6, 1, 0.14117648, 1)
 texture_repeat = 2
-position = Vector2(156, 1.25)
-scale = Vector2(1, 1.204698)
+position = Vector2(156, 0.49999917)
+scale = Vector2(1, 0.59731567)
 texture = ExtResource("3_lyss6")
 region_enabled = true
 region_rect = Rect2(0, 0, 2000, 149)
