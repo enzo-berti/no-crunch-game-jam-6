@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bv30pwrxrbn77"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_qjd6r"]
+[ext_resource type="Texture2D" uid="uid://cp4x8cxd1wknq" path="res://game/mix_table/hologram/sprites/gnome/laser_up.png" id="2_qjd6r"]
+[ext_resource type="Texture2D" uid="uid://d4blfqcpqlc5u" path="res://game/mix_table/hologram/sprites/gnome/pixls.png" id="3_3riis"]
+[ext_resource type="Texture2D" uid="uid://cqcp13mw22thv" path="res://game/mix_table/hologram/sprites/gnome/pink_halo.png" id="4_1bqsb"]
+[ext_resource type="Texture2D" uid="uid://bx02xnvagwhl8" path="res://game/mix_table/hologram/sprites/gnome/gnome.png" id="5_3codr"]
+[ext_resource type="AudioStream" uid="uid://ckcarcd3ajs6c" path="res://game/mix_table/hologram/sfx/GnomeWoo.mp3" id="6_qjd6r"]
+
+[node name="HologramGnome" unique_id=876305959 instance=ExtResource("1_qjd6r")]
+
+[node name="LaserUp" parent="." index="0" unique_id=1497465739]
+texture = ExtResource("2_qjd6r")
+
+[node name="Pixls" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="0" unique_id=999506354]
+texture = ExtResource("3_3riis")
+
+[node name="Halo" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="1" unique_id=671523481]
+texture = ExtResource("4_1bqsb")
+
+[node name="Visual" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="2" unique_id=1560904618]
+position = Vector2(7, 21)
+texture = ExtResource("5_3codr")
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("6_qjd6r")

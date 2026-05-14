@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dwnwcpclgwdy1"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_tay2a"]
+[ext_resource type="AudioStream" uid="uid://bmqsajw7gcryp" path="res://game/mix_table/hologram/sfx/AirHorn.mp3" id="2_mkk4r"]
+
+[node name="HologramAirhorn" unique_id=876305959 instance=ExtResource("1_tay2a")]
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("2_mkk4r")

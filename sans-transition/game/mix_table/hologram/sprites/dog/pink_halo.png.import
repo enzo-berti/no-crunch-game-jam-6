@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf6jo4qcx373t"
-path="res://.godot/imported/ecran1.png-1af552f670e34db31f6f684a34c19d19.ctex"
+uid="uid://cknqsi2q6i2my"
+path="res://.godot/imported/pink_halo.png-87660327edb2e663fba080ddea528b2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/mix_table/sprites/ecran1.png"
-dest_files=["res://.godot/imported/ecran1.png-1af552f670e34db31f6f684a34c19d19.ctex"]
+source_file="res://game/mix_table/hologram/sprites/dog/pink_halo.png"
+dest_files=["res://.godot/imported/pink_halo.png-87660327edb2e663fba080ddea528b2c.ctex"]
 
 [params]
 

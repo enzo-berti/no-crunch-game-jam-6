@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://biai1icv3vglg"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_fy04a"]
+[ext_resource type="Texture2D" uid="uid://1222mfmi4t2m" path="res://game/mix_table/hologram/sprites/sean paul/laser_up.png" id="2_fy04a"]
+[ext_resource type="Texture2D" uid="uid://b2g2wh8p4vjon" path="res://game/mix_table/hologram/sprites/sean paul/pixls.png" id="3_wf1tv"]
+[ext_resource type="Texture2D" uid="uid://cqcp13mw22thv" path="res://game/mix_table/hologram/sprites/gnome/pink_halo.png" id="4_xfcgt"]
+[ext_resource type="Texture2D" uid="uid://uuqken8ytcvt" path="res://game/mix_table/hologram/sprites/sean paul/sean paul.png" id="5_6qydu"]
+[ext_resource type="AudioStream" uid="uid://dxjeyxfsqlmwb" path="res://game/mix_table/hologram/sfx/SeanPaul.mp3" id="6_fy04a"]
+
+[node name="HologramSean" unique_id=876305959 instance=ExtResource("1_fy04a")]
+
+[node name="LaserUp" parent="." index="0" unique_id=1497465739]
+texture = ExtResource("2_fy04a")
+
+[node name="Pixls" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="0" unique_id=999506354]
+texture = ExtResource("3_wf1tv")
+
+[node name="Halo" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="1" unique_id=671523481]
+modulate = Color(1, 0.20999998, 0.20999998, 1)
+position = Vector2(1, -2)
+texture = ExtResource("4_xfcgt")
+
+[node name="Visual" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="2" unique_id=1560904618]
+position = Vector2(7, 21)
+texture = ExtResource("5_6qydu")
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("6_fy04a")

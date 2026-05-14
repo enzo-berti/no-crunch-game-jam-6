@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d4if86e5tyjp"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_igenb"]
+[ext_resource type="Texture2D" uid="uid://cmplbjgjttr5m" path="res://game/mix_table/hologram/sprites/dog/laser_up.png" id="2_igenb"]
+[ext_resource type="Texture2D" uid="uid://7c8ofkuiu6m7" path="res://game/mix_table/hologram/sprites/dog/pixls.png" id="3_ga8yw"]
+[ext_resource type="Texture2D" uid="uid://cknqsi2q6i2my" path="res://game/mix_table/hologram/sprites/dog/pink_halo.png" id="4_jhi71"]
+[ext_resource type="Texture2D" uid="uid://bxsj5fpumm8vj" path="res://game/mix_table/hologram/sprites/dog/chien.png" id="5_rsx12"]
+[ext_resource type="AudioStream" uid="uid://bw88puinl1xq2" path="res://game/mix_table/hologram/sfx/DogBark.mp3" id="6_igenb"]
+
+[node name="HologramDog" unique_id=876305959 instance=ExtResource("1_igenb")]
+
+[node name="LaserUp" parent="." index="0" unique_id=1497465739]
+texture = ExtResource("2_igenb")
+
+[node name="Pixls" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="0" unique_id=999506354]
+texture = ExtResource("3_ga8yw")
+
+[node name="Halo" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="1" unique_id=671523481]
+texture = ExtResource("4_jhi71")
+
+[node name="Visual" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="2" unique_id=1560904618]
+position = Vector2(7, 21)
+texture = ExtResource("5_rsx12")
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("6_igenb")

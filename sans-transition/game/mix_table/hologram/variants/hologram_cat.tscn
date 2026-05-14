@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://g1brdqbxheyh"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_ibpod"]
+[ext_resource type="Texture2D" uid="uid://ku1cihfr8pjx" path="res://game/mix_table/hologram/sprites/chat/laser_up.png" id="2_n47vl"]
+[ext_resource type="Texture2D" uid="uid://du7ty328wvb3o" path="res://game/mix_table/hologram/sprites/chat/pixls.png" id="3_5ktqi"]
+[ext_resource type="Texture2D" uid="uid://cmy2lp36dkj0f" path="res://game/mix_table/hologram/sprites/chat/yellow_halo.png" id="4_k6f5t"]
+[ext_resource type="Texture2D" uid="uid://dd4dqc2nbqucl" path="res://game/mix_table/hologram/sprites/chat/chat.png" id="5_m068e"]
+[ext_resource type="AudioStream" uid="uid://1i4vxifxjs4j" path="res://game/mix_table/hologram/sfx/CatOIAI.mp3" id="6_xy6a6"]
+
+[node name="HologramCat" unique_id=876305959 instance=ExtResource("1_ibpod")]
+
+[node name="LaserUp" parent="." index="0" unique_id=1497465739]
+texture = ExtResource("2_n47vl")
+
+[node name="Pixls" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="0" unique_id=999506354]
+texture = ExtResource("3_5ktqi")
+
+[node name="Halo" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="1" unique_id=671523481]
+texture = ExtResource("4_k6f5t")
+
+[node name="Visual" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="2" unique_id=1560904618]
+position = Vector2(-4, 0)
+texture = ExtResource("5_m068e")
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("6_xy6a6")

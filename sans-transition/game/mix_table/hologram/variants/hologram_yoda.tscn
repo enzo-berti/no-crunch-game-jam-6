@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dm50vwr31np2b"]
+
+[ext_resource type="PackedScene" uid="uid://bhq32cij6dcy3" path="res://game/mix_table/hologram/hologram_base.tscn" id="1_b8mo5"]
+[ext_resource type="Texture2D" uid="uid://c21dlgjmx4en8" path="res://game/mix_table/hologram/sprites/yodas/laser_up.png" id="2_b8mo5"]
+[ext_resource type="Texture2D" uid="uid://ds2osqs8odsmn" path="res://game/mix_table/hologram/sprites/yodas/pixls.png" id="3_a144o"]
+[ext_resource type="Texture2D" uid="uid://kjblmcdleji2" path="res://game/mix_table/hologram/sprites/yodas/violet_halo.png" id="4_h781h"]
+[ext_resource type="Texture2D" uid="uid://d1fy1ljwame3" path="res://game/mix_table/hologram/sprites/yodas/Layer 86.png" id="5_k2tbv"]
+[ext_resource type="AudioStream" uid="uid://67awehnev3dk" path="res://game/mix_table/hologram/sfx/YodaDeath.mp3" id="6_b8mo5"]
+
+[node name="HologramYoda" unique_id=876305959 instance=ExtResource("1_b8mo5")]
+
+[node name="LaserUp" parent="." index="0" unique_id=1497465739]
+texture = ExtResource("2_b8mo5")
+
+[node name="Pixls" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="0" unique_id=999506354]
+texture = ExtResource("3_a144o")
+
+[node name="Halo" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="1" unique_id=671523481]
+position = Vector2(1, -2)
+texture = ExtResource("4_h781h")
+
+[node name="Visual" parent="Icon" parent_id_path=PackedInt32Array(577736923) index="2" unique_id=1560904618]
+position = Vector2(7, 21)
+texture = ExtResource("5_k2tbv")
+
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
+stream = ExtResource("6_b8mo5")

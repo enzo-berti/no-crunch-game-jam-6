@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cdb0yg4qvs1q1" path="res://game/vizualizer/sprites/bar_marker.png" id="4_lyss6"]
 
 [node name="TrackVisualizer" type="Node2D" unique_id=1299234425 node_paths=PackedStringArray("_track_sprite", "_bars_sprite")]
-position = Vector2(963, 452)
 script = ExtResource("1_qpb78")
 _track_sprite = NodePath("ScreenMask/Track")
 _bars_sprite = NodePath("ScreenMask/Track/Bars")

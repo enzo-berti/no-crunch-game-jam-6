@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c607qm6oaoeub"
-path="res://.godot/imported/New group.png-084d6925b9159523e0a4db11e8b94107.ctex"
+uid="uid://cmplbjgjttr5m"
+path="res://.godot/imported/laser_up.png-3aedc0fcb67657a2d2ed12cf27e2f075.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/mix_table/sprites/New group.png"
-dest_files=["res://.godot/imported/New group.png-084d6925b9159523e0a4db11e8b94107.ctex"]
+source_file="res://game/mix_table/hologram/sprites/dog/laser_up.png"
+dest_files=["res://.godot/imported/laser_up.png-3aedc0fcb67657a2d2ed12cf27e2f075.ctex"]
 
 [params]
 

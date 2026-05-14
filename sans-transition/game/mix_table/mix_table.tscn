@@ -3,9 +3,61 @@
 [ext_resource type="Texture2D" uid="uid://dgf3ehstk1u66" path="res://game/mix_table/sprites/tablette_ref.png" id="1_y51vw"]
 [ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="2_rphpj"]
 [ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="3_247ce"]
-[ext_resource type="Texture2D" uid="uid://bebnt0x4np4c1" path="res://game/mix_table/sprites/ecran base.png" id="3_rphpj"]
+[ext_resource type="Texture2D" uid="uid://6q3ctacsihgk" path="res://game/mix_table/sprites/From selection.png" id="3_f1hik"]
+[ext_resource type="Texture2D" uid="uid://cmgamc84bc4b1" path="res://game/mix_table/sprites/boutons.png" id="3_kp4uu"]
+[ext_resource type="Texture2D" uid="uid://boqinmfaabn56" path="res://game/mix_table/sprites/outside_frame.png" id="4_247ce"]
+[ext_resource type="Texture2D" uid="uid://bthp5qxiffiin" path="res://game/mix_table/sprites/Layer 55.png" id="4_uki45"]
 [ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="5_wuq5k"]
 [ext_resource type="Script" uid="uid://1opklquswpf3" path="res://game/dj_input.gd" id="6_247ce"]
+[ext_resource type="PackedScene" uid="uid://qbeuen8f6unh" path="res://game/disc/disc.tscn" id="8_wqdoj"]
+[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/perspective.gdshader" id="9_o5qx1"]
+[ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="10_f07uh"]
+[ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="11_cw1dt"]
+[ext_resource type="PackedScene" uid="uid://bxpqxdbaqcd78" path="res://game/mix_table/sync_button.tscn" id="12_g8qep"]
+[ext_resource type="Texture2D" uid="uid://dbfu0o8t1ejce" path="res://game/mix_table/sprites/Sync A.png" id="13_ec0rs"]
+[ext_resource type="PackedScene" uid="uid://g1brdqbxheyh" path="res://game/mix_table/hologram/variants/hologram_cat.tscn" id="14_dff6c"]
+[ext_resource type="PackedScene" uid="uid://dwnwcpclgwdy1" path="res://game/mix_table/hologram/variants/hologram_airhorn.tscn" id="15_tdgsy"]
+[ext_resource type="PackedScene" uid="uid://d4if86e5tyjp" path="res://game/mix_table/hologram/variants/hologram_dog.tscn" id="16_lvfhp"]
+[ext_resource type="PackedScene" uid="uid://bv30pwrxrbn77" path="res://game/mix_table/hologram/variants/hologram_gnome.tscn" id="17_tpak7"]
+[ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="18_3vb45"]
+[ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="19_p1v12"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dff6c"]
+action = &"sfx_cat"
+pressed = true
+
+[sub_resource type="InputEventAction" id="InputEventAction_tdgsy"]
+action = &"sfx_airhorn"
+pressed = true
+
+[sub_resource type="InputEventAction" id="InputEventAction_lvfhp"]
+action = &"sfx_dog"
+pressed = true
+
+[sub_resource type="InputEventAction" id="InputEventAction_tpak7"]
+action = &"sfx_gnome"
+pressed = true
+
+[sub_resource type="InputEventAction" id="InputEventAction_3vb45"]
+action = &"sfx_sean"
+pressed = true
+
+[sub_resource type="InputEventAction" id="InputEventAction_p1v12"]
+action = &"sfx_yoda"
+pressed = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f07uh"]
+shader = ExtResource("9_o5qx1")
+shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
+shader_parameter/speed = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g8qep"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cw1dt"]
+shader = ExtResource("9_o5qx1")
+shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
+shader_parameter/speed = -1.0
 
 [sub_resource type="GDScript" id="GDScript_kp4uu"]
 resource_name = "InputTest"
@@ -29,12 +81,6 @@ func _ready() -> void:
 
 [node name="MixTable" type="Node2D" unique_id=438255488]
 
-[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
-visible = false
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_y51vw")
-centered = false
-
 [node name="Visual" type="Node2D" parent="." unique_id=885483339]
 scale = Vector2(0.75, 0.75)
 
@@ -42,23 +88,155 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(1281.3334, 1112)
 texture = ExtResource("2_rphpj")
 
+[node name="Boutons" type="Sprite2D" parent="Visual" unique_id=1553678113]
+position = Vector2(1252, 894.6666)
+texture = ExtResource("3_kp4uu")
+
+[node name="Platines" type="Sprite2D" parent="Visual" unique_id=1868496890]
+position = Vector2(1301.3334, 1209.3334)
+texture = ExtResource("3_f1hik")
+
+[node name="TransitionButton" type="Sprite2D" parent="Visual" unique_id=1255956996]
+position = Vector2(1281.3334, 1332)
+texture = ExtResource("4_uki45")
+
+[node name="HologramCat" parent="Visual" unique_id=876305959 instance=ExtResource("14_dff6c")]
+position = Vector2(188, 649.3334)
+input_action = SubResource("InputEventAction_dff6c")
+
+[node name="HologramAirhorn" parent="Visual" unique_id=1481108766 instance=ExtResource("15_tdgsy")]
+position = Vector2(390.6667, 650.6667)
+input_action = SubResource("InputEventAction_tdgsy")
+
+[node name="HologramDog" parent="Visual" unique_id=1213239451 instance=ExtResource("16_lvfhp")]
+position = Vector2(593.3334, 637.3334)
+input_action = SubResource("InputEventAction_lvfhp")
+
+[node name="HologramGnome" parent="Visual" unique_id=157349764 instance=ExtResource("17_tpak7")]
+position = Vector2(1905.3334, 653.3333)
+input_action = SubResource("InputEventAction_tpak7")
+
+[node name="HologramSean" parent="Visual" unique_id=4887440 instance=ExtResource("18_3vb45")]
+position = Vector2(2272, 660)
+input_action = SubResource("InputEventAction_3vb45")
+
+[node name="HologramYoda" parent="Visual" unique_id=317031716 instance=ExtResource("19_p1v12")]
+position = Vector2(2104, 648)
+input_action = SubResource("InputEventAction_p1v12")
+
 [node name="Stand" type="Sprite2D" parent="Visual" unique_id=2092668068]
 position = Vector2(1290.6666, 904)
 texture = ExtResource("3_247ce")
 
-[node name="Screens" type="Sprite2D" parent="Visual/Stand" unique_id=1588145583]
-texture = ExtResource("3_rphpj")
+[node name="ScreenA" type="Sprite2D" parent="Visual/Stand" unique_id=1588145583]
+position = Vector2(5.3333335, -134.66667)
+texture = ExtResource("4_247ce")
 
-[node name="TrackVisualizerA" parent="Visual/Stand/Screens" unique_id=1299234425 instance=ExtResource("5_wuq5k")]
-position = Vector2(-1.3333327, -132.00003)
+[node name="TrackVisualizerA" parent="Visual/Stand/ScreenA" unique_id=1299234425 instance=ExtResource("5_wuq5k")]
+show_behind_parent = true
+position = Vector2(-4.000244, 7.9999695)
+scale = Vector2(1.01, 1.01)
 track_duration = 5.0
 
-[node name="TrackVisualizerB" parent="Visual/Stand/Screens" unique_id=1443232581 instance=ExtResource("5_wuq5k")]
-position = Vector2(-9.333373, 148.00002)
+[node name="ScreenB" type="Sprite2D" parent="Visual/Stand" unique_id=1476404501]
+position = Vector2(0, 146.66667)
+texture = ExtResource("4_247ce")
+
+[node name="TrackVisualizerB" parent="Visual/Stand/ScreenB" unique_id=1443232581 instance=ExtResource("5_wuq5k")]
+show_behind_parent = true
+position = Vector2(-6.666667, 8)
+scale = Vector2(1.01, 1.01)
 track_duration = 5.0
 
-[node name="Track" parent="Visual/Stand/Screens/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
+[node name="Track" parent="Visual/Stand/ScreenB/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
 self_modulate = Color(0.69899964, 0.13999999, 1, 1)
+
+[node name="SyncState" type="Sprite2D" parent="Visual/Stand" unique_id=1385842724]
+
+[node name="DiskLeft" parent="Visual" unique_id=1586880461 instance=ExtResource("8_wqdoj")]
+texture_filter = 4
+texture_repeat = 1
+position = Vector2(540, 757.3334)
+scale = Vector2(5.713333, 5.4466667)
+
+[node name="MeshInstance2D" parent="Visual/DiskLeft" index="0" unique_id=1036466809]
+material = SubResource("ShaderMaterial_f07uh")
+position = Vector2(-2.1276588, 18.723427)
+
+[node name="DiskMask" type="Sprite2D" parent="Visual/DiskLeft" unique_id=658506138]
+self_modulate = Color(1, 0.32, 0.32, 0.48235294)
+clip_children = 1
+position = Vector2(-20.536755, 70.991425)
+scale = Vector2(0.38188186, 0.399)
+texture = ExtResource("10_f07uh")
+
+[node name="BillanceOne" type="Sprite2D" parent="Visual/DiskLeft/DiskMask" unique_id=370433104]
+modulate = Color(0.28, 0.28, 0.28, 1)
+material = SubResource("CanvasItemMaterial_g8qep")
+position = Vector2(70.84514, -9.202932)
+scale = Vector2(0.6451613, 0.4706592)
+texture = ExtResource("11_cw1dt")
+
+[node name="BillanceOne2" type="Sprite2D" parent="Visual/DiskLeft/DiskMask" unique_id=820640220]
+modulate = Color(0.6635353, 0.31162292, 0.49430537, 1)
+material = SubResource("CanvasItemMaterial_g8qep")
+position = Vector2(-94.06331, -9.202932)
+scale = Vector2(0.6451613, 0.4706592)
+texture = ExtResource("11_cw1dt")
+flip_h = true
+
+[node name="DiskRight" parent="Visual" unique_id=1759649224 instance=ExtResource("8_wqdoj")]
+texture_filter = 4
+texture_repeat = 1
+position = Vector2(2062.6667, 761.3334)
+rotation = 3.1415927
+scale = Vector2(5.713333, -5.4466667)
+
+[node name="MeshInstance2D" parent="Visual/DiskRight" index="0" unique_id=1036466809]
+material = SubResource("ShaderMaterial_cw1dt")
+position = Vector2(-2.1276588, 18.723427)
+
+[node name="DiskMask" type="Sprite2D" parent="Visual/DiskRight" unique_id=1995840904]
+self_modulate = Color(1, 0.32, 0.32, 0.48235294)
+clip_children = 1
+position = Vector2(-20.664019, 70.991425)
+scale = Vector2(0.3769989, 0.399)
+texture = ExtResource("10_f07uh")
+
+[node name="BillanceOne" type="Sprite2D" parent="Visual/DiskRight/DiskMask" unique_id=379391999]
+modulate = Color(0.28, 0.28, 0.28, 1)
+material = SubResource("CanvasItemMaterial_g8qep")
+position = Vector2(70.84514, -9.202932)
+scale = Vector2(0.6451613, 0.4706592)
+texture = ExtResource("11_cw1dt")
+
+[node name="BillanceOne2" type="Sprite2D" parent="Visual/DiskRight/DiskMask" unique_id=1755308388]
+modulate = Color(1, 1, 1, 0.3019608)
+material = SubResource("CanvasItemMaterial_g8qep")
+position = Vector2(-94.06331, -9.202932)
+scale = Vector2(0.6451613, 0.4706592)
+texture = ExtResource("11_cw1dt")
+flip_h = true
+
+[node name="SyncButtonA" parent="Visual" unique_id=1719226366 instance=ExtResource("12_g8qep")]
+position = Vector2(1280, 624)
+state = 1
+
+[node name="SyncButtonB" parent="Visual" unique_id=1271359808 instance=ExtResource("12_g8qep")]
+position = Vector2(1278.6666, 900.00006)
+state = 0
+
+[node name="SyncText" type="Sprite2D" parent="Visual" unique_id=758071472]
+position = Vector2(1454.6666, 770.6667)
+texture = ExtResource("13_ec0rs")
+
+[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
+visible = false
+modulate = Color(1, 1, 1, 0.38039216)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_y51vw")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="DJInputLeft" type="Node" parent="." unique_id=996665280]
 script = ExtResource("6_247ce")
@@ -71,10 +249,12 @@ multiplier = -0.1
 
 [node name="Glue" type="Node" parent="." unique_id=253026878 node_paths=PackedStringArray("track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = SubResource("GDScript_kp4uu")
-track_visualizer_a = NodePath("../Visual/Stand/Screens/TrackVisualizerA")
-track_visualizer_b = NodePath("../Visual/Stand/Screens/TrackVisualizerB")
+track_visualizer_a = NodePath("../Visual/Stand/ScreenA/TrackVisualizerA")
+track_visualizer_b = NodePath("../Visual/Stand/ScreenB/TrackVisualizerB")
 dj_input_left = NodePath("../DJInputLeft")
 dj_input_right = NodePath("../DJInputRight")
 
-[editable path="Visual/Stand/Screens/TrackVisualizerA"]
-[editable path="Visual/Stand/Screens/TrackVisualizerB"]
+[editable path="Visual/Stand/ScreenA/TrackVisualizerA"]
+[editable path="Visual/Stand/ScreenB/TrackVisualizerB"]
+[editable path="Visual/DiskLeft"]
+[editable path="Visual/DiskRight"]

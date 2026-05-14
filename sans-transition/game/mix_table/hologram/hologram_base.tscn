@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bhq32cij6dcy3"]
+
+[ext_resource type="Script" uid="uid://co7k5pu5rwtr3" path="res://game/mix_table/hologram/hologram.gd" id="1_3j5dm"]
+[ext_resource type="Texture2D" uid="uid://db2nba0jkagmj" path="res://game/mix_table/hologram/sprites/airhorn/laser_up.png" id="2_qmcfv"]
+[ext_resource type="Texture2D" uid="uid://bf22ilm211wbl" path="res://game/mix_table/hologram/sprites/airhorn/pixls.png" id="3_2orh8"]
+[ext_resource type="Texture2D" uid="uid://i1uohq37nm1q" path="res://game/mix_table/hologram/sprites/airhorn/blue_halo.png" id="4_dlap6"]
+[ext_resource type="Texture2D" uid="uid://bf4n2s6rr3k0g" path="res://game/mix_table/hologram/sprites/airhorn/airhorn.png" id="5_sbbmx"]
+[ext_resource type="Script" uid="uid://wtnwhe68kyls" path="res://game/mix_table/hologram/shake.gd" id="6_wss88"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qe1rw"]
+blend_mode = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wss88"]
+frequency = 0.2154
+fractal_octaves = 1
+
+[sub_resource type="Animation" id="Animation_k7fn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon/Pixls:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cdbvx"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 10), Vector2(0, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon/Pixls:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_typ44"]
+_data = {
+&"RESET": SubResource("Animation_k7fn5"),
+&"idle": SubResource("Animation_cdbvx")
+}
+
+[node name="Hologram" type="Node2D" unique_id=876305959 node_paths=PackedStringArray("audio_stream_player", "icon")]
+position = Vector2(879, 501)
+script = ExtResource("1_3j5dm")
+audio_stream_player = NodePath("AudioStreamPlayer")
+icon = NodePath("Icon")
+
+[node name="LaserUp" type="Sprite2D" parent="." unique_id=1497465739]
+texture = ExtResource("2_qmcfv")
+
+[node name="Icon" type="Node2D" parent="." unique_id=577736923]
+
+[node name="Pixls" type="Sprite2D" parent="Icon" unique_id=999506354]
+texture = ExtResource("3_2orh8")
+
+[node name="Halo" type="Sprite2D" parent="Icon" unique_id=671523481]
+material = SubResource("CanvasItemMaterial_qe1rw")
+texture = ExtResource("4_dlap6")
+
+[node name="Visual" type="Sprite2D" parent="Icon" unique_id=1560904618]
+position = Vector2(25, 0)
+texture = ExtResource("5_sbbmx")
+
+[node name="Shake" type="Node" parent="Icon/Visual" unique_id=1018738933]
+script = ExtResource("6_wss88")
+amplitude = 30.0
+rotation_amplitude = 0.1
+noise = SubResource("FastNoiseLite_wss88")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1329203805]
+libraries/ = SubResource("AnimationLibrary_typ44")
+autoplay = &"idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1231547747]

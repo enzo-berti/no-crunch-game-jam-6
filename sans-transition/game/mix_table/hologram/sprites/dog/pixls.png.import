@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kttgyqjxgm7t"
-path="res://.godot/imported/Layer 52.png-83cdc56133afcd00889f5a4632925bf9.ctex"
+uid="uid://7c8ofkuiu6m7"
+path="res://.godot/imported/pixls.png-46f1e9ee72be493c056c3c191c6aed63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/mix_table/sprites/Layer 52.png"
-dest_files=["res://.godot/imported/Layer 52.png-83cdc56133afcd00889f5a4632925bf9.ctex"]
+source_file="res://game/mix_table/hologram/sprites/dog/pixls.png"
+dest_files=["res://.godot/imported/pixls.png-46f1e9ee72be493c056c3c191c6aed63.ctex"]
 
 [params]
 

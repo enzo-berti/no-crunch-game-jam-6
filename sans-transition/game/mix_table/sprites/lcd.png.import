@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy8prnce16rj8"
-path="res://.godot/imported/cd.png-8619d358237a61436ca87afffc4a8445.ctex"
+uid="uid://bjds6461ffhkt"
+path="res://.godot/imported/lcd.png-2e8979e911d4051a1ffb8c28e61b84ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/mix_table/sprites/cd.png"
-dest_files=["res://.godot/imported/cd.png-8619d358237a61436ca87afffc4a8445.ctex"]
+source_file="res://game/mix_table/sprites/lcd.png"
+dest_files=["res://.godot/imported/lcd.png-2e8979e911d4051a1ffb8c28e61b84ba.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
