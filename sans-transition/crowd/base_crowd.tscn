@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvwnigme1oj1e"]
+
+[ext_resource type="Script" uid="uid://ivsmet4uhab0" path="res://crowd/crowd_excitement.gd" id="1_wtg0n"]
+
+[node name="BaseCrowd" type="Node2D" unique_id=1718517280]
+script = ExtResource("1_wtg0n")

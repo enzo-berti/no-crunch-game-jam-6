@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://b1gtfv4360bh5"]
-
-[ext_resource type="PackedScene" uid="uid://c7y0hjw25o6ps" path="res://public_scene/base_public_scene.tscn" id="1_d0h0h"]
-
-[node name="TechnoPublicScene" unique_id=1393716545 instance=ExtResource("1_d0h0h")]
