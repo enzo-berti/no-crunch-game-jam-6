@@ -11,6 +11,8 @@ extends Node2D
 @export var dj_input_left: DJInput
 @export var dj_input_right: DJInput
 
+@export var dj_input_mouse : DJInputMouse
+
 var next_track_id : int
 
 # Called when the node enters the scene tree for the first time.
@@ -22,11 +24,16 @@ func _ready() -> void:
 	next_track_id = 2
 	
 	dj_input_left.input_shifted.connect(
-		func(value: float): track_visualizer_a.speed_scale += value
+		func(value: float): 
+			track_visualizer_a.speed_scale += value
+			synchroniser.speed_updater(value)
+
 	)
 	
 	dj_input_right.input_shifted.connect(
-		func(value: float): track_visualizer_b.speed_scale += value
+		func(value: float): 
+			track_visualizer_b.speed_scale += value
+			synchroniser.speed_updater(value)
 	)
 
 
@@ -53,3 +60,7 @@ func update_visualizers() -> void:
 	track_visualizer_a.set_track_texture(synchroniser.track_A_data.wave)
 	track_visualizer_b.set_track_texture(synchroniser.track_B_data.wave)
 	
+
+func update_tracks(value: float) -> void:
+	track_visualizer_b.speed_scale += value
+	synchroniser.speed_updater(value)
