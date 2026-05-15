@@ -87,10 +87,16 @@ func disable_DJ_listening() -> void:
 
 
 func switch_tracks() -> void:
-	var previous_dj_track: AudioStreamPlayer
-	previous_dj_track = audio_stream_player_public
+	var previous_public_track: AudioStreamPlayer
+	previous_public_track = audio_stream_player_public
 	audio_stream_player_public = audio_stream_player_dj_only
-	audio_stream_player_public = previous_dj_track
+	audio_stream_player_dj_only = previous_public_track
+	
+	audio_stream_player_public.bus = "Public"
+	audio_stream_player_public.volume_db = 0
+	audio_stream_player_dj_only.bus = "DjOnly"
+	audio_stream_player_dj_only.volume_db = -80
+	
 
 
 func calculate_window() -> void:
@@ -115,11 +121,13 @@ func calculate_window() -> void:
 		
 		
 func set_stream_public(stream : AudioStream) -> void:
+	audio_stream_player_public.stop()
 	audio_stream_player_public.stream = stream
 	audio_stream_player_public.play()
 	pass
 	
 func set_stream_dj(stream : AudioStream) -> void:
+	audio_stream_player_dj_only.stop()
 	audio_stream_player_dj_only.stream = stream
 	audio_stream_player_dj_only.play()
 	pass
