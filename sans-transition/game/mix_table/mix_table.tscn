@@ -10,30 +10,14 @@
 [ext_resource type="Script" path="res://game/dj_input.gd" id="6_247ce"]
 [ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="8_uki45"]
 
-[sub_resource type="GDScript" id="GDScript_kp4uu"]
-resource_name = "InputTest"
-script/source = "extends Node
-
-@export var track_visualizer_a: TrackVisualizer
-@export var track_visualizer_b: TrackVisualizer
-
-@export var dj_input_left: DJInput
-@export var dj_input_right: DJInput
-
-func _ready() -> void:
-	dj_input_left.input_shifted.connect(
-		func(value: float): track_visualizer_a.speed_scale += value
-	)
-	
-	dj_input_right.input_shifted.connect(
-		func(value: float): track_visualizer_b.speed_scale += value
-	)
-"
-
-[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser")]
+[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
 synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
+track_visualizer_a = NodePath("Visual/Stand/Screens/TrackVisualizerA")
+track_visualizer_b = NodePath("Visual/Stand/Screens/TrackVisualizerB")
+dj_input_left = NodePath("DJInputLeft")
+dj_input_right = NodePath("DJInputRight")
 
 [node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
 visible = false
@@ -74,13 +58,6 @@ multiplier = -0.1
 script = ExtResource("6_247ce")
 input_side = 1
 multiplier = -0.1
-
-[node name="Glue" type="Node" parent="." unique_id=253026878 node_paths=PackedStringArray("track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
-script = SubResource("GDScript_kp4uu")
-track_visualizer_a = NodePath("../Visual/Stand/Screens/TrackVisualizerA")
-track_visualizer_b = NodePath("../Visual/Stand/Screens/TrackVisualizerB")
-dj_input_left = NodePath("../DJInputLeft")
-dj_input_right = NodePath("../DJInputRight")
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
 

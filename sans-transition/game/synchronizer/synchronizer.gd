@@ -1,7 +1,7 @@
 class_name Synchroniser
 extends Node
 
-signal tracks_in_range_signal(in_range: bool)
+signal tracks_in_range_signal(in_range: bool, offset_in_range: float)
 
 ## Synchronize range (to be tweaked)
 @export var synchronised_window: float
@@ -49,13 +49,17 @@ func _ready() -> void:
 	audio_stream_player_public = audio_stream_player_track_A
 	audio_stream_player_dj_only = audio_stream_player_track_B
 
-	track_A_length = audio_stream_player_track_A.stream.get_length()
-	track_B_length = audio_stream_player_track_B.stream.get_length()
-
 	is_synced = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	if audio_stream_player_track_A.stream == null or audio_stream_player_track_B.stream == null: 
+		return
+	
+	track_A_length = audio_stream_player_track_A.stream.get_length()
+	track_B_length = audio_stream_player_track_B.stream.get_length()
+
 	track_A_position_percentage = audio_stream_player_track_A.get_playback_position() / track_A_length
 	track_B_position_percentage = audio_stream_player_track_B.get_playback_position() / track_B_length
 
@@ -83,10 +87,10 @@ func disable_DJ_listening() -> void:
 
 
 func switch_tracks() -> void:
-	var previous_public_track: AudioStreamPlayer
-	previous_public_track = audio_stream_player_public
+	var previous_dj_track: AudioStreamPlayer
+	previous_dj_track = audio_stream_player_public
 	audio_stream_player_public = audio_stream_player_dj_only
-	audio_stream_player_dj_only = previous_public_track
+	audio_stream_player_public = previous_dj_track
 
 
 func calculate_window() -> void:
@@ -103,10 +107,10 @@ func calculate_window() -> void:
 	var difference_to_check = min(difference_in_mesure, difference_out_mesure)
 
 	if difference_to_check < synchronised_window and !is_synced:
-		tracks_in_range_signal.emit(true)
+		tracks_in_range_signal.emit(true, difference_to_check)
 		is_synced = true
 	elif difference_to_check > synchronised_window and is_synced:
-		tracks_in_range_signal.emit(false)
+		tracks_in_range_signal.emit(false, difference_to_check)
 		is_synced = false
 		
 		
