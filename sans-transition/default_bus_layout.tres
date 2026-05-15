@@ -2,15 +2,13 @@
 
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchronizer/audio_effects/public_low_pass_filter.tres" id="1_g28q7"]
 [ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchronizer/audio_effects/public_filter_panner.tres" id="2_n8wo2"]
+[ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="3_5t1r3"]
 
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_g28q7"]
 resource_name = "PitchShift"
 pitch_scale = 0.4
 oversampling = 7
 fft_size = 1
-
-[sub_resource type="AudioEffectPanner" id="AudioEffectPanner_n8wo2"]
-resource_name = "Panner"
 
 [resource]
 bus/1/name = &"Public"
@@ -31,5 +29,5 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.22502327
 bus/2/send = &"Master"
-bus/2/effect/0/effect = SubResource("AudioEffectPanner_n8wo2")
+bus/2/effect/0/effect = ExtResource("3_5t1r3")
 bus/2/effect/0/enabled = true

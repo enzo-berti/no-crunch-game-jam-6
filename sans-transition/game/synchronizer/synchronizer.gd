@@ -68,16 +68,19 @@ func _process(_delta: float) -> void:
 
 
 func enable_DJ_listening() -> void:
+	audio_stream_player_dj_only.set_volume_db(0)
 	if audio_stream_player_track_A == audio_stream_player_public:
 		public_panner.pan = -1
 		djonly_panner.pan = 1
+
 
 	else:
 		public_panner.pan = 1
 		djonly_panner.pan = -1
 
+	
 	public_filter.cutoff_hz = cuttof_value_enable
-	audio_stream_player_dj_only.set_volume_db(0)
+	#audio_stream_player_dj_only.set_volume_db(0)
 
 
 func disable_DJ_listening() -> void:
@@ -130,4 +133,8 @@ func set_stream_dj(stream : AudioStream) -> void:
 	audio_stream_player_dj_only.stop()
 	audio_stream_player_dj_only.stream = stream
 	audio_stream_player_dj_only.play()
+	pass
+
+func speed_updater(value: float) -> void:
+	audio_stream_player_dj_only.pitch_scale += value
 	pass

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://kgd5nuh3hng8" path="res://game/synchronizer/synchronizer.gd" id="1_mgp3x"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchronizer/audio_effects/public_low_pass_filter.tres" id="2_bjkrn"]
 [ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchronizer/audio_effects/public_filter_panner.tres" id="3_17csd"]
-[ext_resource type="AudioEffectPanner" uid="uid://gggq6123c31o" path="res://game/synchronizer/audio_effects/dj_ondly_panner.tres" id="4_sgph1"]
+[ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="4_sgph1"]
 
 [node name="Synchronizer" type="Node" unique_id=1921030261 node_paths=PackedStringArray("audio_stream_player_track_A", "audio_stream_player_track_B")]
 script = ExtResource("1_mgp3x")

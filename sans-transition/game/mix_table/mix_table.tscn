@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="5_wuq5k"]
 [ext_resource type="Script" path="res://game/dj_input.gd" id="6_247ce"]
 [ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="8_uki45"]
+[ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="10_a5j23"]
 
 [node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
@@ -60,6 +61,7 @@ input_side = 1
 multiplier = -0.1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
+djonly_panner = ExtResource("10_a5j23")
 
 [editable path="Visual/Stand/Screens/TrackVisualizerA"]
 [editable path="Visual/Stand/Screens/TrackVisualizerB"]
