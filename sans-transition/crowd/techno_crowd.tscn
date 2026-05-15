@@ -5,3 +5,9 @@
 
 [node name="BaseCrowd" unique_id=1718517280 instance=ExtResource("1_3030l")]
 track = ExtResource("2_x6hah")
+
+[node name="HornGuy" parent="Individuals" parent_id_path=PackedInt32Array(1893485815) index="0" unique_id=1535574454]
+position = Vector2(217, 399)
+
+[node name="MetalGuy" parent="Individuals" parent_id_path=PackedInt32Array(1893485815) index="2" unique_id=910546759]
+position = Vector2(742.00006, 310)

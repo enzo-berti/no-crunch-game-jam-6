@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://wtnwhe68kyls" path="res://game/mix_table/hologram/shake.gd" id="6_wss88"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qe1rw"]
-blend_mode = 1
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wss88"]
 frequency = 0.2154

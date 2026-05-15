@@ -6,14 +6,15 @@ extends Node
 @export var animationPlayer: AnimationPlayer
 
 func _ready() -> void:
-	for animation in animations:
-		animation.play()
-		var x: float = randf() * 1500 + 200
-		animation.position.x = x
-	
-	animationPlayer.play("crowd")
-	
-	_on_bpm_changed(50)
+	return
+	#for animation in animations:
+		#animation.play()
+		#var x: float = randf() * 1500 + 200
+		#animation.position.x = x
+	#
+	#animationPlayer.play("crowd")
+	#
+	#_on_bpm_changed(50)
 
 
 func _process(delta: float) -> void:
