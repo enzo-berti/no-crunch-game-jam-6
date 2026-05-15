@@ -4,12 +4,9 @@
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchronizer/audio_effects/public_low_pass_filter.tres" id="2_bjkrn"]
 [ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchronizer/audio_effects/public_filter_panner.tres" id="3_17csd"]
 [ext_resource type="AudioEffectPanner" uid="uid://gggq6123c31o" path="res://game/synchronizer/audio_effects/dj_ondly_panner.tres" id="4_sgph1"]
-[ext_resource type="AudioStream" uid="uid://cf8mwlihxdiet" path="res://game/music_loops/techno.ogg" id="5_vq2gx"]
-[ext_resource type="AudioStream" uid="uid://ccbci83ixai4f" path="res://game/music_loops/paillard.ogg" id="6_1w5o5"]
 
 [node name="Synchronizer" type="Node" unique_id=1921030261 node_paths=PackedStringArray("audio_stream_player_track_A", "audio_stream_player_track_B")]
 script = ExtResource("1_mgp3x")
-offset_window = 1.0
 audio_stream_player_track_A = NodePath("AudioStreamPlayerTrackA")
 audio_stream_player_track_B = NodePath("AudioStreamPlayerTrackB")
 public_filter = ExtResource("2_bjkrn")
@@ -19,12 +16,8 @@ cuttof_value_enable = 2500
 cuttof_value_disable = 20500
 
 [node name="AudioStreamPlayerTrackA" type="AudioStreamPlayer" parent="." unique_id=1617637127]
-stream = ExtResource("5_vq2gx")
 bus = &"Public"
-parameters/looping = true
 
 [node name="AudioStreamPlayerTrackB" type="AudioStreamPlayer" parent="." unique_id=869155321]
-stream = ExtResource("6_1w5o5")
 volume_db = -80.0
 bus = &"DjOnly"
-parameters/looping = true
