@@ -132,7 +132,6 @@ texture = ExtResource("4_247ce")
 show_behind_parent = true
 position = Vector2(-2.6666665, -3.0517578e-05)
 scale = Vector2(1.01, 1.01)
-track_duration = 5.0
 
 [node name="Dots" type="Sprite2D" parent="Visual/Stand/ScreenA" unique_id=607280095]
 show_behind_parent = true
@@ -148,7 +147,6 @@ texture = ExtResource("4_247ce")
 show_behind_parent = true
 position = Vector2(-2.666667, 0)
 scale = Vector2(1.01, 1.01)
-track_duration = 5.0
 
 [node name="Track" parent="Visual/Stand/ScreenB/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
 self_modulate = Color(0.69899964, 0.13999999, 1, 1)

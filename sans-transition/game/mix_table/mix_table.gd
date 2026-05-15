@@ -26,24 +26,15 @@ func _ready() -> void:
 	
 	next_track_id = 2
 	
-	dj_input_left.input_shifted.connect(
-		func(value: float): 
-			track_visualizer_a.speed_scale += value
-			synchroniser.speed_updater(value)
-
-	)
-	
-	dj_input_right.input_shifted.connect(
-		func(value: float): 
-			track_visualizer_b.speed_scale += value
-			synchroniser.speed_updater(value)
-	)
+	dj_input_left.input_shifted.connect(synchroniser.speed_updater)
+	dj_input_right.input_shifted.connect(synchroniser.speed_updater)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	synchroniser.calculate_window()
-	pass 
+	track_visualizer_a.offset = synchroniser.track_A_position_percentage
+	track_visualizer_b.offset = synchroniser.track_B_position_percentage
+
 
 func _input(event: InputEvent) -> void:
 	#print_debug(event)
@@ -70,8 +61,3 @@ func _input(event: InputEvent) -> void:
 func update_visualizers() -> void:
 	track_visualizer_a.set_track_texture(synchroniser.track_A_data.wave)
 	track_visualizer_b.set_track_texture(synchroniser.track_B_data.wave)
-	
-
-func update_tracks(value: float) -> void:
-	track_visualizer_b.speed_scale += value
-	synchroniser.speed_updater(value)

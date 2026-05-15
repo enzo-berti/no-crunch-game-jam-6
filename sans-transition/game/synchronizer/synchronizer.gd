@@ -153,9 +153,10 @@ func set_track_dj(data : TrackData) -> void:
 	audio_stream_player_dj_only.play()
 	pass
 
+
 func speed_updater(value: float) -> void:
 	audio_stream_player_dj_only.pitch_scale += value
-	pass
+
 
 func get_track_A_speed() -> float:
 	return audio_stream_player_track_A.pitch_scale
