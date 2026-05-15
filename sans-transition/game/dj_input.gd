@@ -20,6 +20,9 @@ signal input_shifted(value: float)
 
 
 func _process(delta: float) -> void:
+	if not enabled: 
+		return
+	
 	var input_vector := (
 		Input.get_vector("left_platine_left", "left_platine_right", "left_platine_down", "left_platine_up")
 		if input_side == InputSide.LEFT 

@@ -40,6 +40,8 @@ var audio_stream_player_dj_only: AudioStreamPlayer
 @export var cuttof_value_enable: int
 @export var cuttof_value_disable: int
 
+var offset_between_tracks: float 
+
 var is_synced: bool
 
 @onready var public_bus_id: int = AudioServer.get_bus_index("Public")
@@ -119,13 +121,13 @@ func calculate_window() -> void:
 	else:
 		difference_out_mesure = 1 - track_B_position_modulo
 
-	var difference_to_check = min(difference_in_mesure, difference_out_mesure)
+	offset_between_tracks = min(difference_in_mesure, difference_out_mesure)
 
-	if difference_to_check < synchronised_window and !is_synced:
-		tracks_in_range_signal.emit(true, difference_to_check)
+	if offset_between_tracks < synchronised_window and !is_synced:
+		tracks_in_range_signal.emit(true)
 		is_synced = true
-	elif difference_to_check > synchronised_window and is_synced:
-		tracks_in_range_signal.emit(false, difference_to_check)
+	elif offset_between_tracks > synchronised_window and is_synced:
+		tracks_in_range_signal.emit(false)
 		is_synced = false
 		
 		
@@ -160,3 +162,6 @@ func get_track_A_speed() -> float:
 
 func get_track_B_speed() -> float:
 	return audio_stream_player_track_B.pitch_scale
+	
+func get_offset_between_tracks() -> float:
+	return offset_between_tracks

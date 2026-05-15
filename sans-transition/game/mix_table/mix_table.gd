@@ -21,6 +21,9 @@ func _ready() -> void:
 	synchroniser.set_track_dj(track_list.track_list[1])
 	update_visualizers()
 	
+	dj_input_left.enabled = false
+	dj_input_right.enabled = true
+	
 	next_track_id = 2
 	
 	dj_input_left.input_shifted.connect(
@@ -39,17 +42,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	synchroniser.calculate_window()
 	pass 
 
 func _input(event: InputEvent) -> void:
 	#print_debug(event)
-	if event.is_action_pressed("transition"):
-		synchroniser.calculate_window()
+	if event.is_action_pressed("transition") and not event.is_echo():
 		synchroniser.switch_tracks()
 		synchroniser.set_track_dj(track_list.track_list[next_track_id])
 		update_visualizers()
 		
 		next_track_id = next_track_id + 1
+		
+		dj_input_left.enabled = !dj_input_left.enabled
+		dj_input_right.enabled = !dj_input_right.enabled
+		
 	elif event.is_action_pressed("listen_dj_track"):
 		synchroniser.enable_DJ_listening()
 	elif event.is_action_released("listen_dj_track"):
