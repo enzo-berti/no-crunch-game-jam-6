@@ -249,9 +249,9 @@ multiplier = -0.1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
 
-[editable path="Visual/Stand/ScreenB/TrackVisualizerB"]
 [node name="DJInputMouse" type="Node" parent="." unique_id=460878965]
 script = ExtResource("24_tpak7")
 
+[editable path="Visual/Stand/ScreenB/TrackVisualizerB"]
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]
