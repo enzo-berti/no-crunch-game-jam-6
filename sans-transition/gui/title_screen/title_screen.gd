@@ -4,14 +4,13 @@ extends Control
 @export var tween_duration: float
 
 @export var sfx_button_pressed: AudioStreamPlayer2D
-@export var start_button: BaseButton
-@export var credits_button: BaseButton
+@export var buttons: Array[BaseButton]
 
 @export var credits_scene: Control
 
 func _process(_delta: float) -> void:
-	btn_hovered(start_button)
-	btn_hovered(credits_button)
+	for button in buttons:
+		btn_hovered(button)
 
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()
