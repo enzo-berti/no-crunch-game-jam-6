@@ -1,6 +1,7 @@
 class_name MixtTable
 extends Node2D
 
+signal track_switched
 
 @export var synchroniser : Synchroniser
 @export var track_list : TrackList
@@ -68,6 +69,7 @@ func _input(event: InputEvent) -> void:
 		
 		print(next_track_id)
 		synchroniser.switch_tracks()
+		track_switched.emit()
 		synchroniser.set_track_dj(track_list.track_list[next_track_id])
 		update_visualizers()
 		

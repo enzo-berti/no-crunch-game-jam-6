@@ -4,6 +4,69 @@
 [ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://crowd/base_crowd.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_h7iqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4fuuu"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxrkv"]
+_data = {
+&"RESET": SubResource("Animation_h7iqs"),
+&"transition": SubResource("Animation_4fuuu")
+}
+
 [node name="Game" type="Node" unique_id=61779973]
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_vasa2")]
@@ -12,3 +75,19 @@ scale = Vector2(0.75, 0.75)
 [node name="BaseCrowd" parent="." unique_id=1718517280 instance=ExtResource("2_h7iqs")]
 
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Transition" unique_id=426499220]
+material = SubResource("CanvasItemMaterial_h7iqs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1889154340]
+libraries/ = SubResource("AnimationLibrary_dxrkv")
+
+[connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
