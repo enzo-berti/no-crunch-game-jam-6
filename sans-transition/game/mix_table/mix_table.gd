@@ -38,7 +38,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("transition"):
 		synchroniser.calculate_window()
 		synchroniser.switch_tracks()
-		print("switched")
 		synchroniser.set_stream_dj(track_list.track_list[next_track_id].audio)
 		next_track_id = next_track_id + 1
 	elif event.is_action_pressed("listen_dj_track"):

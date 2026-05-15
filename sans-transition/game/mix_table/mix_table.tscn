@@ -61,6 +61,7 @@ blend_mode = 1
 shader = ExtResource("9_o5qx1")
 shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
 shader_parameter/speed = -1.0
+[ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="10_a5j23"]
 
 [node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
@@ -251,6 +252,7 @@ dj_input_left = NodePath("../DJInputLeft")
 dj_input_right = NodePath("../DJInputRight")
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
+djonly_panner = ExtResource("10_a5j23")
 
 [editable path="Visual/Stand/Screens/TrackVisualizerA"]
 [editable path="Visual/Stand/Screens/TrackVisualizerB"]
