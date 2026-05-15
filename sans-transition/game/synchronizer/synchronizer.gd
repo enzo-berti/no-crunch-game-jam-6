@@ -165,3 +165,9 @@ func get_track_B_speed() -> float:
 	
 func get_offset_between_tracks() -> float:
 	return offset_between_tracks
+
+func get_current_dj_track() -> TrackData:
+	if audio_stream_player_track_A == audio_stream_player_dj_only:
+		return track_A_data
+	else:
+		return track_B_data

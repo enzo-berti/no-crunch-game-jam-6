@@ -15,8 +15,11 @@ extends Node2D
 
 var next_track_id : int
 
+var track_list_length: int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#track_list.track_list.shuffle()
 	synchroniser.set_track_public(track_list.track_list[0])
 	synchroniser.set_track_dj(track_list.track_list[1])
 	update_visualizers()
@@ -25,6 +28,10 @@ func _ready() -> void:
 	dj_input_right.enabled = true
 	
 	next_track_id = 2
+	
+	track_list_length = track_list.track_list.size()
+	
+	
 	
 	dj_input_left.input_shifted.connect(
 		func(value: float): 
@@ -48,6 +55,16 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	#print_debug(event)
 	if event.is_action_pressed("transition") and not event.is_echo():
+		if next_track_id == track_list_length: 
+			next_track_id = 0
+			track_list.track_list.shuffle()
+			var current_dj_track = synchroniser.get_current_dj_track()
+			if current_dj_track == track_list.track_list[0]:
+				next_track_id = next_track_id + 1
+
+			
+		
+		print(next_track_id)
 		synchroniser.switch_tracks()
 		synchroniser.set_track_dj(track_list.track_list[next_track_id])
 		update_visualizers()
@@ -75,3 +92,4 @@ func update_visualizers() -> void:
 func update_tracks(value: float) -> void:
 	track_visualizer_b.speed_scale += value
 	synchroniser.speed_updater(value)
+	
