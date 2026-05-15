@@ -30,7 +30,7 @@ func _ready() -> void:
 	track_list.track_list.shuffle()
 	synchroniser.set_track_public(track_list.track_list[0])
 	synchroniser.set_track_dj(track_list.track_list[1])
-	update_visualizers()
+	update_visuals()
 
 	dj_input_left.enabled = false
 	dj_input_right.enabled = false
@@ -77,7 +77,7 @@ func _input(event: InputEvent) -> void:
 		synchroniser.switch_tracks()
 		track_switched.emit()
 		synchroniser.set_track_dj(track_list.track_list[next_track_id])
-		update_visualizers()
+		update_visuals()
 
 		next_track_id = next_track_id + 1
 
@@ -97,9 +97,12 @@ func _input(event: InputEvent) -> void:
 			synchroniser.disable_DJ_listening()
 
 
-func update_visualizers() -> void:
+func update_visuals() -> void:
 	track_visualizer_a.set_track_texture(synchroniser.track_A_data.wave)
 	track_visualizer_b.set_track_texture(synchroniser.track_B_data.wave)
+	
+	disk_a.set_texture(synchroniser.track_A_data.disc)
+	disk_b.set_texture(synchroniser.track_B_data.disc)
 
 
 func update_tracks(value: float) -> void:

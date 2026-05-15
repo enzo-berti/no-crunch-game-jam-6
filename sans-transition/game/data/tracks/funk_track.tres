@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://d4fprvq3y7r63"]
 
 [ext_resource type="AudioStream" uid="uid://b4q5kjgmqlgen" path="res://game/music_loops/funk.ogg" id="1_o8jkv"]
+[ext_resource type="Texture2D" uid="uid://dejoqgnc0u0pw" path="res://game/disc/sprites/cd_funk.png" id="2_025nt"]
 [ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_vqpt0"]
 [ext_resource type="Texture2D" uid="uid://clliklk0alfx3" path="res://game/vizualizer/sprites/tracks/funk.png" id="3_rfdd0"]
 
@@ -8,4 +9,5 @@
 script = ExtResource("2_vqpt0")
 audio = ExtResource("1_o8jkv")
 wave = ExtResource("3_rfdd0")
+disc = ExtResource("2_025nt")
 metadata/_custom_type_script = "uid://641doj4awc7g"

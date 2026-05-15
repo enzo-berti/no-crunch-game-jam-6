@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://dsn4gaegg6l7s" path="res://game/data/tracks/noel_track.tres" id="5_kl121"]
 [ext_resource type="Resource" uid="uid://npxve42ghu41" path="res://game/data/tracks/eurodance_track.tres" id="6_ckefa"]
 [ext_resource type="Resource" uid="uid://d4fprvq3y7r63" path="res://game/data/tracks/funk_track.tres" id="7_m2nk3"]
+[ext_resource type="Resource" uid="uid://emasr2rj05mm" path="res://game/data/tracks/pop_track.tres" id="8_2hler"]
 
 [resource]
 script = ExtResource("1_d4du7")
-track_list = Array[ExtResource("2_kjeli")]([ExtResource("3_2hler"), ExtResource("4_pxfdk"), ExtResource("5_kl121"), ExtResource("6_ckefa"), ExtResource("7_m2nk3")])
+track_list = Array[ExtResource("2_kjeli")]([ExtResource("3_2hler"), ExtResource("4_pxfdk"), ExtResource("5_kl121"), ExtResource("6_ckefa"), ExtResource("7_m2nk3"), ExtResource("8_2hler")])
 metadata/_custom_type_script = "uid://b85b6f8d0re4w"

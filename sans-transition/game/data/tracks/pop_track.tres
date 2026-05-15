@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://emasr2rj05mm"]
+
+[ext_resource type="AudioStream" uid="uid://boxlqoq3l4nxn" path="res://game/music_loops/pop.ogg" id="1_jn5wb"]
+[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="1_tvb3x"]
+[ext_resource type="Texture2D" uid="uid://7do5ljoaugp4" path="res://game/disc/sprites/cd_pop.png" id="2_copbs"]
+[ext_resource type="Texture2D" uid="uid://cmxrdbobxkfxp" path="res://game/vizualizer/sprites/tracks/pop.png" id="4_ks5wq"]
+
+[resource]
+script = ExtResource("1_tvb3x")
+audio = ExtResource("1_jn5wb")
+wave = ExtResource("4_ks5wq")
+disc = ExtResource("2_copbs")
+metadata/_custom_type_script = "uid://641doj4awc7g"

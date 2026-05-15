@@ -2,10 +2,12 @@
 
 [ext_resource type="AudioStream" uid="uid://cf8mwlihxdiet" path="res://game/music_loops/techno.ogg" id="1_end18"]
 [ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_2k11q"]
+[ext_resource type="Texture2D" uid="uid://o8xami7c0sm0" path="res://game/disc/sprites/cd_techno.png" id="2_6legx"]
 [ext_resource type="Texture2D" uid="uid://bcv3b6kdwn3j2" path="res://game/vizualizer/sprites/tracks/techno.png" id="3_2icbv"]
 
 [resource]
 script = ExtResource("2_2k11q")
 audio = ExtResource("1_end18")
 wave = ExtResource("3_2icbv")
+disc = ExtResource("2_6legx")
 metadata/_custom_type_script = "uid://641doj4awc7g"
