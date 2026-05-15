@@ -63,8 +63,8 @@ shader_parameter/speed = -1.0
 
 [node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
-track_list = ExtResource("2_uki45")
 synchroniser = NodePath("Synchronizer")
+track_list = ExtResource("2_uki45")
 track_visualizer_a = NodePath("Visual/Stand/ScreenA/TrackVisualizerA")
 track_visualizer_b = NodePath("Visual/Stand/ScreenB/TrackVisualizerB")
 dj_input_left = NodePath("DJInputLeft")
