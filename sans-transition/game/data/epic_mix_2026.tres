@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://djsrqo3v34h84" path="res://game/vizualizer/sprites/tracks/paillarde.png" id="6_ckefa"]
 [ext_resource type="Texture2D" uid="uid://rj6y8x5e2pfe" path="res://game/vizualizer/sprites/tracks/noel.png" id="8_m2nk3"]
 [ext_resource type="Texture2D" uid="uid://bgoim4au0cjj" path="res://game/vizualizer/sprites/tracks/eurodance.png" id="10_d3aus"]
+[ext_resource type="AudioStream" uid="uid://b4q5kjgmqlgen" path="res://game/music_loops/funk.ogg" id="11_ckefa"]
+[ext_resource type="Texture2D" uid="uid://clliklk0alfx3" path="res://game/vizualizer/sprites/tracks/funk.png" id="12_m2nk3"]
 
 [sub_resource type="Resource" id="Resource_0jig3"]
 script = ExtResource("2_y5fv6")
@@ -35,7 +37,13 @@ audio = ExtResource("6_0jig3")
 wave = ExtResource("10_d3aus")
 metadata/_custom_type_script = "uid://641doj4awc7g"
 
+[sub_resource type="Resource" id="Resource_d3aus"]
+script = ExtResource("2_y5fv6")
+audio = ExtResource("11_ckefa")
+wave = ExtResource("12_m2nk3")
+metadata/_custom_type_script = "uid://641doj4awc7g"
+
 [resource]
 script = ExtResource("1_d4du7")
-track_list = Array[ExtResource("2_y5fv6")]([SubResource("Resource_0jig3"), SubResource("Resource_kjeli"), SubResource("Resource_2hler"), SubResource("Resource_pxfdk")])
+track_list = Array[ExtResource("2_y5fv6")]([SubResource("Resource_0jig3"), SubResource("Resource_kjeli"), SubResource("Resource_2hler"), SubResource("Resource_pxfdk"), SubResource("Resource_d3aus")])
 metadata/_custom_type_script = "uid://b85b6f8d0re4w"

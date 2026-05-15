@@ -109,6 +109,8 @@ func switch_tracks() -> void:
 	audio_stream_player_dj_only.volume_db = -80
 	audio_stream_player_dj_only.pitch_scale = randf_range(0,4)
 	
+	public_panner.pan = 0
+	djonly_panner.pan = 0
 
 
 func calculate_window() -> void:

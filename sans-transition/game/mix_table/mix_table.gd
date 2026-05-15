@@ -22,7 +22,7 @@ var track_list_length: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#track_list.track_list.shuffle()
+	track_list.track_list.shuffle()
 	synchroniser.set_track_public(track_list.track_list[0])
 	synchroniser.set_track_dj(track_list.track_list[1])
 	update_visualizers()
@@ -46,19 +46,23 @@ func _process(delta: float) -> void:
 	if synchroniser.is_synced:
 		if dj_input_right.enabled:
 			sync_button_B.state = sync_button_B.State.SYNCED
+			sync_button_A.state = sync_button_A.State.OFF
 		else:
 			sync_button_A.state = sync_button_A.State.SYNCED
+			sync_button_B.state = sync_button_B.State.OFF
 
 	else:
 		if dj_input_right.enabled:
 			sync_button_B.state = sync_button_B.State.NOT_SYNCED
+			sync_button_A.state = sync_button_A.State.OFF
 		else:
 			sync_button_A.state = sync_button_A.State.NOT_SYNCED
+			sync_button_B.state = sync_button_B.State.OFF
 
 
 func _input(event: InputEvent) -> void:
 	#print_debug(event)
-	if event.is_action_pressed("transition") and not event.is_echo():		
+	if event.is_action_pressed("transition") and not event.is_echo() and synchroniser.is_synced:		
 		if next_track_id == track_list_length: 
 			next_track_id = 0
 			track_list.track_list.shuffle()
