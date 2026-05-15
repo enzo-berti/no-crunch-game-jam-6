@@ -16,6 +16,9 @@ var track_B_position_percentage: float
 var track_B_length: float
 var track_B_position_modulo: float
 
+var track_A_data: TrackData
+var track_B_data: TrackData
+
 @export_group("Depenencies")
 @export var audio_stream_player_track_A: AudioStreamPlayer
 @export var audio_stream_player_track_B: AudioStreamPlayer
@@ -122,15 +125,25 @@ func calculate_window() -> void:
 		is_synced = false
 		
 		
-func set_stream_public(stream : AudioStream) -> void:
+func set_track_public(data : TrackData) -> void:
+	if audio_stream_player_public == audio_stream_player_track_A:
+		track_A_data = data
+	else:
+		track_B_data = data
+	
 	audio_stream_player_public.stop()
-	audio_stream_player_public.stream = stream
+	audio_stream_player_public.stream = data.audio
 	audio_stream_player_public.play()
 	pass
 	
-func set_stream_dj(stream : AudioStream) -> void:
+func set_track_dj(data : TrackData) -> void:
+	if audio_stream_player_dj_only == audio_stream_player_track_A:
+		track_A_data = data
+	else:
+		track_B_data = data
+	
 	audio_stream_player_dj_only.stop()
-	audio_stream_player_dj_only.stream = stream
+	audio_stream_player_dj_only.stream = data.audio
 	audio_stream_player_dj_only.play()
 	pass
 
