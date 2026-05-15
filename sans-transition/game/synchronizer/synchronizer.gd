@@ -32,6 +32,7 @@ var audio_stream_player_dj_only: AudioStreamPlayer
 
 @export var public_filter: AudioEffectFilter
 @export var public_panner: AudioEffectPanner
+@export var public_reverb: AudioEffectReverb
 
 @export_subgroup("DJ")
 
@@ -59,7 +60,7 @@ func _ready() -> void:
 
 	audio_stream_player_dj_only.pitch_scale = randf_range(0.2, 4)
 	is_synced = false
-
+	public_reverb.hipass = 0.3
 
 func _process(delta: float) -> void:
 	if audio_stream_player_track_A.stream == null or audio_stream_player_track_B.stream == null:

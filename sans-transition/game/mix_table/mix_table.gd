@@ -20,6 +20,8 @@ signal track_switched
 @export var sync_button_A: SyncButton
 @export var sync_button_B: SyncButton
 
+@export var highlighter: Highlighter
+
 var next_track_id: int
 
 var track_list_length: int
@@ -74,6 +76,8 @@ func _input(event: InputEvent) -> void:
 		dj_input_left.enabled = false
 		dj_input_right.enabled = false
 
+		highlighter.vanish()
+		
 		synchroniser.switch_tracks()
 		track_switched.emit()
 		synchroniser.set_track_dj(track_list.track_list[next_track_id])
@@ -85,14 +89,20 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("listen_dj_track_left"):
 			dj_input_left.enabled = true
 			synchroniser.enable_DJ_listening()
+			highlighter.texture = highlighter.LEFT
+			highlighter.appear()
 		if event.is_action_released("listen_dj_track_left"):
 			dj_input_left.enabled = false
+			highlighter.vanish()
 			synchroniser.disable_DJ_listening()
 	else:
 		if event.is_action_pressed("listen_dj_track_right"):
 			dj_input_right.enabled = true
 			synchroniser.enable_DJ_listening()
+			highlighter.texture = highlighter.RIGHT
+			highlighter.appear()
 		if event.is_action_released("listen_dj_track_right"):
+			highlighter.vanish()
 			dj_input_right.enabled = false
 			synchroniser.disable_DJ_listening()
 
@@ -103,7 +113,8 @@ func update_visuals() -> void:
 	
 	disk_a.set_texture(synchroniser.track_A_data.disc)
 	disk_b.set_texture(synchroniser.track_B_data.disc)
-
+	
+	
 
 func update_tracks(value: float) -> void:
 	track_visualizer_b.speed_scale += value

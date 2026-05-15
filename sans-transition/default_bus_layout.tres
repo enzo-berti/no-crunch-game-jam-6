@@ -3,6 +3,7 @@
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchronizer/audio_effects/public_low_pass_filter.tres" id="1_g28q7"]
 [ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchronizer/audio_effects/public_filter_panner.tres" id="2_n8wo2"]
 [ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="3_5t1r3"]
+[ext_resource type="AudioEffectReverb" uid="uid://cvv4w6dru1ybu" path="res://game/synchronizer/audio_effects/reverb.tres" id="3_cenje"]
 
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_g28q7"]
 resource_name = "PitchShift"
@@ -11,18 +12,21 @@ oversampling = 7
 fft_size = 1
 
 [resource]
+bus/0/bypass_fx = true
 bus/1/name = &"Public"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = -3.1196349
 bus/1/send = &"Master"
-bus/1/effect/0/effect = ExtResource("1_g28q7")
-bus/1/effect/0/enabled = true
-bus/1/effect/1/effect = SubResource("AudioEffectPitchShift_g28q7")
-bus/1/effect/1/enabled = false
-bus/1/effect/2/effect = ExtResource("2_n8wo2")
+bus/1/effect/0/effect = SubResource("AudioEffectPitchShift_g28q7")
+bus/1/effect/0/enabled = false
+bus/1/effect/1/effect = ExtResource("2_n8wo2")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = ExtResource("3_cenje")
 bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = ExtResource("1_g28q7")
+bus/1/effect/3/enabled = true
 bus/2/name = &"DjOnly"
 bus/2/solo = false
 bus/2/mute = false

@@ -24,3 +24,4 @@ texture = ExtResource("5_rsx12")
 
 [node name="AudioStreamPlayer" parent="." index="3" unique_id=1231547747]
 stream = ExtResource("6_igenb")
+volume_db = 10.0

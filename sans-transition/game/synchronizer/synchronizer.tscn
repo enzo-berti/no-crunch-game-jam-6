@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://kgd5nuh3hng8" path="res://game/synchronizer/synchronizer.gd" id="1_mgp3x"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://de7udbcviyhq6" path="res://game/synchronizer/audio_effects/public_low_pass_filter.tres" id="2_bjkrn"]
 [ext_resource type="AudioEffectPanner" uid="uid://brafttjbef6lx" path="res://game/synchronizer/audio_effects/public_filter_panner.tres" id="3_17csd"]
+[ext_resource type="AudioEffectReverb" uid="uid://cvv4w6dru1ybu" path="res://game/synchronizer/audio_effects/reverb.tres" id="4_7c0gh"]
 [ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="4_sgph1"]
 
 [node name="Synchronizer" type="Node" unique_id=1921030261 node_paths=PackedStringArray("audio_stream_player_track_A", "audio_stream_player_track_B")]
@@ -11,6 +12,7 @@ audio_stream_player_track_A = NodePath("AudioStreamPlayerTrackA")
 audio_stream_player_track_B = NodePath("AudioStreamPlayerTrackB")
 public_filter = ExtResource("2_bjkrn")
 public_panner = ExtResource("3_17csd")
+public_reverb = ExtResource("4_7c0gh")
 djonly_panner = ExtResource("4_sgph1")
 cuttof_value_enable = 2500
 cuttof_value_disable = 20500

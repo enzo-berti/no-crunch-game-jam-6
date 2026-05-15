@@ -31,6 +31,8 @@
 [ext_resource type="AudioStream" uid="uid://xx7yo81b5fpb" path="res://game/mix_table/sounds/ShortScratch4.mp3" id="29_f8n0g"]
 [ext_resource type="AudioStream" uid="uid://5ciuh6n7afvx" path="res://game/mix_table/sounds/ShortScratch5.mp3" id="30_i83a4"]
 [ext_resource type="AudioStream" uid="uid://ds1uctwnurxa1" path="res://game/mix_table/sounds/ShortScratch6.mp3" id="31_q37fi"]
+[ext_resource type="Texture2D" uid="uid://dg8h8ulwi3vyx" path="res://game/hints/panel_hilight_right.png" id="32_8he0m"]
+[ext_resource type="Script" uid="uid://bihcpouvfd16s" path="res://game/highlighter.gd" id="33_gwt5a"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_k35n5"]
 action = &"sfx_cat"
@@ -93,7 +95,21 @@ func scratch() -> void:
 		play()
 "
 
-[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "disk_a", "disk_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B")]
+[sub_resource type="Shader" id="Shader_8he0m"]
+code = "shader_type canvas_item;
+render_mode blend_mul;
+
+uniform float factor = 0.0;
+
+void fragment() {
+	COLOR = mix(vec4(1.0), COLOR, factor);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwt5a"]
+shader = SubResource("Shader_8he0m")
+shader_parameter/factor = 0.0
+
+[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "disk_a", "disk_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B", "highlighter")]
 script = ExtResource("1_f1hik")
 synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
@@ -105,12 +121,13 @@ dj_input_left = NodePath("DJInputLeft")
 dj_input_right = NodePath("DJInputRight")
 sync_button_A = NodePath("Visual/SyncButtonA")
 sync_button_B = NodePath("Visual/SyncButtonB")
+highlighter = NodePath("Highlighter")
 
 [node name="Visual" type="Node2D" parent="." unique_id=885483339]
 scale = Vector2(0.75, 0.75)
 
 [node name="Base" type="Sprite2D" parent="Visual" unique_id=1364645613]
-position = Vector2(1281.3334, 1112)
+position = Vector2(1280, 1114)
 texture = ExtResource("2_rphpj")
 
 [node name="Boutons" type="Sprite2D" parent="Visual" unique_id=1553678113]
@@ -285,6 +302,14 @@ script = ExtResource("24_tpak7")
 stream = SubResource("AudioStreamRandomizer_67gfx")
 volume_db = -5.0
 script = SubResource("GDScript_ayo15")
+
+[node name="Highlighter" type="Sprite2D" parent="." unique_id=439135478]
+material = SubResource("ShaderMaterial_gwt5a")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("32_8he0m")
+centered = false
+script = ExtResource("33_gwt5a")
+metadata/_edit_lock_ = true
 
 [connection signal="input_shifted" from="DJInputLeft" to="Scratcher" method="scratch" unbinds=1]
 [connection signal="input_shifted" from="DJInputRight" to="Scratcher" method="scratch" unbinds=1]
