@@ -22,7 +22,8 @@ signal input_shifted(value: float)
 func _process(delta: float) -> void:
 	var input_vector := (
 		Input.get_vector("left_platine_left", "left_platine_right", "left_platine_down", "left_platine_up")
-		if input_side == InputSide.LEFT else Input.get_vector("right_platine_left", "right_platine_right", "right_platine_down", "right_platine_up")
+		if input_side == InputSide.LEFT 
+		else Input.get_vector("right_platine_left", "right_platine_right", "right_platine_down", "right_platine_up")
 	)
 
 	if not input_vector.is_zero_approx():

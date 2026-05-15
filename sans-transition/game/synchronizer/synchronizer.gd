@@ -48,6 +48,7 @@ func _ready() -> void:
 	audio_stream_player_public = audio_stream_player_track_A
 	audio_stream_player_dj_only = audio_stream_player_track_B
 
+	audio_stream_player_dj_only.pitch_scale = randf_range(0,4)
 	is_synced = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -96,8 +97,11 @@ func switch_tracks() -> void:
 	
 	audio_stream_player_public.bus = "Public"
 	audio_stream_player_public.volume_db = 0
+	audio_stream_player_public.pitch_scale = 1
+	
 	audio_stream_player_dj_only.bus = "DjOnly"
 	audio_stream_player_dj_only.volume_db = -80
+	audio_stream_player_dj_only.pitch_scale = randf_range(0,4)
 	
 
 
@@ -137,3 +141,9 @@ func set_stream_dj(stream : AudioStream) -> void:
 func speed_updater(value: float) -> void:
 	audio_stream_player_dj_only.pitch_scale += value
 	pass
+
+func get_track_A_speed() -> float:
+	return audio_stream_player_track_A.pitch_scale
+
+func get_track_B_speed() -> float:
+	return audio_stream_player_track_B.pitch_scale

@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bv30pwrxrbn77" path="res://game/mix_table/hologram/variants/hologram_gnome.tscn" id="17_tpak7"]
 [ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="18_3vb45"]
 [ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="19_p1v12"]
+[ext_resource type="Script" uid="uid://ddcaheit81jr3" path="res://game/mix_table/dj_input_mouse.gd" id="24_tpak7"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_k35n5"]
 action = &"sfx_cat"
@@ -62,8 +63,8 @@ shader_parameter/speed = -1.0
 
 [node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
-synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
+synchroniser = NodePath("Synchronizer")
 track_visualizer_a = NodePath("Visual/Stand/ScreenA/TrackVisualizerA")
 track_visualizer_b = NodePath("Visual/Stand/ScreenB/TrackVisualizerB")
 dj_input_left = NodePath("DJInputLeft")
@@ -225,6 +226,9 @@ input_side = 1
 multiplier = -0.1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
+
+[node name="DJInputMouse" type="Node" parent="." unique_id=460878965]
+script = ExtResource("24_tpak7")
 
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]
