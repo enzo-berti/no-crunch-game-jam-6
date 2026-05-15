@@ -4,7 +4,7 @@ extends Node
 signal tracks_in_range_signal(in_range: bool)
 
 ## Synchronize range (to be tweaked)
-@export var offset_window: float
+@export var synchronised_window: float
 
 var track_A_position_percentage: float
 var track_A_position_modulo: float
@@ -54,15 +54,6 @@ func _ready() -> void:
 
 	is_synced = false
 
-	audio_stream_player_track_A.play()
-	audio_stream_player_track_B.play()
-
-	await get_tree().create_timer(5).timeout
-	enable_DJ_listening()
-	await get_tree().create_timer(5).timeout
-	disable_DJ_listening()
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	track_A_position_percentage = audio_stream_player_track_A.get_playback_position() / track_A_length
@@ -111,9 +102,20 @@ func calculate_window() -> void:
 
 	var difference_to_check = min(difference_in_mesure, difference_out_mesure)
 
-	if difference_to_check < offset_window and !is_synced:
+	if difference_to_check < synchronised_window and !is_synced:
 		tracks_in_range_signal.emit(true)
 		is_synced = true
-	elif difference_to_check > offset_window and is_synced:
+	elif difference_to_check > synchronised_window and is_synced:
 		tracks_in_range_signal.emit(false)
 		is_synced = false
+		
+		
+func set_stream_public(stream : AudioStream) -> void:
+	audio_stream_player_public.stream = stream
+	audio_stream_player_public.play()
+	pass
+	
+func set_stream_dj(stream : AudioStream) -> void:
+	audio_stream_player_dj_only.stream = stream
+	audio_stream_player_dj_only.play()
+	pass

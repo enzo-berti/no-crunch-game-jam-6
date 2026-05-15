@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://bjhc6mbk2n4n1"]
 
+[ext_resource type="Script" uid="uid://c5c2m5wcmekpw" path="res://game/mix_table/mix_table.gd" id="1_f1hik"]
 [ext_resource type="Texture2D" uid="uid://dgf3ehstk1u66" path="res://game/mix_table/sprites/tablette_ref.png" id="1_y51vw"]
 [ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="2_rphpj"]
+[ext_resource type="Resource" uid="uid://082o32rnfkh1" path="res://game/data/epic_mix_2026.tres" id="2_uki45"]
 [ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="3_247ce"]
 [ext_resource type="Texture2D" uid="uid://6q3ctacsihgk" path="res://game/mix_table/sprites/From selection.png" id="3_f1hik"]
 [ext_resource type="Texture2D" uid="uid://cmgamc84bc4b1" path="res://game/mix_table/sprites/boutons.png" id="3_kp4uu"]
 [ext_resource type="Texture2D" uid="uid://boqinmfaabn56" path="res://game/mix_table/sprites/outside_frame.png" id="4_247ce"]
 [ext_resource type="Texture2D" uid="uid://bthp5qxiffiin" path="res://game/mix_table/sprites/Layer 55.png" id="4_uki45"]
 [ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="5_wuq5k"]
-[ext_resource type="Script" uid="uid://1opklquswpf3" path="res://game/dj_input.gd" id="6_247ce"]
+[ext_resource type="Script" path="res://game/dj_input.gd" id="6_247ce"]
+[ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="8_uki45"]
 [ext_resource type="PackedScene" uid="uid://qbeuen8f6unh" path="res://game/disc/disc.tscn" id="8_wqdoj"]
 [ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/perspective.gdshader" id="9_o5qx1"]
 [ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="10_f07uh"]
@@ -79,7 +82,16 @@ func _ready() -> void:
 	)
 "
 
-[node name="MixTable" type="Node2D" unique_id=438255488]
+[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser")]
+script = ExtResource("1_f1hik")
+synchroniser = NodePath("Synchronizer")
+track_list = ExtResource("2_uki45")
+
+[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
+visible = false
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_y51vw")
+centered = false
 
 [node name="Visual" type="Node2D" parent="." unique_id=885483339]
 scale = Vector2(0.75, 0.75)
@@ -254,7 +266,9 @@ track_visualizer_b = NodePath("../Visual/Stand/ScreenB/TrackVisualizerB")
 dj_input_left = NodePath("../DJInputLeft")
 dj_input_right = NodePath("../DJInputRight")
 
-[editable path="Visual/Stand/ScreenA/TrackVisualizerA"]
-[editable path="Visual/Stand/ScreenB/TrackVisualizerB"]
+[node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
+
+[editable path="Visual/Stand/Screens/TrackVisualizerA"]
+[editable path="Visual/Stand/Screens/TrackVisualizerB"]
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]
