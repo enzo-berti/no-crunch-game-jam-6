@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c10h78la4qb4r"
-path="res://.godot/imported/test_tablette.png-9221a2341b5f3e672d8f38e865a24274.ctex"
+uid="uid://cujlnu73pm17g"
+path="res://.godot/imported/JOUER.png-c378f8826eec04a7fea7dd1cd41bb53e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/title_screen/test_tablette.png"
-dest_files=["res://.godot/imported/test_tablette.png-9221a2341b5f3e672d8f38e865a24274.ctex"]
+source_file="res://gui/title_screen/JOUER.png"
+dest_files=["res://.godot/imported/JOUER.png-c378f8826eec04a7fea7dd1cd41bb53e.ctex"]
 
 [params]
 

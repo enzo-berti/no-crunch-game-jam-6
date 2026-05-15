@@ -1,12 +1,12 @@
 extends Control
 
-@export var tween_intensity: float
-@export var tween_duration: float
-
 @export var sfx_button_pressed: AudioStreamPlayer2D
 @export var buttons: Array[BaseButton]
 
-@export var credits_scene: Control
+@export var credits_scene: Credits
+
+func _ready() -> void:
+	buttons.append(credits_scene.x_button)
 
 func _process(_delta: float) -> void:
 	for button in buttons:
@@ -19,9 +19,12 @@ func start_tween(object: Object, property: String, final_val: Variant, duration:
 func btn_hovered(button: BaseButton):
 	button.pivot_offset = button.size / 2.0
 	if button.is_hovered():
-		start_tween(button, "scale", Vector2.ONE * tween_intensity, tween_duration)
+		if (button.scale >= Vector2.ONE * 1.3):
+			start_tween(button, "scale", Vector2.ONE * 1.2, 0.05)
+		elif (button.scale <= Vector2.ONE * 1.2):
+			start_tween(button, "scale", Vector2.ONE * 1.3, 0.3)
 	else:
-		start_tween(button, "scale", Vector2.ONE, tween_duration)
+		start_tween(button, "scale", Vector2.ONE, 0.2)
 
 
 func _on_start_button_pressed() -> void:
@@ -31,4 +34,9 @@ func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(load("uid://c8mtky32erftq"))
 
 func _on_credits_button_pressed() -> void:
-	credits_scene.visible = true
+	var tween = create_tween()
+	tween.tween_property(credits_scene, "scale", Vector2(1, 1), 0.1).set_ease(Tween.EASE_IN_OUT)
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit() 

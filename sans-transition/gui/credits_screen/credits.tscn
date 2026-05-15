@@ -1,20 +1,25 @@
 [gd_scene format=3 uid="uid://ujcjlawgca8i"]
 
-[ext_resource type="Texture2D" uid="uid://cwyrsxe6l44x6" path="res://gui/X.png" id="1_i8qro"]
-[ext_resource type="FontFile" uid="uid://cgfbdjse0dath" path="res://gui/Micro5-Regular.ttf" id="1_t6a7l"]
-[ext_resource type="Texture2D" uid="uid://cqv6dbefymt27" path="res://gui/ecran.png" id="3_uhutt"]
+[ext_resource type="Script" uid="uid://cfj0mhoxwexml" path="res://gui/credits_screen/credits.gd" id="1_6og75"]
+[ext_resource type="Texture2D" uid="uid://cwyrsxe6l44x6" path="res://gui/credits_screen/X.png" id="1_i8qro"]
+[ext_resource type="FontFile" uid="uid://cgfbdjse0dath" path="res://gui/credits_screen/Micro5-Regular.ttf" id="1_t6a7l"]
+[ext_resource type="Texture2D" uid="uid://cqv6dbefymt27" path="res://gui/credits_screen/ecran.png" id="3_uhutt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c05bu"]
 font = ExtResource("1_t6a7l")
 font_size = 64
 
-[node name="Credits" type="Control" unique_id=1293935610]
+[node name="Credits" type="Control" unique_id=1293935610 node_paths=PackedStringArray("x_button")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6og75")
+x_button = NodePath("XButton")
 
 [node name="Screen" type="TextureRect" parent="." unique_id=1026952451]
 layout_mode = 1
@@ -23,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -385.125
-offset_top = -270.0
-offset_right = 385.125
-offset_bottom = 325.0
+offset_left = -492.0
+offset_top = -264.0
+offset_right = 492.0
+offset_bottom = 331.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_uhutt")
@@ -39,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 319.0
-offset_top = -295.0
-offset_right = 419.0
-offset_bottom = -195.0
+offset_left = 413.0
+offset_top = -289.10547
+offset_right = 533.0
+offset_bottom = -168.43945
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_i8qro")
@@ -56,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -409.5
+offset_top = -205.0
+offset_right = 409.5
+offset_bottom = 205.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 24
@@ -81,9 +86,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_t6a7l")
 theme_override_font_sizes/font_size = 64
-text = "Cédric"
+text = "CÉDRIC"
 underline = 1
-uri = "https://nolkaloid.xyz/"
+uri = "https://www.linkedin.com/in/c%C3%A9dric-thiriet-remondin-73146810b/"
 
 [node name="Enzo" type="LinkButton" parent="HBoxContainer/Names" unique_id=1152583368]
 layout_mode = 2
@@ -92,32 +97,32 @@ theme_override_fonts/font = ExtResource("1_t6a7l")
 theme_override_font_sizes/font_size = 64
 text = "ENZO BERTI"
 underline = 1
-uri = "https://nolkaloid.xyz/"
+uri = "https://enzoberti.itch.io/"
 
 [node name="Maxime" type="LinkButton" parent="HBoxContainer/Names" unique_id=1451699333]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_t6a7l")
 theme_override_font_sizes/font_size = 64
-text = "Maxime"
+text = "MAXIME BREISTROFF "
 underline = 1
-uri = "https://nolkaloid.xyz/"
+uri = "https://www.linkedin.com/in/maxime-breistroff"
 
 [node name="Nella" type="LinkButton" parent="HBoxContainer/Names" unique_id=357531355]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_t6a7l")
 theme_override_font_sizes/font_size = 64
-text = "Nella"
+text = "NELLA"
 underline = 1
-uri = "https://nolkaloid.xyz/"
+uri = "https://www.nellaskogen.com/"
 
 [node name="Noe" type="LinkButton" parent="HBoxContainer/Names" unique_id=1126901523]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_t6a7l")
 theme_override_font_sizes/font_size = 64
-text = "Noe"
+text = "NOÉ"
 underline = 1
 uri = "https://nolkaloid.xyz/"
 
@@ -126,30 +131,32 @@ layout_mode = 2
 
 [node name="AloisRole" type="Label" parent="HBoxContainer/Roles" unique_id=1732685206]
 layout_mode = 2
-text = "GAME DESIGNER"
+text = "GAME DESIGN"
 label_settings = SubResource("LabelSettings_c05bu")
 
 [node name="CedricRole" type="Label" parent="HBoxContainer/Roles" unique_id=872982943]
 layout_mode = 2
-text = "Programmeur"
+text = "DEVELOPMENT"
 label_settings = SubResource("LabelSettings_c05bu")
 
 [node name="EnzoRole" type="Label" parent="HBoxContainer/Roles" unique_id=319096493]
 layout_mode = 2
-text = "Programmeur"
+text = "DEVELOPMENT"
 label_settings = SubResource("LabelSettings_c05bu")
 
 [node name="MaximeRole" type="Label" parent="HBoxContainer/Roles" unique_id=417897528]
 layout_mode = 2
-text = "Musicien"
+text = "SOUND DESIGN - SFX"
 label_settings = SubResource("LabelSettings_c05bu")
 
 [node name="NellaRole" type="Label" parent="HBoxContainer/Roles" unique_id=316528951]
 layout_mode = 2
-text = "Artiste"
+text = "GAME ART"
 label_settings = SubResource("LabelSettings_c05bu")
 
 [node name="NoeRole" type="Label" parent="HBoxContainer/Roles" unique_id=953526151]
 layout_mode = 2
-text = "Programmeur"
+text = "DEVELOPMENT"
 label_settings = SubResource("LabelSettings_c05bu")
+
+[connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
