@@ -54,9 +54,13 @@ func _input(event: InputEvent) -> void:
 		dj_input_left.enabled = !dj_input_left.enabled
 		dj_input_right.enabled = !dj_input_right.enabled
 		
-	elif event.is_action_pressed("listen_dj_track"):
+	elif event.is_action_pressed("listen_dj_track_right") and dj_input_right.enabled:
 		synchroniser.enable_DJ_listening()
-	elif event.is_action_released("listen_dj_track"):
+	elif event.is_action_released("listen_dj_track_right") and dj_input_right.enabled:
+		synchroniser.disable_DJ_listening()
+	elif event.is_action_pressed("listen_dj_track_left") and dj_input_left.enabled:
+		synchroniser.enable_DJ_listening()
+	elif event.is_action_released("listen_dj_track_left") and dj_input_left.enabled:
 		synchroniser.disable_DJ_listening()
 		
 
