@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrgx7xglyh4x"
-path="res://.godot/imported/placeholder_track.png-c6f93495cc62169668db32533a8174f8.ctex"
+uid="uid://cmxrdbobxkfxp"
+path="res://.godot/imported/pop.png-624a9838d430c8e20db46cf0ee627e48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/vizualizer/sprites/placeholder_track.png"
-dest_files=["res://.godot/imported/placeholder_track.png-c6f93495cc62169668db32533a8174f8.ctex"]
+source_file="res://game/vizualizer/sprites/tracks/pop.png"
+dest_files=["res://.godot/imported/pop.png-624a9838d430c8e20db46cf0ee627e48.ctex"]
 
 [params]
 

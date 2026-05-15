@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db2q7xug6r42a"
-path="res://.godot/imported/temp.png-94ebc136288ec40b5bf1e682638909c5.ctex"
+uid="uid://rj6y8x5e2pfe"
+path="res://.godot/imported/noel.png-3e2ed0a17244d3a0e9ed486089d6a613.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/vizualizer/sprites/temp.png"
-dest_files=["res://.godot/imported/temp.png-94ebc136288ec40b5bf1e682638909c5.ctex"]
+source_file="res://game/vizualizer/sprites/tracks/noel.png"
+dest_files=["res://.godot/imported/noel.png-3e2ed0a17244d3a0e9ed486089d6a613.ctex"]
 
 [params]
 

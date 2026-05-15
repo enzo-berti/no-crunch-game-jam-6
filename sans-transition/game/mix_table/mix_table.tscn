@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://g1brdqbxheyh" path="res://game/mix_table/hologram/variants/hologram_cat.tscn" id="14_dff6c"]
 [ext_resource type="PackedScene" uid="uid://dwnwcpclgwdy1" path="res://game/mix_table/hologram/variants/hologram_airhorn.tscn" id="15_tdgsy"]
 [ext_resource type="PackedScene" uid="uid://d4if86e5tyjp" path="res://game/mix_table/hologram/variants/hologram_dog.tscn" id="16_lvfhp"]
+[ext_resource type="Texture2D" uid="uid://01ein1akdcv6" path="res://game/mix_table/sprites/dots.png" id="16_tpak7"]
 [ext_resource type="PackedScene" uid="uid://bv30pwrxrbn77" path="res://game/mix_table/hologram/variants/hologram_gnome.tscn" id="17_tpak7"]
 [ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="18_3vb45"]
 [ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="19_p1v12"]
@@ -46,6 +47,12 @@ pressed = true
 [sub_resource type="InputEventAction" id="InputEventAction_p1v12"]
 action = &"sfx_yoda"
 pressed = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tpak7"]
+blend_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3vb45"]
+blend_mode = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f07uh"]
 shader = ExtResource("9_o5qx1")
@@ -122,9 +129,15 @@ texture = ExtResource("4_247ce")
 
 [node name="TrackVisualizerA" parent="Visual/Stand/ScreenA" unique_id=1299234425 instance=ExtResource("5_wuq5k")]
 show_behind_parent = true
-position = Vector2(-4.000244, 7.9999695)
+position = Vector2(-2.6666665, -3.0517578e-05)
 scale = Vector2(1.01, 1.01)
 track_duration = 5.0
+
+[node name="Dots" type="Sprite2D" parent="Visual/Stand/ScreenA" unique_id=607280095]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_tpak7")
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("16_tpak7")
 
 [node name="ScreenB" type="Sprite2D" parent="Visual/Stand" unique_id=1476404501]
 position = Vector2(0, 146.66667)
@@ -132,9 +145,18 @@ texture = ExtResource("4_247ce")
 
 [node name="TrackVisualizerB" parent="Visual/Stand/ScreenB" unique_id=1443232581 instance=ExtResource("5_wuq5k")]
 show_behind_parent = true
-position = Vector2(-6.666667, 8)
+position = Vector2(-2.666667, 0)
 scale = Vector2(1.01, 1.01)
 track_duration = 5.0
+
+[node name="Track" parent="Visual/Stand/ScreenB/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
+self_modulate = Color(0.69899964, 0.13999999, 1, 1)
+
+[node name="Dots" type="Sprite2D" parent="Visual/Stand/ScreenB" unique_id=1627871673]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_3vb45")
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("16_tpak7")
 
 [node name="SyncState" type="Sprite2D" parent="Visual/Stand" unique_id=1385842724]
 
@@ -226,5 +248,6 @@ multiplier = -0.1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
 
+[editable path="Visual/Stand/ScreenB/TrackVisualizerB"]
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]

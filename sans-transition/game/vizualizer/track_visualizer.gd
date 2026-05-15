@@ -13,6 +13,8 @@ extends Node2D
 @export var _track_sprite: Sprite2D
 @export var _bars_sprite: Sprite2D
 
+@export var _bar_offset: float = 121
+
 @export var offset: float:
 	set(value):
 		offset = value
@@ -25,11 +27,6 @@ var scroll_speed: float:
 const MAX_TRACK_SCALE: int = 5
 
 
-func _ready() -> void:
-	_track_sprite.region_rect.size.x = _track_sprite.texture.get_size().x * MAX_TRACK_SCALE
-	_bars_sprite.region_rect.size.x = _track_sprite.region_rect.size.x
-
-
 func _update_scroll() -> void:
 	_track_sprite.region_rect.position.x = offset * scroll_speed
 	_bars_sprite.region_rect.position.x = offset * scroll_speed
@@ -38,4 +35,7 @@ func _update_scroll() -> void:
 func _process(delta: float) -> void:
 	offset += speed_scale * delta
 	_update_scroll()
-	
+
+
+func set_track_texture(texture: Texture2D) -> void:
+	_track_sprite.texture = texture

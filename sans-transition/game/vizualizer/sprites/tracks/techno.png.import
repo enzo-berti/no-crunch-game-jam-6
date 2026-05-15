@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://igdh84ttxki4"
-path="res://.godot/imported/cursor.png-a4997103e3ef0f32cf9bf41d9ef65238.ctex"
+uid="uid://bcv3b6kdwn3j2"
+path="res://.godot/imported/techno.png-3b79d117bc7530a0eeef6f863a2e1f72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/vizualizer/sprites/cursor.png"
-dest_files=["res://.godot/imported/cursor.png-a4997103e3ef0f32cf9bf41d9ef65238.ctex"]
+source_file="res://game/vizualizer/sprites/tracks/techno.png"
+dest_files=["res://.godot/imported/techno.png-3b79d117bc7530a0eeef6f863a2e1f72.ctex"]
 
 [params]
 
