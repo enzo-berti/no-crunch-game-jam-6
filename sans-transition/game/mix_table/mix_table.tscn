@@ -240,16 +240,14 @@ texture = ExtResource("13_ec0rs")
 
 [node name="DJInputLeft" type="Node" parent="." unique_id=996665280]
 script = ExtResource("6_247ce")
-multiplier = -0.1
 
 [node name="DJInputRight" type="Node" parent="." unique_id=945628514]
 script = ExtResource("6_247ce")
 input_side = 1
-multiplier = -0.1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
-synchronised_window = 0.2
-offset_speed_between_tracks = 0.2
+synchronised_window = 0.1
+offset_speed_between_tracks = 0.05
 
 [node name="DJInputMouse" type="Node" parent="." unique_id=460878965]
 script = ExtResource("24_tpak7")
