@@ -30,7 +30,6 @@ var audio_stream_player_dj_only: AudioStreamPlayer
 
 @export_subgroup("DJ")
 
-@export var djonly_filter: AudioEffectFilter
 @export var djonly_panner: AudioEffectPanner
 
 @export_subgroup("Tweaks")

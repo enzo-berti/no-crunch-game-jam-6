@@ -21,5 +21,5 @@ func play() -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_property(icon, "scale", Vector2.ONE * 1.0, 1.0) \
+	_tween.tween_property(icon, "scale", Vector2.ONE, 1.0) \
 	.from(Vector2.ONE * 2.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)

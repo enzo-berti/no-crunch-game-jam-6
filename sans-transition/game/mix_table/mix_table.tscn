@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bjhc6mbk2n4n1"]
 
 [ext_resource type="Script" uid="uid://c5c2m5wcmekpw" path="res://game/mix_table/mix_table.gd" id="1_f1hik"]
-[ext_resource type="Texture2D" uid="uid://dgf3ehstk1u66" path="res://game/mix_table/sprites/tablette_ref.png" id="1_y51vw"]
 [ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="2_rphpj"]
 [ext_resource type="Resource" uid="uid://082o32rnfkh1" path="res://game/data/epic_mix_2026.tres" id="2_uki45"]
 [ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="3_247ce"]
@@ -10,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://boqinmfaabn56" path="res://game/mix_table/sprites/outside_frame.png" id="4_247ce"]
 [ext_resource type="Texture2D" uid="uid://bthp5qxiffiin" path="res://game/mix_table/sprites/Layer 55.png" id="4_uki45"]
 [ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="5_wuq5k"]
-[ext_resource type="Script" path="res://game/dj_input.gd" id="6_247ce"]
+[ext_resource type="Script" uid="uid://1opklquswpf3" path="res://game/dj_input.gd" id="6_247ce"]
 [ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="8_uki45"]
 [ext_resource type="PackedScene" uid="uid://qbeuen8f6unh" path="res://game/disc/disc.tscn" id="8_wqdoj"]
 [ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/perspective.gdshader" id="9_o5qx1"]
@@ -25,9 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="18_3vb45"]
 [ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="19_p1v12"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_dff6c"]
+[sub_resource type="InputEventAction" id="InputEventAction_k35n5"]
 action = &"sfx_cat"
-pressed = true
 
 [sub_resource type="InputEventAction" id="InputEventAction_tdgsy"]
 action = &"sfx_airhorn"
@@ -61,22 +59,15 @@ blend_mode = 1
 shader = ExtResource("9_o5qx1")
 shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
 shader_parameter/speed = -1.0
-[ext_resource type="AudioEffectPanner" uid="uid://cljtiysof3flw" path="res://game/synchronizer/audio_effects/dj_only_panner.tres" id="10_a5j23"]
 
 [node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
 script = ExtResource("1_f1hik")
 synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
-track_visualizer_a = NodePath("Visual/Stand/Screens/TrackVisualizerA")
-track_visualizer_b = NodePath("Visual/Stand/Screens/TrackVisualizerB")
+track_visualizer_a = NodePath("Visual/Stand/ScreenA/TrackVisualizerA")
+track_visualizer_b = NodePath("Visual/Stand/ScreenB/TrackVisualizerB")
 dj_input_left = NodePath("DJInputLeft")
 dj_input_right = NodePath("DJInputRight")
-
-[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
-visible = false
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_y51vw")
-centered = false
 
 [node name="Visual" type="Node2D" parent="." unique_id=885483339]
 scale = Vector2(0.75, 0.75)
@@ -99,7 +90,7 @@ texture = ExtResource("4_uki45")
 
 [node name="HologramCat" parent="Visual" unique_id=876305959 instance=ExtResource("14_dff6c")]
 position = Vector2(188, 649.3334)
-input_action = SubResource("InputEventAction_dff6c")
+input_action = SubResource("InputEventAction_k35n5")
 
 [node name="HologramAirhorn" parent="Visual" unique_id=1481108766 instance=ExtResource("15_tdgsy")]
 position = Vector2(390.6667, 650.6667)
@@ -144,9 +135,6 @@ show_behind_parent = true
 position = Vector2(-6.666667, 8)
 scale = Vector2(1.01, 1.01)
 track_duration = 5.0
-
-[node name="Track" parent="Visual/Stand/ScreenB/TrackVisualizerB/ScreenMask" parent_id_path=PackedInt32Array(1443232581, 1414859341) index="0" unique_id=1840377646]
-self_modulate = Color(0.69899964, 0.13999999, 1, 1)
 
 [node name="SyncState" type="Sprite2D" parent="Visual/Stand" unique_id=1385842724]
 
@@ -227,14 +215,6 @@ state = 0
 position = Vector2(1454.6666, 770.6667)
 texture = ExtResource("13_ec0rs")
 
-[node name="TabletteRef" type="Sprite2D" parent="." unique_id=1743856446]
-visible = false
-modulate = Color(1, 1, 1, 0.38039216)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_y51vw")
-centered = false
-metadata/_edit_lock_ = true
-
 [node name="DJInputLeft" type="Node" parent="." unique_id=996665280]
 script = ExtResource("6_247ce")
 multiplier = -0.1
@@ -244,17 +224,7 @@ script = ExtResource("6_247ce")
 input_side = 1
 multiplier = -0.1
 
-[node name="Glue" type="Node" parent="." unique_id=253026878 node_paths=PackedStringArray("track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right")]
-script = SubResource("GDScript_kp4uu")
-track_visualizer_a = NodePath("../Visual/Stand/ScreenA/TrackVisualizerA")
-track_visualizer_b = NodePath("../Visual/Stand/ScreenB/TrackVisualizerB")
-dj_input_left = NodePath("../DJInputLeft")
-dj_input_right = NodePath("../DJInputRight")
-
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
-djonly_panner = ExtResource("10_a5j23")
 
-[editable path="Visual/Stand/Screens/TrackVisualizerA"]
-[editable path="Visual/Stand/Screens/TrackVisualizerB"]
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]
