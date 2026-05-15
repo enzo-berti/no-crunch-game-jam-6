@@ -275,7 +275,7 @@ script = ExtResource("6_247ce")
 input_side = 1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
-offset_window = 0.1
+offset_window = 0.14
 speed_window = 0.1
 
 [node name="DJInputMouse" type="Node" parent="." unique_id=460878965]
