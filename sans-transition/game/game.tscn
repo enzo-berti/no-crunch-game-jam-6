@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq3inuaup1vaf"]
 
 [ext_resource type="PackedScene" uid="uid://bjhc6mbk2n4n1" path="res://game/mix_table/mix_table.tscn" id="1_l1rk1"]
-[ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://crowd/base_crowd.tscn" id="2_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://game/crowd/base_crowd.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blk36fiqsdu1c"
-path="res://.godot/imported/decoration.png-28b1d09052eae5cd1ad5fc65dd55f7c1.ctex"
+uid="uid://cic8ncbtkqkli"
+path="res://.godot/imported/romain.png-0e342c429e26965f2211d6b3e7c51a33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/lights/decoration.png"
-dest_files=["res://.godot/imported/decoration.png-28b1d09052eae5cd1ad5fc65dd55f7c1.ctex"]
+source_file="res://game/crowd/people/romain.png"
+dest_files=["res://.godot/imported/romain.png-0e342c429e26965f2211d6b3e7c51a33.ctex"]
 
 [params]
 

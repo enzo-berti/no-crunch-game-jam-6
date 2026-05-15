@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dakefa0j6vqti"
-path="res://.godot/imported/back_crowd_background.png-a08b2094e326437d351e81aff44859af.ctex"
+uid="uid://do8a4q54dupe"
+path="res://.godot/imported/virgi_et_dorian.png-b058485df999e8ec98b3c400d2a97269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/background/back_crowd_background.png"
-dest_files=["res://.godot/imported/back_crowd_background.png-a08b2094e326437d351e81aff44859af.ctex"]
+source_file="res://game/crowd/people/virgi_et_dorian.png"
+dest_files=["res://.godot/imported/virgi_et_dorian.png-b058485df999e8ec98b3c400d2a97269.ctex"]
 
 [params]
 

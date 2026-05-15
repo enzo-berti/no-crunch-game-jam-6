@@ -40,6 +40,5 @@ func _process(delta: float) -> void:
 			input_shifted.emit(factor * multiplier)
 			_last_input_vector = input_vector
 		turns += factor
-		print(turns)
 	else:
 		_has_last_input = false

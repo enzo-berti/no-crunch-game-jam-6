@@ -1,49 +1,14 @@
 [gd_resource type="Resource" script_class="TrackList" format=3 uid="uid://082o32rnfkh1"]
 
 [ext_resource type="Script" uid="uid://b85b6f8d0re4w" path="res://game/data/track_list.gd" id="1_d4du7"]
-[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://track/track_data.gd" id="2_y5fv6"]
-[ext_resource type="AudioStream" uid="uid://cf8mwlihxdiet" path="res://game/music_loops/techno.ogg" id="3_cebyg"]
-[ext_resource type="AudioStream" uid="uid://ccbci83ixai4f" path="res://game/music_loops/paillard.ogg" id="4_f5xtb"]
-[ext_resource type="Texture2D" uid="uid://bcv3b6kdwn3j2" path="res://game/vizualizer/sprites/tracks/techno.png" id="4_kl121"]
-[ext_resource type="AudioStream" uid="uid://bj8aafniknil0" path="res://game/music_loops/noel.ogg" id="5_f5xtb"]
-[ext_resource type="AudioStream" uid="uid://ve5io0dqp43q" path="res://game/music_loops/eurodance.ogg" id="6_0jig3"]
-[ext_resource type="Texture2D" uid="uid://djsrqo3v34h84" path="res://game/vizualizer/sprites/tracks/paillarde.png" id="6_ckefa"]
-[ext_resource type="Texture2D" uid="uid://rj6y8x5e2pfe" path="res://game/vizualizer/sprites/tracks/noel.png" id="8_m2nk3"]
-[ext_resource type="Texture2D" uid="uid://bgoim4au0cjj" path="res://game/vizualizer/sprites/tracks/eurodance.png" id="10_d3aus"]
-[ext_resource type="AudioStream" uid="uid://b4q5kjgmqlgen" path="res://game/music_loops/funk.ogg" id="11_ckefa"]
-[ext_resource type="Texture2D" uid="uid://clliklk0alfx3" path="res://game/vizualizer/sprites/tracks/funk.png" id="12_m2nk3"]
-
-[sub_resource type="Resource" id="Resource_0jig3"]
-script = ExtResource("2_y5fv6")
-audio = ExtResource("3_cebyg")
-wave = ExtResource("4_kl121")
-metadata/_custom_type_script = "uid://641doj4awc7g"
-
-[sub_resource type="Resource" id="Resource_kjeli"]
-script = ExtResource("2_y5fv6")
-audio = ExtResource("4_f5xtb")
-wave = ExtResource("6_ckefa")
-metadata/_custom_type_script = "uid://641doj4awc7g"
-
-[sub_resource type="Resource" id="Resource_2hler"]
-script = ExtResource("2_y5fv6")
-audio = ExtResource("5_f5xtb")
-wave = ExtResource("8_m2nk3")
-metadata/_custom_type_script = "uid://641doj4awc7g"
-
-[sub_resource type="Resource" id="Resource_pxfdk"]
-script = ExtResource("2_y5fv6")
-audio = ExtResource("6_0jig3")
-wave = ExtResource("10_d3aus")
-metadata/_custom_type_script = "uid://641doj4awc7g"
-
-[sub_resource type="Resource" id="Resource_d3aus"]
-script = ExtResource("2_y5fv6")
-audio = ExtResource("11_ckefa")
-wave = ExtResource("12_m2nk3")
-metadata/_custom_type_script = "uid://641doj4awc7g"
+[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_kjeli"]
+[ext_resource type="Resource" uid="uid://q634ha10itcl" path="res://game/data/tracks/techno_track.tres" id="3_2hler"]
+[ext_resource type="Resource" uid="uid://c3jhhm1sryotc" path="res://game/data/tracks/paillard_track.tres" id="4_pxfdk"]
+[ext_resource type="Resource" uid="uid://dsn4gaegg6l7s" path="res://game/data/tracks/noel_track.tres" id="5_kl121"]
+[ext_resource type="Resource" uid="uid://npxve42ghu41" path="res://game/data/tracks/eurodance_track.tres" id="6_ckefa"]
+[ext_resource type="Resource" uid="uid://d4fprvq3y7r63" path="res://game/data/tracks/funk_track.tres" id="7_m2nk3"]
 
 [resource]
 script = ExtResource("1_d4du7")
-track_list = Array[ExtResource("2_y5fv6")]([SubResource("Resource_0jig3"), SubResource("Resource_kjeli"), SubResource("Resource_2hler"), SubResource("Resource_pxfdk"), SubResource("Resource_d3aus")])
+track_list = Array[ExtResource("2_kjeli")]([ExtResource("3_2hler"), ExtResource("4_pxfdk"), ExtResource("5_kl121"), ExtResource("6_ckefa"), ExtResource("7_m2nk3")])
 metadata/_custom_type_script = "uid://b85b6f8d0re4w"

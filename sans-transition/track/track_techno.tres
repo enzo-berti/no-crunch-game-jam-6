@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://cc5r61ati7kvs"]
-
-[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://track/track_data.gd" id="1_58uva"]
-[ext_resource type="Resource" uid="uid://db58ottdqtwqe" path="res://theme/theme_techno.tres" id="2_bs6vm"]
-
-[resource]
-script = ExtResource("1_58uva")
-theme = ExtResource("2_bs6vm")
-metadata/_custom_type_script = "uid://641doj4awc7g"

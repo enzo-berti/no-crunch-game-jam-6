@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpqd0kp70yvuy"
-path="res://.godot/imported/metal_guy.png-dd5ae363ebe47a5e1696b22c96cb70dd.ctex"
+uid="uid://r5h63ugwx0bi"
+path="res://.godot/imported/front_crowd_background.png-07a065c0d621f5b06359dcec3c7b4147.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/people/metal_guy.png"
-dest_files=["res://.godot/imported/metal_guy.png-dd5ae363ebe47a5e1696b22c96cb70dd.ctex"]
+source_file="res://game/crowd/background/front_crowd_background.png"
+dest_files=["res://.godot/imported/front_crowd_background.png-07a065c0d621f5b06359dcec3c7b4147.ctex"]
 
 [params]
 

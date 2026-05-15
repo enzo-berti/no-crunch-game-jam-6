@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r5h63ugwx0bi"
-path="res://.godot/imported/front_crowd_background.png-0708807a08ea28fae9aebe4d433f93d9.ctex"
+uid="uid://ccklp4j18f17d"
+path="res://.godot/imported/Layer 69.png-41d7a52947b0f2bb8fc8c2a847a6b161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/background/front_crowd_background.png"
-dest_files=["res://.godot/imported/front_crowd_background.png-0708807a08ea28fae9aebe4d433f93d9.ctex"]
+source_file="res://game/crowd/lights/Layer 69.png"
+dest_files=["res://.godot/imported/Layer 69.png-41d7a52947b0f2bb8fc8c2a847a6b161.ctex"]
 
 [params]
 

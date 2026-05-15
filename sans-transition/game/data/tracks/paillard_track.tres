@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://c3jhhm1sryotc"]
+
+[ext_resource type="AudioStream" uid="uid://ccbci83ixai4f" path="res://game/music_loops/paillard.ogg" id="1_66x20"]
+[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_dhexk"]
+[ext_resource type="Texture2D" uid="uid://djsrqo3v34h84" path="res://game/vizualizer/sprites/tracks/paillarde.png" id="3_4djc5"]
+
+[resource]
+script = ExtResource("2_dhexk")
+audio = ExtResource("1_66x20")
+wave = ExtResource("3_4djc5")
+metadata/_custom_type_script = "uid://641doj4awc7g"

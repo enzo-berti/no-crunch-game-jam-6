@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bu5uvqxfvokcn"]
-
-[ext_resource type="PackedScene" uid="uid://bdw4luwg2yhdq" path="res://game/vizualizer/track_visualizer.tscn" id="1_37kl0"]
-
-[node name="test" type="Node2D" unique_id=283545982]
-
-[node name="TrackVisualizer" parent="." unique_id=1299234425 instance=ExtResource("1_37kl0")]
-position = Vector2(653, 342)

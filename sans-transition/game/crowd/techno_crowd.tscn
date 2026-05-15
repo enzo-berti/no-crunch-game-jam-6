@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dy06gy0jn5bjp"]
 
-[ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://crowd/base_crowd.tscn" id="1_3030l"]
+[ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://game/crowd/base_crowd.tscn" id="1_3030l"]
 [ext_resource type="Resource" uid="uid://cc5r61ati7kvs" path="res://track/track_techno.tres" id="2_x6hah"]
 
 [node name="BaseCrowd" unique_id=1718517280 instance=ExtResource("1_3030l")]

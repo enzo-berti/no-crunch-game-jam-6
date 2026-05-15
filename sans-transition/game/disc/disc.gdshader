@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 
 uniform float positions[4];
-uniform float speed = 1.0;
+uniform float angle = 0.0;
 varying float z;
 
 vec2 rotate(vec2 v, float a) {
@@ -18,7 +18,7 @@ void vertex() {
 }
 
 void fragment() {
-	vec2 rotated_uv = rotate((UV * z - 0.5), TIME * speed);
+	vec2 rotated_uv = rotate((UV * z - 0.5), angle);
 	rotated_uv += 0.5;
 	//rotated_uv = clamp(rotated_uv, vec2(-1.0), vec2(1.0));
 	COLOR = texture(TEXTURE, rotated_uv);

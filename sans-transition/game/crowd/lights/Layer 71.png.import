@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccklp4j18f17d"
-path="res://.godot/imported/Layer 69.png-585dd5450d4a1904345e4c2d0f089d18.ctex"
+uid="uid://dy8vpi72jiko6"
+path="res://.godot/imported/Layer 71.png-e76cd21fd7d45e1482b77be587603a26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/lights/Layer 69.png"
-dest_files=["res://.godot/imported/Layer 69.png-585dd5450d4a1904345e4c2d0f089d18.ctex"]
+source_file="res://game/crowd/lights/Layer 71.png"
+dest_files=["res://.godot/imported/Layer 71.png-e76cd21fd7d45e1482b77be587603a26.ctex"]
 
 [params]
 

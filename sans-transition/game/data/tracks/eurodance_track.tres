@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://npxve42ghu41"]
+
+[ext_resource type="AudioStream" uid="uid://ve5io0dqp43q" path="res://game/music_loops/eurodance.ogg" id="1_i8hhl"]
+[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_kj1uk"]
+[ext_resource type="Texture2D" uid="uid://bgoim4au0cjj" path="res://game/vizualizer/sprites/tracks/eurodance.png" id="3_aolt8"]
+
+[resource]
+script = ExtResource("2_kj1uk")
+audio = ExtResource("1_i8hhl")
+wave = ExtResource("3_aolt8")
+metadata/_custom_type_script = "uid://641doj4awc7g"

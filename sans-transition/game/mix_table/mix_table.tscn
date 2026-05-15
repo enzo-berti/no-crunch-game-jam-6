@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://1opklquswpf3" path="res://game/dj_input.gd" id="6_247ce"]
 [ext_resource type="PackedScene" uid="uid://c8mtky32erftq" path="res://game/synchronizer/synchronizer.tscn" id="8_uki45"]
 [ext_resource type="PackedScene" uid="uid://qbeuen8f6unh" path="res://game/disc/disc.tscn" id="8_wqdoj"]
-[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/perspective.gdshader" id="9_o5qx1"]
+[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/disc.gdshader" id="9_o5qx1"]
 [ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="10_f07uh"]
 [ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="11_cw1dt"]
 [ext_resource type="PackedScene" uid="uid://bxpqxdbaqcd78" path="res://game/mix_table/sync_button.tscn" id="12_g8qep"]
@@ -64,7 +64,7 @@ blend_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f07uh"]
 shader = ExtResource("9_o5qx1")
 shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
-shader_parameter/speed = 1.0
+shader_parameter/angle = 0.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g8qep"]
 blend_mode = 1
@@ -72,7 +72,7 @@ blend_mode = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cw1dt"]
 shader = ExtResource("9_o5qx1")
 shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
-shader_parameter/speed = -1.0
+shader_parameter/angle = 0.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_67gfx"]
 random_pitch = 1.3348398
@@ -93,12 +93,14 @@ func scratch() -> void:
 		play()
 "
 
-[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B")]
+[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "disk_a", "disk_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B")]
 script = ExtResource("1_f1hik")
 synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
 track_visualizer_a = NodePath("Visual/Stand/ScreenA/TrackVisualizerA")
 track_visualizer_b = NodePath("Visual/Stand/ScreenB/TrackVisualizerB")
+disk_a = NodePath("Visual/DiskLeft")
+disk_b = NodePath("Visual/DiskRight")
 dj_input_left = NodePath("DJInputLeft")
 dj_input_right = NodePath("DJInputRight")
 sync_button_A = NodePath("Visual/SyncButtonA")
@@ -191,6 +193,7 @@ texture_filter = 4
 texture_repeat = 1
 position = Vector2(540, 757.3334)
 scale = Vector2(5.713333, 5.4466667)
+direction = 1.0
 
 [node name="MeshInstance2D" parent="Visual/DiskLeft" index="0" unique_id=1036466809]
 material = SubResource("ShaderMaterial_f07uh")
@@ -224,6 +227,7 @@ texture_repeat = 1
 position = Vector2(2062.6667, 761.3334)
 rotation = 3.1415927
 scale = Vector2(5.713333, -5.4466667)
+direction = -1.0
 
 [node name="MeshInstance2D" parent="Visual/DiskRight" index="0" unique_id=1036466809]
 material = SubResource("ShaderMaterial_cw1dt")
@@ -271,8 +275,8 @@ script = ExtResource("6_247ce")
 input_side = 1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
-synchronised_window = 0.1
-offset_speed_between_tracks = 0.05
+offset_window = 0.1
+speed_window = 0.1
 
 [node name="DJInputMouse" type="Node" parent="." unique_id=460878965]
 script = ExtResource("24_tpak7")

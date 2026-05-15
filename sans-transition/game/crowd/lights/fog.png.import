@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcb5i8ar1yl1l"
-path="res://.godot/imported/armsup_girl.png-af1a57d8ff027131f61c2e50081c490d.ctex"
+uid="uid://b1prixnvha08j"
+path="res://.godot/imported/fog.png-a0ce5a03d3c8c33638bce8f7ccefa820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/people/armsup_girl.png"
-dest_files=["res://.godot/imported/armsup_girl.png-af1a57d8ff027131f61c2e50081c490d.ctex"]
+source_file="res://game/crowd/lights/fog.png"
+dest_files=["res://.godot/imported/fog.png-a0ce5a03d3c8c33638bce8f7ccefa820.ctex"]
 
 [params]
 

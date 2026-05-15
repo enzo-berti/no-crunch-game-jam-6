@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2djpa0m0fws"
-path="res://.godot/imported/middle_crowd_background.png-291f3a1bdd244d373c686f82a6d4e38f.ctex"
+uid="uid://b5ygei4tq7i2h"
+path="res://.godot/imported/sam.png-39ca0aae0a358afcda2ac08af7292b8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/background/middle_crowd_background.png"
-dest_files=["res://.godot/imported/middle_crowd_background.png-291f3a1bdd244d373c686f82a6d4e38f.ctex"]
+source_file="res://game/crowd/people/sam.png"
+dest_files=["res://.godot/imported/sam.png-39ca0aae0a358afcda2ac08af7292b8c.ctex"]
 
 [params]
 

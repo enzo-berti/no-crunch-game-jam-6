@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by3gmd4jqhilq"
-path="res://.godot/imported/Layer 73.png-d23e84ebbff125143caac9f6ab15dea1.ctex"
+uid="uid://cb8abks32ia8q"
+path="res://.godot/imported/horn_guy.png-c615231c687ffa87d1b55444cb497ea9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/lights/Layer 73.png"
-dest_files=["res://.godot/imported/Layer 73.png-d23e84ebbff125143caac9f6ab15dea1.ctex"]
+source_file="res://game/crowd/people/horn_guy.png"
+dest_files=["res://.godot/imported/horn_guy.png-c615231c687ffa87d1b55444cb497ea9.ctex"]
 
 [params]
 

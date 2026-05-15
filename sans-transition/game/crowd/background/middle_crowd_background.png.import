@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhx1okripe5pc"
-path="res://.godot/imported/back_light.png-b17a6281243fca1329b5aa2e093c23b5.ctex"
+uid="uid://c2djpa0m0fws"
+path="res://.godot/imported/middle_crowd_background.png-d11c99d8b1de6176f9c39a01080a494b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/lights/back_light.png"
-dest_files=["res://.godot/imported/back_light.png-b17a6281243fca1329b5aa2e093c23b5.ctex"]
+source_file="res://game/crowd/background/middle_crowd_background.png"
+dest_files=["res://.godot/imported/middle_crowd_background.png-d11c99d8b1de6176f9c39a01080a494b.ctex"]
 
 [params]
 

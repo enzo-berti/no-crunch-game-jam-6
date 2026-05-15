@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8abks32ia8q"
-path="res://.godot/imported/horn_guy.png-df40913e01bc577d9e51123f94acd72d.ctex"
+uid="uid://blk36fiqsdu1c"
+path="res://.godot/imported/decoration.png-f38847cf13bb792ceda5affee153e9cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/people/horn_guy.png"
-dest_files=["res://.godot/imported/horn_guy.png-df40913e01bc577d9e51123f94acd72d.ctex"]
+source_file="res://game/crowd/lights/decoration.png"
+dest_files=["res://.godot/imported/decoration.png-f38847cf13bb792ceda5affee153e9cf.ctex"]
 
 [params]
 

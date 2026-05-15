@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TrackData" format=3 uid="uid://dsn4gaegg6l7s"]
+
+[ext_resource type="AudioStream" uid="uid://bj8aafniknil0" path="res://game/music_loops/noel.ogg" id="1_tbb2j"]
+[ext_resource type="Script" uid="uid://641doj4awc7g" path="res://game/data/track_data.gd" id="2_mwelr"]
+[ext_resource type="Texture2D" uid="uid://rj6y8x5e2pfe" path="res://game/vizualizer/sprites/tracks/noel.png" id="3_xv8kq"]
+
+[resource]
+script = ExtResource("2_mwelr")
+audio = ExtResource("1_tbb2j")
+wave = ExtResource("3_xv8kq")
+metadata/_custom_type_script = "uid://641doj4awc7g"

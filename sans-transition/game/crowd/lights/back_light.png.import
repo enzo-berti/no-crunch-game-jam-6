@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1prixnvha08j"
-path="res://.godot/imported/fog.png-a0d9c72cd986700a12a5827be0122f0e.ctex"
+uid="uid://dhx1okripe5pc"
+path="res://.godot/imported/back_light.png-cb2841203023c2c0781b25300e59a64d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/lights/fog.png"
-dest_files=["res://.godot/imported/fog.png-a0d9c72cd986700a12a5827be0122f0e.ctex"]
+source_file="res://game/crowd/lights/back_light.png"
+dest_files=["res://.godot/imported/back_light.png-cb2841203023c2c0781b25300e59a64d.ctex"]
 
 [params]
 

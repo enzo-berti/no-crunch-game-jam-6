@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cic8ncbtkqkli"
-path="res://.godot/imported/romain.png-c8e8c88cf1f373b5db00c7c2beca6ea0.ctex"
+uid="uid://dcb5i8ar1yl1l"
+path="res://.godot/imported/armsup_girl.png-c2b54555cb79ea1d2b7bc407e07202a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crowd/people/romain.png"
-dest_files=["res://.godot/imported/romain.png-c8e8c88cf1f373b5db00c7c2beca6ea0.ctex"]
+source_file="res://game/crowd/people/armsup_girl.png"
+dest_files=["res://.godot/imported/armsup_girl.png-c2b54555cb79ea1d2b7bc407e07202a3.ctex"]
 
 [params]
 

@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://qbeuen8f6unh"]
 
-[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/perspective.gdshader" id="1_swia7"]
+[ext_resource type="Script" uid="uid://dq6xtmicbxtg4" path="res://game/disc/disc.gd" id="1_1o1nj"]
+[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/disc.gdshader" id="1_swia7"]
 [ext_resource type="Texture2D" uid="uid://cy8prnce16rj8" path="res://game/mix_table/sprites/cd.png" id="2_1o1nj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swia7"]
 shader = ExtResource("1_swia7")
 shader_parameter/positions = PackedFloat32Array(1.51, 3.275, 1.085, 0.95)
+shader_parameter/angle = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_1o1nj"]
 size = Vector2(200, 200)
 
-[node name="Disk" type="Node2D" unique_id=1586880461]
+[node name="Disk" type="Node2D" unique_id=1586880461 node_paths=PackedStringArray("mesh_instance_2d")]
+script = ExtResource("1_1o1nj")
+mesh_instance_2d = NodePath("MeshInstance2D")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1036466809]
 texture_repeat = 1
