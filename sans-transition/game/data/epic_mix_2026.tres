@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://641doj4awc7g" path="res://track/track_data.gd" id="2_y5fv6"]
 [ext_resource type="AudioStream" uid="uid://cf8mwlihxdiet" path="res://game/music_loops/techno.ogg" id="3_cebyg"]
 [ext_resource type="AudioStream" uid="uid://ccbci83ixai4f" path="res://game/music_loops/paillard.ogg" id="4_f5xtb"]
+[ext_resource type="AudioStream" uid="uid://bj8aafniknil0" path="res://game/music_loops/noel.ogg" id="5_f5xtb"]
 
 [sub_resource type="Resource" id="Resource_0jig3"]
 script = ExtResource("2_y5fv6")
@@ -15,7 +16,12 @@ script = ExtResource("2_y5fv6")
 audio = ExtResource("4_f5xtb")
 metadata/_custom_type_script = "uid://641doj4awc7g"
 
+[sub_resource type="Resource" id="Resource_2hler"]
+script = ExtResource("2_y5fv6")
+audio = ExtResource("5_f5xtb")
+metadata/_custom_type_script = "uid://641doj4awc7g"
+
 [resource]
 script = ExtResource("1_d4du7")
-track_list = Array[ExtResource("2_y5fv6")]([SubResource("Resource_0jig3"), SubResource("Resource_kjeli")])
+track_list = Array[ExtResource("2_y5fv6")]([SubResource("Resource_0jig3"), SubResource("Resource_kjeli"), SubResource("Resource_2hler")])
 metadata/_custom_type_script = "uid://b85b6f8d0re4w"
