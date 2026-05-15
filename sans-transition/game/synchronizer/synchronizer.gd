@@ -1,7 +1,7 @@
 class_name Synchroniser
 extends Node
 
-signal tracks_in_range_signal(in_range: bool, offset_in_range: float)
+signal tracks_in_range_signal(in_range: bool)
 
 @export_group("Settings")
 @export var offset_window: float

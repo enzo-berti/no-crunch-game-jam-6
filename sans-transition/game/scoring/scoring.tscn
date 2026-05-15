@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c3p0w1j3q6lke"]
+
+[ext_resource type="Script" uid="uid://y1qsjytmtpka" path="res://scoring.gd" id="1_1486f"]
+[ext_resource type="Texture2D" uid="uid://cwny3kv5dpuat" path="res://game/scoring/assets/bottom.png" id="2_bsvus"]
+[ext_resource type="Texture2D" uid="uid://dry5cwcr2ekd2" path="res://game/scoring/assets/top.png" id="3_71r88"]
+[ext_resource type="Texture2D" uid="uid://c2fxm3by1jm5q" path="res://game/scoring/assets/inside.png" id="4_d14sx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsvus"]
+font_size = 80
+
+[node name="Scoring" type="Node2D" unique_id=1867024691 node_paths=PackedStringArray("scoring_label", "ambiance_progress_bar")]
+script = ExtResource("1_1486f")
+scoring_label = NodePath("Label")
+ambiance_progress_bar = NodePath("AmbianceBar")
+
+[node name="Label" type="Label" parent="." unique_id=119026626]
+offset_left = 1725.0
+offset_top = 9.0
+offset_right = 1904.0
+offset_bottom = 125.0
+text = "TEST"
+label_settings = SubResource("LabelSettings_bsvus")
+
+[node name="AmbianceBar" type="TextureProgressBar" parent="." unique_id=627944683]
+offset_left = 1227.0
+offset_top = 128.0
+offset_right = 1924.0
+offset_bottom = 290.0
+max_value = 20.0
+step = 0.01
+value = 20.0
+fill_mode = 1
+texture_under = ExtResource("2_bsvus")
+texture_over = ExtResource("4_d14sx")
+texture_progress = ExtResource("3_71r88")
