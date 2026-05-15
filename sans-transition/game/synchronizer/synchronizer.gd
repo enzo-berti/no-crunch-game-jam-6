@@ -40,7 +40,8 @@ var audio_stream_player_dj_only: AudioStreamPlayer
 @export var cuttof_value_enable: int
 @export var cuttof_value_disable: int
 
-var offset_between_tracks: float 
+@export var offset_between_tracks: float 
+@export var offset_speed_between_tracks: float
 
 var is_synced: bool
 
@@ -113,22 +114,33 @@ func switch_tracks() -> void:
 func calculate_window() -> void:
 	track_A_position_modulo = fmod(track_A_position_percentage * 4, 1)
 	track_B_position_modulo = fmod(track_B_position_percentage * 4, 1)
+	
+	if audio_stream_player_dj_only.pitch_scale > 1 - offset_speed_between_tracks and audio_stream_player_dj_only.pitch_scale < 1 + offset_speed_between_tracks:
+		print("synchro !")
+		print("pitch_scale")
+		print(audio_stream_player_dj_only.pitch_scale)
+		var difference_in_mesure = abs(track_A_position_modulo - track_B_position_modulo)
+		var difference_out_mesure: float = 0.0
+		
+		
+		if track_A_position_modulo > track_B_position_modulo:
+			difference_out_mesure = abs(-(1.0 - track_A_position_modulo))
+		else:
+			difference_out_mesure = abs(-(1.0 - track_B_position_modulo))
 
-	var difference_in_mesure = abs(track_A_position_modulo - track_B_position_modulo)
-	var difference_out_mesure: float = 0.0
-	if track_A_position_modulo > track_B_position_modulo:
-		difference_out_mesure = 1 - track_A_position_modulo
+		offset_between_tracks = min(difference_in_mesure, difference_out_mesure)
+		print("offset_between_tracks:")
+		print(offset_between_tracks)
+
+		if offset_between_tracks < synchronised_window and !is_synced:
+			tracks_in_range_signal.emit(true)
+			is_synced = true
+		elif offset_between_tracks > synchronised_window and is_synced:
+			tracks_in_range_signal.emit(false)
+			is_synced = false
 	else:
-		difference_out_mesure = 1 - track_B_position_modulo
-
-	offset_between_tracks = min(difference_in_mesure, difference_out_mesure)
-
-	if offset_between_tracks < synchronised_window and !is_synced:
-		tracks_in_range_signal.emit(true)
-		is_synced = true
-	elif offset_between_tracks > synchronised_window and is_synced:
-		tracks_in_range_signal.emit(false)
 		is_synced = false
+	return	
 		
 		
 func set_track_public(data : TrackData) -> void:

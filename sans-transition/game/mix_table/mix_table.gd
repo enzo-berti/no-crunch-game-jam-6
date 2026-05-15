@@ -13,6 +13,9 @@ extends Node2D
 
 @export var dj_input_mouse : DJInputMouse
 
+@export var sync_button_A : SyncButton
+@export var sync_button_B : SyncButton
+
 var next_track_id : int
 
 var track_list_length: int
@@ -39,19 +42,29 @@ func _process(delta: float) -> void:
 	synchroniser.calculate_window()
 	track_visualizer_a.offset = synchroniser.track_A_position_percentage
 	track_visualizer_b.offset = synchroniser.track_B_position_percentage
+	
+	if synchroniser.is_synced:
+		if dj_input_right.enabled:
+			sync_button_B.state = sync_button_B.State.SYNCED
+		else:
+			sync_button_A.state = sync_button_A.State.SYNCED
+
+	else:
+		if dj_input_right.enabled:
+			sync_button_B.state = sync_button_B.State.NOT_SYNCED
+		else:
+			sync_button_A.state = sync_button_A.State.NOT_SYNCED
 
 
 func _input(event: InputEvent) -> void:
 	#print_debug(event)
-	if event.is_action_pressed("transition") and not event.is_echo():
+	if event.is_action_pressed("transition") and not event.is_echo():		
 		if next_track_id == track_list_length: 
 			next_track_id = 0
 			track_list.track_list.shuffle()
 			var current_dj_track = synchroniser.get_current_dj_track()
 			if current_dj_track == track_list.track_list[0]:
 				next_track_id = next_track_id + 1
-
-			
 		
 		print(next_track_id)
 		synchroniser.switch_tracks()
