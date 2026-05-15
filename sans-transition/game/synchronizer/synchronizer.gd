@@ -111,6 +111,7 @@ func switch_tracks() -> void:
 	
 	public_panner.pan = 0
 	djonly_panner.pan = 0
+	public_filter.cutoff_hz = cuttof_value_disable
 
 
 func calculate_window() -> void:
