@@ -11,3 +11,7 @@ var score: int:
 
 func _on_start_button_pressed() -> void:
 	restart_requested.emit()
+
+
+func _on_visibility_changed() -> void:
+	$VBoxContainer/StartButton.grab_focus()
