@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dok4rg1l2hhyy"]
+
+[ext_resource type="Script" uid="uid://dbt8e8kmpdv61" path="res://gui/tutorial_non_interactive.gd" id="1_ni6q3"]
+[ext_resource type="Texture2D" uid="uid://30q6pvo4iew8" path="res://gui/tuto/1.png" id="2_emukn"]
+[ext_resource type="Texture2D" uid="uid://cc7p0ub7pgcm8" path="res://gui/tuto/2.png" id="3_y27em"]
+[ext_resource type="Texture2D" uid="uid://c6lbfqb5l0sgr" path="res://gui/tuto/3.png" id="4_jnh1m"]
+[ext_resource type="Texture2D" uid="uid://4vhffj06auy0" path="res://gui/tuto/4.png" id="5_pem3n"]
+[ext_resource type="Texture2D" uid="uid://cqkbfaolj0cyw" path="res://gui/tuto/4_5.png" id="6_xtbjm"]
+[ext_resource type="Texture2D" uid="uid://cabdrnxhoovy7" path="res://gui/tuto/5.png" id="7_e6ng0"]
+
+[node name="TutorialNonInteractive" type="Control" unique_id=1275719019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ni6q3")
+
+[node name="01" type="TextureRect" parent="." unique_id=207666466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_emukn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="02" type="TextureRect" parent="." unique_id=1734881187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y27em")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="03" type="TextureRect" parent="." unique_id=1650871699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jnh1m")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="04" type="TextureRect" parent="." unique_id=1116837065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_pem3n")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="05" type="TextureRect" parent="." unique_id=1082683225]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xtbjm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="06" type="TextureRect" parent="." unique_id=1277085375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_e6ng0")
+expand_mode = 1
+stretch_mode = 4

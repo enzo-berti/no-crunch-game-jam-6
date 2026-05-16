@@ -1,5 +1,5 @@
 class_name Scoring
-extends Node
+extends Control
 
 
 
@@ -36,6 +36,12 @@ func _ready() -> void:
 	_track_time = total_mix_set_time_seconds
 	
 	reset_excitement()
+	set_process(false)
+	hide()
+
+func enable():
+	show()
+	set_process(true)
 	
 
 

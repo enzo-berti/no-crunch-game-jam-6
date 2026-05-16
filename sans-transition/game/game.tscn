@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
 [ext_resource type="AudioStream" uid="uid://blfgfrb8y6em8" path="res://game/sounds/Boucles_Transition_Impact.ogg" id="7_u5opy"]
+[ext_resource type="PackedScene" uid="uid://dok4rg1l2hhyy" path="res://gui/tutorial_non_interactive.tscn" id="8_y36n6"]
 
 [sub_resource type="Curve" id="Curve_4fuuu"]
 _limits = [0.0, 100.0, 0.0, 1.0]
@@ -152,6 +153,10 @@ stream = ExtResource("7_u5opy")
 [node name="GameOverScreen" parent="." unique_id=1808835221 instance=ExtResource("2_dakft")]
 visible = false
 
+[node name="TutorialNonInteractive" parent="." unique_id=1275719019 instance=ExtResource("8_y36n6")]
+
 [connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
 [connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]
+[connection signal="finished" from="TutorialNonInteractive" to="MixTable" method="enable"]
+[connection signal="finished" from="TutorialNonInteractive" to="Scoring" method="enable"]

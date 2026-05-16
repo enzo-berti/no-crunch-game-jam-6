@@ -38,8 +38,11 @@ var can_open_sync_light: bool = true
 var can_synchronise: bool = true
 
 
-func _ready() -> void:
+func enable():
 	is_mixtable_disabled = false
+
+func _ready() -> void:
+	is_mixtable_disabled = true
 	track_list.track_list.shuffle()
 	synchroniser.set_track_public(track_list.track_list[0])
 	synchroniser.set_track_dj(track_list.track_list[1])
@@ -110,6 +113,9 @@ func transition() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if is_mixtable_disabled:
+		return
+		
 	if event.is_action_pressed("transition") and not event.is_echo() and synchroniser.is_synced:
 		transition()
 
