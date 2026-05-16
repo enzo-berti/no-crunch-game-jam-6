@@ -1,6 +1,6 @@
 extends Node
 
-@export var total_track_time_seconds: float
+@export var total_mix_set_time_seconds: float
 
 @export var scoring_label : Label
 @export var total_track_time_pb: TextureProgressBar
@@ -10,7 +10,7 @@ var _track_time: float
 @export var max_range_scoring: float = 7
 
 
-signal track_finished()
+signal mix_set_finished(score: float)
 
 var excitment: float 
 
@@ -21,8 +21,8 @@ var current_score: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_score = 0.0
-	total_track_time_pb.max_value = total_track_time_seconds
-	_track_time = total_track_time_seconds
+	total_track_time_pb.max_value = total_mix_set_time_seconds
+	_track_time = total_mix_set_time_seconds
 	
 	reset_excitement()
 	
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	update_ui()
 	
 	if _track_time <= 0:
-		track_finished.emit()
+		mix_set_finished.emit(current_score)
 
 func reset_excitement() -> void:
 	_scoring_time = max_range_scoring
