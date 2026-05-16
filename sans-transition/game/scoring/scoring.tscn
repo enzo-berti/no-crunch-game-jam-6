@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dry5cwcr2ekd2" path="res://game/scoring/assets/top.png" id="3_71r88"]
 [ext_resource type="Texture2D" uid="uid://c2fxm3by1jm5q" path="res://game/scoring/assets/inside.png" id="4_d14sx"]
 [ext_resource type="Texture2D" uid="uid://bjh4tua15cc67" path="res://gui/game_screen/bouton_nude.png" id="5_71r88"]
+[ext_resource type="Texture2D" uid="uid://baqbg0i6f8dxs" path="res://gui/game_screen/icone_score.png" id="6_d14sx"]
 
 [sub_resource type="Curve" id="Curve_bsvus"]
 _data = [Vector2(0.026109666, 1), 0.0, -0.1496677, 0, 0, Vector2(0.42819846, 0.22782332), 0.0, 0.0, 0, 0, Vector2(1, 0.0042984486), -0.05053714, 0.0, 0, 0]
@@ -18,6 +19,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1486f")
@@ -28,9 +31,9 @@ scoring_curve = SubResource("Curve_bsvus")
 [node name="Label" type="Label" parent="." unique_id=119026626]
 z_index = 5
 layout_mode = 0
-offset_left = 1733.9999
+offset_left = 1639.9998
 offset_top = 32.000015
-offset_right = 1912.9999
+offset_right = 1818.9998
 offset_bottom = 148.00002
 scale = Vector2(0.7, 0.7)
 text = "TEST"
@@ -57,6 +60,11 @@ texture_progress = ExtResource("3_71r88")
 
 [node name="BoutonNude" type="Sprite2D" parent="." unique_id=645334120]
 z_as_relative = false
-position = Vector2(1730, 77.00001)
+position = Vector2(1712, 76.000015)
 scale = Vector2(0.44315064, 0.3039772)
 texture = ExtResource("5_71r88")
+
+[node name="IconeScore" type="Sprite2D" parent="." unique_id=1209504582]
+position = Vector2(1811, 77.99999)
+scale = Vector2(0.17725816, 0.17725813)
+texture = ExtResource("6_d14sx")
