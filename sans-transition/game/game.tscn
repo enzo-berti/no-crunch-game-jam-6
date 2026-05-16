@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
 
+[sub_resource type="Curve" id="Curve_4fuuu"]
+_limits = [0.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, 49.999996), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.5219033, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]
 blend_mode = 1
 
@@ -77,8 +82,9 @@ scale = Vector2(0.75, 0.75)
 
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
 
-[node name="Scoring" parent="." unique_id=1867024691 node_paths=PackedStringArray("mix_table") instance=ExtResource("4_4fuuu")]
-mix_table = NodePath("../MixTable")
+[node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
+scoring_curve = SubResource("Curve_4fuuu")
+max_range = 20.0
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
 visible = false
@@ -94,4 +100,5 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1889154340]
 libraries/ = SubResource("AnimationLibrary_dxrkv")
 
+[connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
