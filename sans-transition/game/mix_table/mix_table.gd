@@ -54,9 +54,10 @@ func _ready() -> void:
 
 	dj_input_left.input_shifted.connect(synchroniser.speed_updater)
 	dj_input_right.input_shifted.connect(synchroniser.speed_updater)
-	
+
 	shine_a.hide()
 	shine_b.hide()
+
 
 func _process(delta: float) -> void:
 	if is_mixtable_disabled:
@@ -101,7 +102,7 @@ func transition() -> void:
 	scoring_event.emit(synchroniser.offset_between_tracks)
 	synchroniser.set_track_dj(track_list.track_list[next_track_id])
 	update_visuals()
-	
+
 	shine_a.hide()
 	shine_b.hide()
 
@@ -121,7 +122,7 @@ func _input(event: InputEvent) -> void:
 				highlighter.appear()
 				listen_dj_track.emit()
 				shine_a.show()
-			
+
 			elif event.is_action_released("listen_dj_track_left"):
 				dj_input_left.enabled = false
 				highlighter.vanish()
@@ -176,6 +177,7 @@ func _on_tutorial_ended() -> void:
 
 func stop_actions() -> void:
 	is_mixtable_disabled = true
-	
+
 	var tween: Tween = create_tween()
-	tween.tween_method(synchroniser.set_speed, 1.0, 0.01, 1.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_method(synchroniser.set_speed, 1.0, 0.01, 1.0) \
+			.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)

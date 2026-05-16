@@ -168,7 +168,7 @@ func set_track_dj(data: TrackData) -> void:
 
 
 func speed_updater(value: float) -> void:
-	audio_stream_player_dj_only.pitch_scale += value
+	audio_stream_player_dj_only.pitch_scale = max(0.01, audio_stream_player_dj_only.pitch_scale + value)
 
 
 ## Is the DJ only track the track A ?

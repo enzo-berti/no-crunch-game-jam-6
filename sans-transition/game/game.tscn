@@ -128,8 +128,9 @@ color = Color(0, 0, 0, 0.9019608)
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
 z_index = 5
-total_mix_set_time_seconds = 120.0
+total_mix_set_time_seconds = 10.0
 scoring_curve = SubResource("Curve_4fuuu")
+max_range_scoring = 20.0
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
 visible = false

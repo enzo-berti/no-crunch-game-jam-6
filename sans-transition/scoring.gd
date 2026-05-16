@@ -38,6 +38,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if _track_time <= 0:
+		mix_set_finished.emit(current_score)
+		set_process(false)
+	
 	var t: float = 1-excitment
 	
 	current_score += scoring_curve.sample(t) * delta
@@ -49,8 +53,7 @@ func _process(delta: float) -> void:
 	
 	update_ui()
 	
-	if _track_time <= 0:
-		mix_set_finished.emit(current_score)
+
 
 func reset_excitement() -> void:
 	_scoring_time = max_range_scoring

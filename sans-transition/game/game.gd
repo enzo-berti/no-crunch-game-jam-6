@@ -7,6 +7,7 @@ extends Node
 @export var game_over: GameOverScreen
 
 func _ready() -> void:
+	$Fade.hide()
 	game_over.visible = false
 	game_over.restart_requested.connect(_on_restart_requested)
 
@@ -19,6 +20,7 @@ func _on_scoring_mix_set_finished(score: float) -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	
+	$Fade.show()
 	game_over.score = score
 	game_over.show()
 
