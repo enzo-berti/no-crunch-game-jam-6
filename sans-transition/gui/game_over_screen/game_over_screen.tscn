@@ -12,6 +12,49 @@ font_size = 137
 shadow_size = 70
 shadow_offset = Vector2(1, 9.875)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ew513"]
+font = ExtResource("5_ew513")
+font_size = 117
+shadow_size = 70
+shadow_color = Color(0, 0, 0, 0.88235295)
+
+[sub_resource type="Animation" id="Animation_kdfbj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xm0uo"]
+resource_name = "pulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ew513"]
+_data = {
+&"RESET": SubResource("Animation_kdfbj"),
+&"pulse": SubResource("Animation_xm0uo")
+}
+
 [node name="GameOverScreen" type="Control" unique_id=1808835221 node_paths=PackedStringArray("score_label")]
 layout_mode = 3
 anchors_preset = 15
@@ -85,4 +128,22 @@ size_flags_horizontal = 6
 text = "SCORE"
 label_settings = SubResource("LabelSettings_j3btv")
 
+[node name="Label" type="Label" parent="." unique_id=2141376583]
+layout_mode = 0
+offset_left = 59.999992
+offset_top = 271.00003
+offset_right = 641.0
+offset_bottom = 580.0
+rotation = -0.53393793
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 6
+text = "MIX TAPE 
+TERMNÉE"
+label_settings = SubResource("LabelSettings_ew513")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=290914515]
+libraries/ = SubResource("AnimationLibrary_ew513")
+autoplay = &"pulse"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
