@@ -25,6 +25,8 @@ signal shut_dj_track
 
 @export var highlighter: Highlighter
 
+var is_mixtable_disabled: bool
+
 var next_track_id: int
 
 var track_list_length: int
@@ -33,6 +35,7 @@ var can_open_sync_light: bool = true
 var can_synchronise: bool = true
 
 func _ready() -> void:
+	is_mixtable_disabled = false
 	track_list.track_list.shuffle()
 	synchroniser.set_track_public(track_list.track_list[0])
 	synchroniser.set_track_dj(track_list.track_list[1])
@@ -50,6 +53,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	if is_mixtable_disabled: 
+		dj_input_right.enabled = false
+		dj_input_left.enabled = false
+		return
+
+
 	track_visualizer_a.offset = synchroniser.track_A_position_percentage
 	track_visualizer_b.offset = synchroniser.track_B_position_percentage
 
@@ -150,3 +160,8 @@ func _on_tutorial_ended() -> void:
 	dj_input_right.enabled = false
 	can_open_sync_light = true
 	can_synchronise = true
+
+func stop_actions() -> void:
+	is_mixtable_disabled = true
+	synchroniser.set_speed(0)
+	pass
