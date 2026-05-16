@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c4smthvekc2f4"]
 
 [ext_resource type="Texture2D" uid="uid://1eh13kyb10ei" path="res://game/room/sprites/fond.png" id="2_8d8be"]
+[ext_resource type="Texture2D" uid="uid://cwasga2x3vpea" path="res://game/room/sprites/bokeh.png" id="3_fmuou"]
+[ext_resource type="Script" uid="uid://bsjfbuiyvawxk" path="res://game/room/bokeh.gd" id="4_tip2s"]
 [ext_resource type="Texture2D" uid="uid://blr2ygsexlqlk" path="res://game/room/sprites/Laserlight.png" id="8_25e6v"]
 
 [sub_resource type="Animation" id="Animation_0jn80"]
@@ -68,7 +70,7 @@ _data = {
 [node name="Room" type="Node2D" unique_id=2059625280]
 
 [node name="Room" type="Sprite2D" parent="." unique_id=1866340989]
-light_mask = 2
+light_mask = 3
 texture = ExtResource("2_8d8be")
 centered = false
 
@@ -87,6 +89,51 @@ scale = Vector2(1.4242052, 1)
 range_item_cull_mask = 2
 texture = ExtResource("8_25e6v")
 offset = Vector2(-1116, 469)
+
+[node name="Bokeh1" type="PointLight2D" parent="." unique_id=66949538]
+position = Vector2(1703.5535, 382.7371)
+scale = Vector2(1.5778421, 1.5778421)
+color = Color(0, 1, 0.58202314, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_fmuou")
+script = ExtResource("4_tip2s")
+
+[node name="Bokeh2" type="PointLight2D" parent="." unique_id=496474815]
+position = Vector2(1389.2368, 609.8455)
+scale = Vector2(1.0438962, 1.0438962)
+color = Color(0, 1, 0.23035097, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_fmuou")
+script = ExtResource("4_tip2s")
+
+[node name="Bokeh3" type="PointLight2D" parent="." unique_id=946887957]
+position = Vector2(1090.3949, 789.5447)
+scale = Vector2(1.2525082, 1.2525082)
+color = Color(0, 0.14915252, 1, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_fmuou")
+script = ExtResource("4_tip2s")
+
+[node name="Bokeh4" type="PointLight2D" parent="." unique_id=2059893400]
+position = Vector2(1025.9641, 774.08136)
+scale = Vector2(1.1323092, 1.1323092)
+color = Color(0, 0.83855534, 1, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_fmuou")
+script = ExtResource("4_tip2s")
+
+[node name="Bokeh5" type="PointLight2D" parent="." unique_id=1467912999]
+position = Vector2(1606.8622, 513.708)
+scale = Vector2(1.2915256, 1.2915256)
+color = Color(1, 0.4775372, 0, 1)
+energy = 0.0
+range_item_cull_mask = 2
+texture = ExtResource("3_fmuou")
+script = ExtResource("4_tip2s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=475009356]
 libraries/ = SubResource("AnimationLibrary_tip2s")

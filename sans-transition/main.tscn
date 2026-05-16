@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://brp3qb8rf3nhg"]
 
+[ext_resource type="PackedScene" uid="uid://crsp0dtnykgrl" path="res://gui/title_screen/title_screen.tscn" id="1_ig7tw"]
+
 [node name="Main" type="Node" unique_id=1131989492]
+
+[node name="TitleScreen" parent="." unique_id=1869998965 instance=ExtResource("1_ig7tw")]

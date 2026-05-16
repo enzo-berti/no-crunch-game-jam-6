@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://cq3inuaup1vaf"]
 
+[ext_resource type="Script" uid="uid://b4glvlh285d74" path="res://game/game.gd" id="1_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://bjhc6mbk2n4n1" path="res://game/mix_table/mix_table.tscn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://dm60efldoto52" path="res://gui/game_over_screen/game_over_screen.tscn" id="2_dakft"]
 [ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://game/crowd/base_crowd.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
+[ext_resource type="AudioStream" uid="uid://blfgfrb8y6em8" path="res://game/sounds/Boucles_Transition_Impact.ogg" id="7_u5opy"]
 
 [sub_resource type="Curve" id="Curve_4fuuu"]
 _limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0, 100), 0.0, -2.0124125, 0, 0, Vector2(0.250996, 8.407341), 0.0, 0.0, 0, 0, Vector2(1, 0.71047974), -2.5219033, 0.0, 0, 0]
+_data = [Vector2(0, 100), 0.0, -2.0124125, 0, 0, Vector2(0.376, 13.684204), 0.0, 0.0, 0, 0, Vector2(1, 0.71047974), -2.5219033, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]
@@ -39,9 +42,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_4fuuu"]
 resource_name = "transition"
+length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,7 +65,7 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.4),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
@@ -61,10 +77,22 @@ tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dxrkv"]
@@ -73,7 +101,12 @@ _data = {
 &"transition": SubResource("Animation_4fuuu")
 }
 
-[node name="Game" type="Node" unique_id=61779973]
+[node name="Game" type="Node" unique_id=61779973 node_paths=PackedStringArray("scoring", "base_crowd", "mix_table", "game_over")]
+script = ExtResource("1_dxrkv")
+scoring = NodePath("Scoring")
+base_crowd = NodePath("BaseCrowd")
+mix_table = NodePath("MixTable")
+game_over = NodePath("GameOverScreen")
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_vasa2")]
 position = Vector2(-3, 0)
@@ -81,12 +114,23 @@ scale = Vector2(0.75, 0.75)
 
 [node name="BaseCrowd" parent="." unique_id=1718517280 instance=ExtResource("2_h7iqs")]
 
+[node name="Fade" type="ColorRect" parent="." unique_id=828601416]
+visible = false
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9019608)
+
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
 z_index = 5
+total_mix_set_time_seconds = 120.0
 scoring_curve = SubResource("Curve_4fuuu")
-max_range = 20.0
+max_range_scoring = 20.0
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
 visible = false
@@ -102,5 +146,12 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1889154340]
 libraries/ = SubResource("AnimationLibrary_dxrkv")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Transition" unique_id=1597396906]
+stream = ExtResource("7_u5opy")
+
+[node name="GameOverScreen" parent="." unique_id=1808835221 instance=ExtResource("2_dakft")]
+visible = false
+
 [connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
+[connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]

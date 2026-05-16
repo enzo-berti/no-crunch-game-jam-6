@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c3p0w1j3q6lke"]
 
 [ext_resource type="Script" uid="uid://y1qsjytmtpka" path="res://scoring.gd" id="1_1486f"]
-[ext_resource type="Texture2D" uid="uid://cwny3kv5dpuat" path="res://game/scoring/assets/bottom.png" id="2_bsvus"]
-[ext_resource type="Texture2D" uid="uid://dry5cwcr2ekd2" path="res://game/scoring/assets/top.png" id="3_71r88"]
-[ext_resource type="Texture2D" uid="uid://c2fxm3by1jm5q" path="res://game/scoring/assets/inside.png" id="4_d14sx"]
+[ext_resource type="Texture2D" uid="uid://d23vkhdeqbt7x" path="res://gui/game_screen/time_bar/2_fond.png" id="2_d14sx"]
+[ext_resource type="Texture2D" uid="uid://cwwu2oeisltxg" path="res://gui/game_screen/time_bar/1_shine.png" id="2_ncsh7"]
+[ext_resource type="Texture2D" uid="uid://bkd4p7mp4gae5" path="res://gui/game_screen/time_bar/4_barre_interieur.png" id="3_ncsh7"]
+[ext_resource type="Texture2D" uid="uid://cc6aqrirf3ph1" path="res://gui/game_screen/time_bar/3_contour.png" id="4_k63mv"]
 [ext_resource type="Texture2D" uid="uid://bjh4tua15cc67" path="res://gui/game_screen/bouton_nude.png" id="5_71r88"]
 [ext_resource type="Texture2D" uid="uid://baqbg0i6f8dxs" path="res://gui/game_screen/icone_score.png" id="6_d14sx"]
 
@@ -14,7 +15,7 @@ point_count = 3
 [sub_resource type="LabelSettings" id="LabelSettings_bsvus"]
 font_size = 60
 
-[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("scoring_label", "ambiance_progress_bar")]
+[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("total_track_time_pb", "scoring_label", "labelContainer", "excitment_bar_containter")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,51 +25,94 @@ offset_right = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1486f")
-scoring_label = NodePath("Label")
-ambiance_progress_bar = NodePath("AmbianceBar")
+total_track_time_pb = NodePath("ExcitmentBarContainer/TotalTrackTimeProgressBar")
+scoring_label = NodePath("LabelContainer/ScoringLabel")
 scoring_curve = SubResource("Curve_bsvus")
+labelContainer = NodePath("LabelContainer")
+excitment_bar_containter = NodePath("ExcitmentBarContainer")
 
-[node name="Label" type="Label" parent="." unique_id=119026626]
-z_index = 5
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -286.0
-offset_top = 14.0
-offset_right = -150.0
-offset_bottom = 130.0
-grow_horizontal = 0
-text = "TEST"
-label_settings = SubResource("LabelSettings_bsvus")
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="LabelContainer" type="Control" parent="." unique_id=1818363171]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AmbianceBar" type="TextureProgressBar" parent="." unique_id=627944683]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -348.5
-offset_right = 348.5
-offset_bottom = 162.0
-grow_horizontal = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset_ratio = Vector2(0.5, 0)
-max_value = 1.0
-step = 0.01
-value = 1.0
-texture_under = ExtResource("2_bsvus")
-texture_over = ExtResource("4_d14sx")
-texture_progress = ExtResource("3_71r88")
-
-[node name="BoutonNude" type="Sprite2D" parent="." unique_id=645334120]
+[node name="BoutonNude" type="Sprite2D" parent="LabelContainer" unique_id=645334120]
 z_as_relative = false
 position = Vector2(1712, 76.000015)
 scale = Vector2(0.44315064, 0.3039772)
 texture = ExtResource("5_71r88")
 
-[node name="IconeScore" type="Sprite2D" parent="." unique_id=1209504582]
+[node name="IconeScore" type="Sprite2D" parent="LabelContainer" unique_id=1209504582]
 position = Vector2(1811, 77.99999)
 scale = Vector2(0.17725816, 0.17725813)
 texture = ExtResource("6_d14sx")
+
+[node name="ScoringLabel" type="Label" parent="LabelContainer" unique_id=119026626]
+layout_mode = 0
+offset_left = 1639.9998
+offset_top = 32.000015
+offset_right = 1818.9998
+offset_bottom = 148.00002
+scale = Vector2(0.7, 0.7)
+text = "TEST"
+label_settings = SubResource("LabelSettings_bsvus")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ExcitmentBarContainer" type="Control" parent="." unique_id=2144921590]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="ExcitmentBarContainer" unique_id=601329134]
+self_modulate = Color(1, 1, 1, 0.40784314)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 395.0
+offset_right = 1485.0
+offset_bottom = 243.0
+grow_horizontal = 2
+texture = ExtResource("2_ncsh7")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="ExcitmentBarContainer" unique_id=1093205922]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 547.0
+offset_right = 1333.0
+offset_bottom = 143.0
+grow_horizontal = 2
+texture = ExtResource("2_d14sx")
+stretch_mode = 5
+
+[node name="TotalTrackTimeProgressBar" type="TextureProgressBar" parent="ExcitmentBarContainer" unique_id=627944683]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 655.0
+offset_top = 54.0
+offset_right = 1356.0
+offset_bottom = 231.01004
+grow_horizontal = 2
+scale = Vector2(1, 2.07)
+pivot_offset_ratio = Vector2(0.5, 0)
+max_value = 1.0
+step = 0.01
+value = 1.0
+texture_progress = ExtResource("3_ncsh7")
+
+[node name="TextureRect" type="TextureRect" parent="ExcitmentBarContainer" unique_id=177158411]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 547.0
+offset_right = 1333.0
+offset_bottom = 143.0
+grow_horizontal = 2
+texture = ExtResource("4_k63mv")

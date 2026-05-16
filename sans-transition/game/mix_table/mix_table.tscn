@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c5c2m5wcmekpw" path="res://game/mix_table/mix_table.gd" id="1_f1hik"]
 [ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="2_rphpj"]
 [ext_resource type="Resource" uid="uid://082o32rnfkh1" path="res://game/data/epic_mix_2026.tres" id="2_uki45"]
-[ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="3_247ce"]
 [ext_resource type="Texture2D" uid="uid://6q3ctacsihgk" path="res://game/mix_table/sprites/From selection.png" id="3_f1hik"]
 [ext_resource type="Texture2D" uid="uid://cmgamc84bc4b1" path="res://game/mix_table/sprites/boutons.png" id="3_kp4uu"]
 [ext_resource type="Texture2D" uid="uid://boqinmfaabn56" path="res://game/mix_table/sprites/outside_frame.png" id="4_247ce"]
@@ -17,10 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="11_cw1dt"]
 [ext_resource type="PackedScene" uid="uid://bxpqxdbaqcd78" path="res://game/mix_table/sync_button.tscn" id="12_g8qep"]
 [ext_resource type="Texture2D" uid="uid://dbfu0o8t1ejce" path="res://game/mix_table/sprites/Sync A.png" id="13_ec0rs"]
+[ext_resource type="Texture2D" uid="uid://c0ckxoy0w8ypc" path="res://game/mix_table/sprites/tablette_naked.png" id="13_f8n0g"]
 [ext_resource type="PackedScene" uid="uid://g1brdqbxheyh" path="res://game/mix_table/hologram/variants/hologram_cat.tscn" id="14_dff6c"]
 [ext_resource type="PackedScene" uid="uid://dwnwcpclgwdy1" path="res://game/mix_table/hologram/variants/hologram_airhorn.tscn" id="15_tdgsy"]
 [ext_resource type="PackedScene" uid="uid://d4if86e5tyjp" path="res://game/mix_table/hologram/variants/hologram_dog.tscn" id="16_lvfhp"]
 [ext_resource type="Texture2D" uid="uid://01ein1akdcv6" path="res://game/mix_table/sprites/dots.png" id="16_tpak7"]
+[ext_resource type="PackedScene" uid="uid://bp20pdq1778br" path="res://game/mix_table/shiny.tscn" id="17_f8n0g"]
 [ext_resource type="PackedScene" uid="uid://bv30pwrxrbn77" path="res://game/mix_table/hologram/variants/hologram_gnome.tscn" id="17_tpak7"]
 [ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="18_3vb45"]
 [ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="19_p1v12"]
@@ -109,7 +110,7 @@ void fragment() {
 shader = SubResource("Shader_8he0m")
 shader_parameter/factor = 0.0
 
-[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "disk_a", "disk_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B", "highlighter")]
+[node name="MixTable" type="Node2D" unique_id=438255488 node_paths=PackedStringArray("synchroniser", "track_visualizer_a", "track_visualizer_b", "disk_a", "disk_b", "dj_input_left", "dj_input_right", "sync_button_A", "sync_button_B", "shine_a", "shine_b", "highlighter")]
 script = ExtResource("1_f1hik")
 synchroniser = NodePath("Synchronizer")
 track_list = ExtResource("2_uki45")
@@ -121,6 +122,8 @@ dj_input_left = NodePath("DJInputLeft")
 dj_input_right = NodePath("DJInputRight")
 sync_button_A = NodePath("Visual/SyncButtonA")
 sync_button_B = NodePath("Visual/SyncButtonB")
+shine_a = NodePath("Visual/Stand/ShinyA")
+shine_b = NodePath("Visual/Stand/ShinyB")
 highlighter = NodePath("Highlighter")
 
 [node name="Visual" type="Node2D" parent="." unique_id=885483339]
@@ -172,10 +175,10 @@ input_action = SubResource("InputEventAction_p1v12")
 
 [node name="Stand" type="Sprite2D" parent="Visual" unique_id=2092668068]
 position = Vector2(1290.6666, 904)
-texture = ExtResource("3_247ce")
+texture = ExtResource("13_f8n0g")
 
 [node name="ScreenA" type="Sprite2D" parent="Visual/Stand" unique_id=1588145583]
-position = Vector2(5.3333335, -134.66667)
+position = Vector2(5, -134.667)
 texture = ExtResource("4_247ce")
 
 [node name="TrackVisualizerA" parent="Visual/Stand/ScreenA" unique_id=1299234425 instance=ExtResource("5_wuq5k")]
@@ -190,7 +193,7 @@ scale = Vector2(1.05, 1.05)
 texture = ExtResource("16_tpak7")
 
 [node name="ScreenB" type="Sprite2D" parent="Visual/Stand" unique_id=1476404501]
-position = Vector2(0, 146.66667)
+position = Vector2(5, 146.667)
 texture = ExtResource("4_247ce")
 
 [node name="TrackVisualizerB" parent="Visual/Stand/ScreenB" unique_id=1443232581 instance=ExtResource("5_wuq5k")]
@@ -211,6 +214,12 @@ texture = ExtResource("16_tpak7")
 [node name="SyncState" type="Sprite2D" parent="Visual/Stand" unique_id=1385842724]
 position = Vector2(0.95, 30.705)
 
+[node name="ShinyA" parent="Visual/Stand" unique_id=1083634189 instance=ExtResource("17_f8n0g")]
+position = Vector2(0, -133.33333)
+
+[node name="ShinyB" parent="Visual/Stand" unique_id=1264962984 instance=ExtResource("17_f8n0g")]
+position = Vector2(0, 146.99791)
+
 [node name="DiskLeft" parent="Visual" unique_id=1586880461 instance=ExtResource("8_wqdoj")]
 texture_filter = 4
 texture_repeat = 1
@@ -220,7 +229,7 @@ direction = 1.0
 
 [node name="MeshInstance2D" parent="Visual/DiskLeft" index="0" unique_id=1036466809]
 material = SubResource("ShaderMaterial_f07uh")
-position = Vector2(-2.1276588, 18.723427)
+position = Vector2(-0.93349206, 18.849442)
 
 [node name="DiskMask" type="Sprite2D" parent="Visual/DiskLeft" unique_id=658506138]
 self_modulate = Color(1, 0.32, 0.32, 0.48235294)
@@ -300,8 +309,9 @@ script = ExtResource("6_247ce")
 input_side = 1
 
 [node name="Synchronizer" parent="." unique_id=1921030261 instance=ExtResource("8_uki45")]
-offset_window = 0.16
-speed_window = 0.12
+offset_window = 0.18
+speed_window = 0.15
+required_sync_duration = 0.5
 cuttof_value_enable = 500
 
 [node name="DJInputMouse" type="Node" parent="." unique_id=460878965]

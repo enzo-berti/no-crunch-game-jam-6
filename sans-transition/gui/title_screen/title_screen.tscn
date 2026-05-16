@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="5_np3mt"]
 [ext_resource type="Texture2D" uid="uid://cmgamc84bc4b1" path="res://game/mix_table/sprites/boutons.png" id="6_2kqy5"]
 [ext_resource type="Texture2D" uid="uid://6q3ctacsihgk" path="res://game/mix_table/sprites/From selection.png" id="7_yx2uf"]
-[ext_resource type="Texture2D" uid="uid://bthp5qxiffiin" path="res://game/mix_table/sprites/Layer 55.png" id="8_xm0uo"]
 [ext_resource type="PackedScene" uid="uid://g1brdqbxheyh" path="res://game/mix_table/hologram/variants/hologram_cat.tscn" id="9_kdfbj"]
 [ext_resource type="PackedScene" uid="uid://dwnwcpclgwdy1" path="res://game/mix_table/hologram/variants/hologram_airhorn.tscn" id="10_fnlf2"]
 [ext_resource type="PackedScene" uid="uid://d4if86e5tyjp" path="res://game/mix_table/hologram/variants/hologram_dog.tscn" id="11_dswg1"]
@@ -20,29 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://cmtdkd6dr640x" path="res://gui/title_screen/CREDITS.png" id="18_2kqy5"]
 [ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="18_6v1uu"]
 [ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="19_6v6pk"]
+[ext_resource type="Script" uid="uid://fv6nbjxa5f0n" path="res://gui/title_screen/button_with_focus.gd" id="19_dswg1"]
+[ext_resource type="Texture2D" uid="uid://dteceu8cknirf" path="res://gui/title_screen/quitter.png" id="19_yx2uf"]
+[ext_resource type="BitMap" uid="uid://dcd4b1ypsp8bl" path="res://gui/title_screen/quitter_mask.png" id="20_xm0uo"]
+[ext_resource type="Texture2D" uid="uid://dqv51htcosb47" path="res://gui/title_screen/logo.png" id="21_yx2uf"]
+[ext_resource type="FontFile" uid="uid://b36gkt5ev50lt" path="res://gui/Tektur-Regular.ttf" id="23_kdfbj"]
+[ext_resource type="AudioStream" uid="uid://bve1k5shckvs3" path="res://gui/title_screen/music.ogg" id="24_fnlf2"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_75ijr"]
-action = &"sfx_cat"
-
-[sub_resource type="InputEventAction" id="InputEventAction_vicc4"]
-action = &"sfx_airhorn"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_dxy1j"]
-action = &"sfx_dog"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_2rdee"]
-action = &"sfx_gnome"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_ny01l"]
-action = &"sfx_sean"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_cpv3b"]
-action = &"sfx_yoda"
-pressed = true
+[sub_resource type="InputEventAction" id="InputEventAction_xm0uo"]
+action = &"dummy"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v6vj4"]
 shader = ExtResource("17_c01q8")
@@ -57,6 +42,43 @@ shader = ExtResource("17_c01q8")
 shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
 shader_parameter/angle = 0.0
 
+[sub_resource type="Animation" id="Animation_kdfbj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xm0uo"]
+resource_name = "pulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdfbj"]
+_data = {
+&"RESET": SubResource("Animation_kdfbj"),
+&"pulse": SubResource("Animation_xm0uo")
+}
+
 [sub_resource type="OggPacketSequence" id="OggPacketSequence_icm1w"]
 packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACRKwAAAAAAAAAcQIAAAAAALgB")], [PackedByteArray("A3ZvcmJpczQAAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDIwMDcwNCAoUmVkdWNpbmcgRW52aXJvbm1lbnQpAAAAAAE="), PackedByteArray("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")], [PackedByteArray("AA=="), PackedByteArray("Cg=="), PackedByteArray("Dg=="), PackedByteArray("Dg=="), PackedByteArray("Dg=="), PackedByteArray("/mf8atf0MCbNRMSf8avd0sOYNBO4WttPQu46EW+R0RYWpqGSmQEAAGC1x04MO6ti2Nnb2VgMTCxssoVN1iwMKzbZwgYLjQ4NWp1a0aERGxFMq9YtVQQ1TVMVBYEE0OAwDD2/xRkAwA5DewAiye77KNaASJJwGK4GbEMYXsaGIUhBsEgAgEES4DgMDUBsPYCIAEih6BVFhFgBiqvqX0CSJIFtx2GsGYbAkIRjG0kAAACQiR3rqmhCOWEYrkqXw9AgKTPBNjAeUpEkKSRDgaJKWVtwlkUg4XAlEwP1D7N4lQJbQBXdlG2HcYZQaWhyt6sRXgIE7q7qNsPFNIT3b2Ip/rbbmR0eEgWQAFo="), PackedByteArray("fir9P5dtQAADOJX+r9dLQAATeCtqyqqaIgBM7rB5R0JEo2ptqyYIAAAAAEYQa9VaQFRRW7xhGobVqoYZZ1olKzaqoVgx1TAHMdciiFcqplERQehgDQlDEMoVBuO1iKhGdzniJVlsFECLIICY2+zbStCCnQ0WAohBqEiE3tvGYHACsDpZMG4oI1XFXWgwEvZQx6A4Uxta2Kwe7BzwmjiTSVrPo5dcVEKZm1hl5qbe16vQCwyYlGmgALuIAlaRQ05mzgqTuYdc7UygRdyom7qru7sA0nUXFHEnOTOY8mB4Z2ZyVjxgoBvobmWrBQSqC6yHsd4j8MYwMCwutma/EBJqZZAI5cGxAA=="), PackedByteArray("Pmr9/9x6aAqybQhGrf/v2xi6AjbwFQBgzrbNQlUFVVUFAQAAAAAtQgEgSFhJSIhxhUABsATTsDBN08KqigrWLa2I1iKr7lKrrFG1CvWgWKxolFk70oItVcHKIiOyyCK+ruqlHsAz0pCArKNQle2msn2togezGUEW0aqCrOyRMVl9O5Z/DlRN3J6mrhrNEi9Rz1WKu6d+xFA907nzzlXm0P8cBDiGIXxdCK+17dv0Zr6RmyYHcmDzyubVnh8Te9fyfny4D3BrzbcLhe3lmTsH+AtYrPV4jgUeAyhqQe6MQ7Y35zcCcLXvr64sgHIA93gffHw4CwDAvtkBWI8FNwAA"), PackedByteArray("Hnr9/y81rSlgA6PX/6ftVOdUG80GvgQAmKNtq6qqSkhQAQAAAAAy2xAJ4C9V6vU0+oiGhlQPACjKtLASZJFwdW2VqZ3o5bpWHTutf2SeFSl6LyRcp3ICtRojZgY6E4OSFsSeLQ6bqmeZNWz18MIpyKnqxp699Lk/SR1dE8aXoPJf9yTJOtvVKShzqab5Tl3/ruOd58wyVZWTVdD7RNHETlF39nCT2dxZQ6aSc64ERDHZYD8J3LmQ9ZM/eKYJYARYA8dyhYEEWDgsgwBgHQCYAgCAemAZALAAjE0AGADA4nkAMABYYMc5Dw=="), PackedByteArray("3sr9f+y1zykmOEAr9//pKKNPMcABvggA4FvVUFUAAAAAAAAAoJQKAEukjp94Xp16jnIJBYNAThpAiQyhsCaJ0w7C1lDNUq9iVUlTAeOOwqeI4qZk0jKa1ORrnDVppRe03G1f07uY6YmguU6/vazPcT7M3vNjJrfNybubMRDGipWkGwbqUdOKpgsGu4OjnllSLjGDZwBiYS0DeL+Az8UAGAAA"), PackedByteArray("vvv9fxypocQAG9j9/j+O1FBigA18CQBgEaGqggAAAAAAAAAAlMwEAKZkl/XSAsS5hCHgMBq91AK5DCW45aRjC3ScgmQFAEUVW+CBoWCdKV/0Av8LzV9OOl0Am+vObJp7EmoqHoZYta24LX+u4e6BWTo4+I2P8QYHt+0dXcOAeWwCAAMYgAMA"), PackedByteArray("Ppz9x+9HmArYQG/2f7msLaUg2CXwJQBAre3UUFVTVWUAAAAAAFEjAgCpGRQ6/DjjZIcNF8QjoLWs44BUu7rrpiwN2L1U0ICgU6nIlPEM1aKBYUgSSELL066qLq/hDGJcNANaUhhayoso6CghJGtcmTmKIkFZtN2pFJbICVfDG4brRBE1vQQRTBTKdUp1iL0sHYX0rs04sJTliNS5BVuYawcrph4eLE1mdvfsGcp+Losfz//j3rLgAL8WgzNgGE49OIAHwD/HA2dguQ7qd6AvoEqZAN+Zi2G2bL2xwyxbv+5JPABb46wc695TxIAh3jtgefDHQS4AWyr0AQ=="), PackedByteArray("fvr8X9LluBDrDQ28p8//KZfjjlkPDOBF8/15g8isROY22jYsLBpWLQkAAACA1Sr/woJVjLXZqhoWVjIjBj1QRjI9edb5zdu/fvCohbXsUUNkOuuk+xfrNu2X2wrERpxDm3Xx83D4JOtuTvCWYjpVKw+qV/7pucJFu2bcr9wrsxm58xqt0T5NvEw6hkWwMuTUCONqLxSoAOWNZoA20DSYiQqQ2gxUJIb+e/Hw5qmGVUy1e95iwx3PTu3SBW8KL1XQPcyw0E6it4tKdrLSY0i/FHu1ZT/Nxs2AyCwAuYerGKpDU17VtKau/HFT6qmsxEl8UQmkm20qNWiBsK7YOUmxOzkB76e9/tW6x3ofHjjLdDMvldkXSea7MZzeNEP7OSSFe3D39tOZExx/1h67s1kOhRNgAAAAEDGShAM="), PackedByteArray("Hsn8Y2/LG9W/J4IQ/C+Vm6vXfE0tN6HQmPB7c/fjxf+/OkBktDP6sLdZqz7rqIYaAWGEJAEAACDY2yUnLbS7b87RZDpVm3awlrQYqpVzT43kq/aMZ2ZYFVIyqvXc0HLTyKONKJV+K9dVr94elGa8yVWZb6xKXSxrrnmG6N7A0FTOaVaq1qKeySIGSM6tumDME4unDEdOPofO+u5nhkqmbjWwe65Kpqv/Jskbsg8qauhPS8wz0tdfWObwRSUq3SAayPSbUG5swc4z0/OaUAMQMxfLAtebJKuhIOszBQyVJfKsPaTJ3mBr8OsxMwF6upNzAit/1lPJ9OAcAKAgeollBvp33KbZgqCHPQr6BUYuIODj3bn3twNfHwvg/oMEFo5Y4sODbcejqCwncF/qoxABWAACwAE="), PackedByteArray("fnj8q5zjuIFORfPlHT8yZ92bUaiqLX5/AAAAgLxZ29FRX1U1QcJISDIJAADA2Tn2HQCI2gIAiK5+psvHLC6S+eOGfWpA1kLD5XhCBwvx9BnAyJQFIkax6NRoq5PaMR2wKAhRB0pxa6CmX8FLTxqGdYECGFlOGVDclC9R7vNRuFypWOHiBBxMEEYlJ056TC/Voz/TA29n91TifZ2ktt6u61DpiSv6/X8yk9NzJmuI3FE2QE6/tbQMpBT0pspJzQ+16WnyzXwZJtsgTlaee6gk+972OPx+ziQZpOkPB7JhV9GCLfYDvMwLD5nXq85qJg2GvhFvTzLh7PhItoy3SHIZipp2TyVT3TQ5zPPWQPH53nLJuIf4H1wQCI1gWI+u+cX9OBbHYxrAYQAOnSYYmJ4GDAAA7CnIAaDNraIkexKAkYeCBA=="), PackedByteArray("Xmf8OzBPN0YCwuKdM/4M7u2DkgaCUPHe4OOH4ntJL+yNWmuNtqqmLhUUCQAAEEu8RWMNWv9kHTb1Q2d28vU+lCUhGnbawaomhqlijGVl3LJt+y5iaq57M44SLdc2XEkg63JqbvRwXFlRzCDDLOESxDPUdHqezPsX/fcCr77CJ3IQrDKPO2XxaphiaOg868J+jHkR+U2ygGu6qZ39PiLzHHKY4dnFydyDLy7jhX3ojuCFnNrZQ51DLuT3lu1n19ozS3HgfucnciZ9QPOa5nk2dCb4MY1/pt7qipNSX/Okp6e2Z7021lzPDQV16NKQHbkn98nNAPXZHzU1WWtOlgSzB4CbZN5dNEnnvIfd9Y5IklNSwh5JzdR/rd+VZZYcY87flwmO86aMfYvLOvPO/ZRIP7Gm0CQNtggeAMBNAwAoFkas5UfkeZfRX5Sw7L8QMvLZUEJCoLLUadABLQA="), PackedByteArray("vmf8H6u7CGNCAnee8T80rhdHQwOeqR9ZRDsAAADbiGgbEQ2zqlYlAwAAkPpw1nwnIQQPoFvHw4TYtt/+vLv0xH9+U7din20rZaUhpcb9C8P4ir97i435mn9/Xld7ITMo9UIC03couUPsWiU2JUZZ6dpZhCx71LwUU1k/CWfmgz95rq51qOnTv46L7reC9X+OYOjKPdvTyeAyE9OzmUPDjBgn02+RY5J8Z6oHUZ3quU4dZuZ5SYZBKHP6C2TTXdVPCa6OX3PwPN/iDDFrQ6E4N+/u309/75nU9OT7PCT5+Onx4f7GfwVzoHoVy8kZAG7gQFNsrp7UyS7ors1dnPWB+7AB1/PfV1ID1B4mrqLtvb/aD54hyVTlm66m+SAgk9MM1ZlXwxRUUghrapO7SwqcjgcZ1GPdkswEBC8CCxr/ACDgMTKTAEYRpYQGOg4AWKgmEIEJ"), PackedByteArray("fmb8DXp9cdtEAcqMP8SYF3NMAO9zRE1Qlgk5BgDA1uEbtVpbUwulKJIEAABJtaSNY9UKOkcXwPmV71f0TbQwKjJy1S51hRfPPgyTL3KTe3E6zOV++tp911Te5Z2DWS4+zqWwWv8l6meNBmoqWk6sVDUv3cw2pvzaeek7s19qz9DD7LHe6tndTbezoyL3hjsor7llb70zHQP7ytMmvp4Jp8rwMLT0I7I9UbGbaxZ61X3+8P99mDdJcoB5Mi82uQtS/UONfz9nXDFDdXezk+Tt6SdK6tBJ1qbuRqvJgVIz7evNXfD+TE27i2r+1Qz8XJW9qxl6EpOYyPTgfAdUyqibrCz6otownKJGWt2zJDnQ0F2QQ+UhryWntwHlChh6k0x1PyOCbAvTM3z8y9q/v/qe789gK+CSfpuhuiGru9oZ4d0MYEDpv+zCduMhPkJ4Om9tIhh+JwXgWCINkEgUAA=="), PackedByteArray("nmb8o6fikyoNKOBaZvyuU/lLA2zg1p7MQ3EsOOF3Z0sXRSjM+orattEIlarKJAAA0HW3YW0o0W7w4vvrZbPa/P3+eZsvs+c3etsbZu/XXtxO7++9nnx9u7VVa+J4tvqD3squXFdJNhcE79dty/1Wn70Rxctxj3jObevc37jYO9fsH/bzc4qqqeaUrw2TX9bd/5X9jJ9WFeyJ/SfHdLiUPv+eA3epm+F09py6mv6JrQjyaGN+9eatj+u+F5h75nYIMdQD/x6mS/N/M85timYXTB9m4PTbPHSdaVVnQdce/tXM9Lfrfedhwrq+2iHRfWg3BZ3N6Kmhe56N+zNsZ4qaIkmz/QxUklk0Pfhht7Ny+tMzVGbOy4bDjoxp/1SUgOqtubq7mAb45kxX1SZpOpulG+w6EzMtHz2dDHVRmV3Jj+1F/Vp5Nw1a+NOa9kHuuJ9f/c5zZiR/fpGyB3sOV5DgRbgife6B1mmE5p6SbT3oAZSGAwOKBA=="), PackedByteArray("nmW8X/bdhYJso6PK+NjuGwhgApfvdmAfbVuNapiqKpMAAAAA4/kPY/X1KPJZpXj1j737enrisZ++bPzQWV/Yy6UP/fkV4+d/slisvW6+/jjlf+aSLCvm9MaPizjNNZ6/3+ZfEW/bzlx++4K3rlq24eyTnM+t/m6Kk5/ZPydzfqaZBM5UQpH6x8uqk18mwQyb0+pNMs/PnKRp/s86XzKLZ7JHcU7BUPvxLsFU78x2v7x9GubJrgESoBnqzDNDk8DMfXzGBhcrZ443vI11RGVl5+TUFPfPvQ8/leCZBIPmYaB7itPWTB1/OOPqkykwAZ4pkqme3sQ90zGPWdVdnalzda6OmaaAf3dP59uemYDgY/YrpqaY+il43N+/3s22ecN6A7vPuc5cwXmmz6uNc//ch4NiQGkfAWJAEwA=")], [PackedByteArray("vmX87yhvUMAGtoybH+VNE8ANNFpVVRACAAAAAAAAAJjl7ayk53mfgen3seKrds+yLuuyPu/zNvQ87xJN3sf89ytPT09Pz2LV9CvLmh5gP+8zUFkAaJUTkp4m6feZdl9tlqWDmCuAVytvPqb2rjzA5iZkFF15Pj4+AKYs8D4cnCuwAAAAHg=="), PackedByteArray("Dg=="), PackedByteArray("Dg==")]])
 granule_positions = PackedInt64Array(0, 0, 19008, 22050)
@@ -64,6 +86,10 @@ sampling_rate = 44100.0
 
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_2kqy5"]
 packet_sequence = SubResource("OggPacketSequence_icm1w")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnlf2"]
+font = ExtResource("23_kdfbj")
+font_size = 75
 
 [node name="TitleScreen" type="Control" unique_id=1869998965 node_paths=PackedStringArray("sfx_button_pressed", "buttons", "credits_scene")]
 layout_mode = 3
@@ -74,7 +100,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sdkmq")
 sfx_button_pressed = NodePath("ButtonPressedAudio")
-buttons = [NodePath("VBoxContainer/StartButton"), NodePath("VBoxContainer/CreditsButton"), NodePath("VBoxContainer/QuitButton")]
+buttons = [NodePath("Buttons/StartButton"), NodePath("Buttons/CreditsButton")]
 credits_scene = NodePath("Credits")
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_yx2uf")]
@@ -97,29 +123,30 @@ texture = ExtResource("7_yx2uf")
 
 [node name="HologramCat" parent="Visual" unique_id=876305959 instance=ExtResource("9_kdfbj")]
 position = Vector2(188, 649.3334)
-input_action = SubResource("InputEventAction_75ijr")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="HologramAirhorn" parent="Visual" unique_id=1111507102 instance=ExtResource("10_fnlf2")]
 position = Vector2(390.6667, 650.6667)
-input_action = SubResource("InputEventAction_vicc4")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="HologramDog" parent="Visual" unique_id=182796938 instance=ExtResource("11_dswg1")]
 position = Vector2(593.3334, 637.3334)
-input_action = SubResource("InputEventAction_dxy1j")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="HologramGnome" parent="Visual" unique_id=2110765763 instance=ExtResource("12_xdydx")]
 position = Vector2(1905.3334, 653.3333)
-input_action = SubResource("InputEventAction_2rdee")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="HologramSean" parent="Visual" unique_id=180806962 instance=ExtResource("13_qk2mr")]
 position = Vector2(2272, 660)
-input_action = SubResource("InputEventAction_ny01l")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="HologramYoda" parent="Visual" unique_id=765551939 instance=ExtResource("14_moaom")]
 position = Vector2(2104, 648)
-input_action = SubResource("InputEventAction_cpv3b")
+input_action = SubResource("InputEventAction_xm0uo")
 
 [node name="Stand" type="Sprite2D" parent="Visual" unique_id=1990647894]
+visible = false
 position = Vector2(1290.6666, 904)
 texture = ExtResource("15_qrll6")
 
@@ -193,65 +220,158 @@ flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=620490259]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08170002, 0.019000005, 0.19, 0.50980395)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1593480437]
+texture_filter = 4
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -324.0
-offset_top = -63.0
-offset_right = 345.0
-offset_bottom = 352.0
+offset_left = -461.0
+offset_top = -799.0
+offset_right = 461.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.08235294, 0.019607844, 0.1882353, 1)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("21_yx2uf")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=920950858]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo" unique_id=1009764307]
+libraries/ = SubResource("AnimationLibrary_kdfbj")
+autoplay = &"pulse"
+
+[node name="Buttons" type="Control" parent="." unique_id=678459182]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -181.495
-offset_top = -600.0
-offset_right = 181.495
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = 161.0
+offset_right = 11.0
+offset_bottom = 201.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 65
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 
-[node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=526089407]
+[node name="StartButton" type="TextureButton" parent="Buttons" unique_id=526089407]
 custom_minimum_size = Vector2(0, 175)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -105.0
+offset_right = 181.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_2kqy5")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("19_dswg1")
 
-[node name="CreditsButton" type="TextureButton" parent="VBoxContainer" unique_id=492561544]
+[node name="CreditsButton" type="TextureButton" parent="Buttons" unique_id=492561544]
 custom_minimum_size = Vector2(0, 175)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = 93.749985
+offset_right = 181.0
+offset_bottom = 268.75
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../../QuitButton")
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("18_2kqy5")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("19_dswg1")
 
-[node name="QuitButton" type="TextureButton" parent="VBoxContainer" unique_id=646063367]
+[node name="QuitButton" type="TextureButton" parent="." unique_id=646063367]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-texture_normal = ExtResource("8_xm0uo")
+layout_mode = 0
+offset_left = 769.0
+offset_top = 880.0
+offset_right = 1131.0
+offset_bottom = 980.0
+scale = Vector2(3, 3)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_neighbor_top = NodePath("../Buttons/CreditsButton")
+focus_neighbor_bottom = NodePath(".")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("19_yx2uf")
+texture_click_mask = ExtResource("20_xm0uo")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("19_dswg1")
 
-[node name="ButtonPressedAudio" type="AudioStreamPlayer2D" parent="." unique_id=579407206]
+[node name="ButtonPressedAudio" type="AudioStreamPlayer" parent="." unique_id=238223111]
 stream = SubResource("AudioStreamOggVorbis_2kqy5")
+volume_db = 9.918
 
 [node name="Credits" parent="." unique_id=1293935610 instance=ExtResource("5_k7v1h")]
 layout_mode = 1
 scale = Vector2(1e-05, 1e-05)
 
-[connection signal="focus_exited" from="VBoxContainer/StartButton" to="." method="_on_start_button_focus_exited"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Loading" type="ColorRect" parent="." unique_id=180375402]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Loading" unique_id=2089011129]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -11.5
+offset_right = 54.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CHARGEMENT"
+label_settings = SubResource("LabelSettings_fnlf2")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=92380416]
+stream = ExtResource("24_fnlf2")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="focus_exited" from="Buttons/StartButton" to="." method="_on_start_button_focus_exited"]
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="quitted" from="Credits" to="." method="_on_credits_quitted"]
 
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]
