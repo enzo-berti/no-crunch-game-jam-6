@@ -82,6 +82,7 @@ scoring = NodePath("Scoring")
 base_crowd = NodePath("BaseCrowd")
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_vasa2")]
+position = Vector2(-3, 0)
 scale = Vector2(0.75, 0.75)
 
 [node name="BaseCrowd" parent="." unique_id=1718517280 instance=ExtResource("2_h7iqs")]
