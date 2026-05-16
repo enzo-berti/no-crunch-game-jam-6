@@ -85,7 +85,6 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
 scoring_curve = SubResource("Curve_4fuuu")
-max_range = 20.0
 
 [node name="Tutorial" parent="." unique_id=1104037385 node_paths=PackedStringArray("mix_table") instance=ExtResource("5_dxrkv")]
 visible = false
