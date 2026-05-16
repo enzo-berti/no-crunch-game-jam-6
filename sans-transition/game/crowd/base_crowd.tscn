@@ -820,7 +820,7 @@ rotation = -0.092077166
 scale = Vector2(0.94437087, 0.94437087)
 sprite_frames = SubResource("SpriteFrames_ce4st")
 autoplay = "default"
-frame_progress = 0.3292962
+frame_progress = 0.49890795
 
 [node name="SmokeMiddle" type="Sprite2D" parent="CrowdBackground" unique_id=1457276161]
 light_mask = 2
@@ -851,7 +851,7 @@ rotation = -0.092077166
 scale = Vector2(1.1509315, 1.1509315)
 sprite_frames = SubResource("SpriteFrames_4p01d")
 autoplay = "default"
-frame_progress = 0.039447412
+frame_progress = 0.20905913
 
 [node name="HornGuy" type="AnimatedSprite2D" parent="Individuals" unique_id=1535574454]
 self_modulate = Color(0.85249996, 0.85, 1, 1)
