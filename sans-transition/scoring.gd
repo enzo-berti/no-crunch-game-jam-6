@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 	
 	_scoring_time -= delta
 	_track_time -= delta
-	print(_track_time)
 
 	_scoring_time = max(_scoring_time,0)
 	

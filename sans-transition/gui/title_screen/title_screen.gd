@@ -30,8 +30,9 @@ func btn_hovered(button: BaseButton):
 func _on_start_button_pressed() -> void:
 	sfx_button_pressed.play()
 	
+	$Loading.show()
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_packed(load("uid://c8mtky32erftq"))
+	get_tree().change_scene_to_file("uid://cq3inuaup1vaf")
 
 func _on_credits_button_pressed() -> void:
 	var tween = create_tween()

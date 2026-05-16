@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://game/crowd/base_crowd.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
-[ext_resource type="PackedScene" uid="uid://o60sycglbmqn" path="res://game/tutorial/tutorial.tscn" id="5_dxrkv"]
 
 [sub_resource type="Curve" id="Curve_4fuuu"]
 _limits = [0.0, 50.0, 0.0, 1.0]
@@ -93,10 +92,6 @@ scale = Vector2(0.75, 0.75)
 total_mix_set_time_seconds = 120.0
 scoring_curve = SubResource("Curve_4fuuu")
 
-[node name="Tutorial" parent="." unique_id=1104037385 node_paths=PackedStringArray("mix_table") instance=ExtResource("5_dxrkv")]
-visible = false
-mix_table = NodePath("../MixTable")
-
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
 visible = false
 
@@ -111,12 +106,6 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1889154340]
 libraries/ = SubResource("AnimationLibrary_dxrkv")
 
-[connection signal="listen_dj_track" from="MixTable" to="Tutorial" method="_on_mix_table_listen_dj_track"]
 [connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
-[connection signal="track_switched" from="MixTable" to="Tutorial" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
 [connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]
-[connection signal="ended" from="Tutorial" to="BaseCrowd" method="_on_tutorial_ended"]
-[connection signal="ended" from="Tutorial" to="MixTable" method="_on_tutorial_ended"]
-[connection signal="started" from="Tutorial" to="MixTable" method="_on_tutorial_started"]
-[connection signal="started" from="Tutorial" to="Tutorial" method="_on_started"]

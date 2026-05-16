@@ -7,7 +7,6 @@ script = ExtResource("1_tsfot")
 sync_button = NodePath("SyncShadow")
 
 [node name="SyncShadow" type="Node2D" parent="." unique_id=1400652830]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="SyncShadow" unique_id=1379468874]
 offset_top = 634.0
