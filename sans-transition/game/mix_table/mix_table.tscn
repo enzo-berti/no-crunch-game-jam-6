@@ -143,27 +143,31 @@ position = Vector2(1281.3334, 1332)
 texture = ExtResource("4_uki45")
 
 [node name="HologramCat" parent="Visual" unique_id=876305959 instance=ExtResource("14_dff6c")]
-position = Vector2(188, 649.3334)
+position = Vector2(219.027, 666.813)
+scale = Vector2(0.8, 0.8)
 input_action = SubResource("InputEventAction_k35n5")
 
 [node name="HologramAirhorn" parent="Visual" unique_id=1481108766 instance=ExtResource("15_tdgsy")]
-position = Vector2(390.6667, 650.6667)
+position = Vector2(409.442, 648.317)
 input_action = SubResource("InputEventAction_tdgsy")
 
 [node name="HologramDog" parent="Visual" unique_id=1213239451 instance=ExtResource("16_lvfhp")]
-position = Vector2(593.3334, 637.3334)
+position = Vector2(594.763, 637.333)
 input_action = SubResource("InputEventAction_lvfhp")
 
 [node name="HologramGnome" parent="Visual" unique_id=157349764 instance=ExtResource("17_tpak7")]
-position = Vector2(1905.3334, 653.3333)
+position = Vector2(1889.818, 653.333)
+scale = Vector2(0.9, 0.9)
 input_action = SubResource("InputEventAction_tpak7")
 
 [node name="HologramSean" parent="Visual" unique_id=4887440 instance=ExtResource("18_3vb45")]
-position = Vector2(2272, 660)
+position = Vector2(2265.39, 660)
+scale = Vector2(0.9, 0.9)
 input_action = SubResource("InputEventAction_3vb45")
 
 [node name="HologramYoda" parent="Visual" unique_id=317031716 instance=ExtResource("19_p1v12")]
-position = Vector2(2104, 648)
+position = Vector2(2076.255, 648)
+scale = Vector2(0.9, 0.9)
 input_action = SubResource("InputEventAction_p1v12")
 
 [node name="Stand" type="Sprite2D" parent="Visual" unique_id=2092668068]
@@ -200,10 +204,12 @@ self_modulate = Color(0.69899964, 0.13999999, 1, 1)
 [node name="Dots" type="Sprite2D" parent="Visual/Stand/ScreenB" unique_id=1627871673]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_3vb45")
+position = Vector2(0, 4.000122)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("16_tpak7")
 
 [node name="SyncState" type="Sprite2D" parent="Visual/Stand" unique_id=1385842724]
+position = Vector2(0.95, 30.705)
 
 [node name="DiskLeft" parent="Visual" unique_id=1586880461 instance=ExtResource("8_wqdoj")]
 texture_filter = 4
@@ -273,15 +279,17 @@ texture = ExtResource("11_cw1dt")
 flip_h = true
 
 [node name="SyncButtonA" parent="Visual" unique_id=1719226366 instance=ExtResource("12_g8qep")]
-position = Vector2(1280, 624)
+position = Vector2(1292.3, 647.605)
+rotation = -0.017453292
 state = 1
 
 [node name="SyncButtonB" parent="Visual" unique_id=1271359808 instance=ExtResource("12_g8qep")]
-position = Vector2(1278.6666, 900.00006)
+position = Vector2(1291.745, 926.83)
+rotation = -0.017453292
 state = 0
 
 [node name="SyncText" type="Sprite2D" parent="Visual" unique_id=758071472]
-position = Vector2(1454.6666, 770.6667)
+position = Vector2(1465.287, 795.207)
 texture = ExtResource("13_ec0rs")
 
 [node name="DJInputLeft" type="Node" parent="." unique_id=996665280]
