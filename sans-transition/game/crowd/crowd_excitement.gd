@@ -25,3 +25,7 @@ func _on_bpm_changed(bpm: float) -> void:
 		animation.speed_scale = bpm / 60
 	
 	animationPlayer.speed_scale = bpm / 60
+
+
+func _on_tutorial_ended() -> void:
+	self.visible = true

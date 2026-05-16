@@ -23,8 +23,6 @@ func _process(delta: float) -> void:
 	scoring_label.text = str(current_score).pad_decimals(2)
 	
 	ambiance_progress_bar.value -= delta
-	print("ambiance_progress_bar.value")
-	print(ambiance_progress_bar.value)
 	pass
 
 func reset_ambiance_bar() -> void:
