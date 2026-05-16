@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dm60efldoto52"]
 
 [ext_resource type="Script" uid="uid://by3dnwvymgtse" path="res://gui/game_over_screen/game_over_screen.gd" id="1_l8ydd"]
+[ext_resource type="Texture2D" uid="uid://dkppvduv0fy8r" path="res://gui/game_over_screen/rejouer_new.png" id="3_ew513"]
+[ext_resource type="Texture2D" uid="uid://b6mdjmxiidrhl" path="res://gui/game_over_screen/quitter_new.png" id="4_ew513"]
+[ext_resource type="Script" uid="uid://fv6nbjxa5f0n" path="res://gui/title_screen/button_with_focus.gd" id="4_ysvem"]
 [ext_resource type="FontFile" uid="uid://b36gkt5ev50lt" path="res://gui/Tektur-Regular.ttf" id="5_ew513"]
 [ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="10_o67gx"]
-[ext_resource type="Texture2D" uid="uid://vebmjn3kcrqt" path="res://gui/REJOUER.png" id="16_j3btv"]
-[ext_resource type="Texture2D" uid="uid://cmtdkd6dr640x" path="res://gui/title_screen/CREDITS.png" id="17_l8ydd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j3btv"]
 font = ExtResource("5_ew513")
@@ -93,27 +94,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -181.495
-offset_top = -600.0
-offset_right = 181.495
-offset_bottom = -176.0
+offset_left = -221.0
+offset_top = -575.0
+offset_right = 141.98999
+offset_bottom = -151.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 65
+scale = Vector2(1.2, 1.2)
+theme_override_constants/separation = 0
 
 [node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=550182425]
 custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
-texture_normal = ExtResource("16_j3btv")
+texture_normal = ExtResource("3_ew513")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("4_ysvem")
 
 [node name="CreditsButton" type="TextureButton" parent="VBoxContainer" unique_id=2000021542]
 custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
-texture_normal = ExtResource("17_l8ydd")
+texture_normal = ExtResource("4_ew513")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("4_ysvem")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1464602729]
 layout_mode = 0
