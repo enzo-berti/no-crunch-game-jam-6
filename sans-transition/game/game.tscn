@@ -80,7 +80,6 @@ _data = {
 scale = Vector2(0.75, 0.75)
 
 [node name="BaseCrowd" parent="." unique_id=1718517280 instance=ExtResource("2_h7iqs")]
-visible = false
 
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
 
@@ -89,6 +88,7 @@ scoring_curve = SubResource("Curve_4fuuu")
 max_range = 20.0
 
 [node name="Tutorial" parent="." unique_id=1104037385 node_paths=PackedStringArray("mix_table") instance=ExtResource("5_dxrkv")]
+visible = false
 mix_table = NodePath("../MixTable")
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
@@ -105,8 +105,8 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1889154340]
 libraries/ = SubResource("AnimationLibrary_dxrkv")
 
-[connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="listen_dj_track" from="MixTable" to="Tutorial" method="_on_mix_table_listen_dj_track"]
+[connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Tutorial" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
 [connection signal="ended" from="Tutorial" to="BaseCrowd" method="_on_tutorial_ended"]

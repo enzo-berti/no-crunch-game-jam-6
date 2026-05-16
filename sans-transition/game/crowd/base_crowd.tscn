@@ -15,13 +15,15 @@
 [ext_resource type="Texture2D" uid="uid://b5ygei4tq7i2h" path="res://game/crowd/people/sam.png" id="13_fbvyp"]
 [ext_resource type="Texture2D" uid="uid://do8a4q54dupe" path="res://game/crowd/people/virgi_et_dorian.png" id="14_or5qt"]
 [ext_resource type="Texture2D" uid="uid://cic8ncbtkqkli" path="res://game/crowd/people/romain.png" id="15_c7ruy"]
+[ext_resource type="Texture2D" uid="uid://dry3yrwqwqb5c" path="res://game/crowd/people/demon.png" id="16_80gks"]
+[ext_resource type="Texture2D" uid="uid://captvut7jxv73" path="res://game/crowd/people/fleur.png" id="17_3klq5"]
 
 [sub_resource type="Animation" id="Animation_pj0wo"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CrowdBackground/PeopleBack:position")
+tracks/0/path = NodePath("CrowdBackground/BackOffset/PeopleBack:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +35,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CrowdBackground/PeopleMiddle:position")
+tracks/1/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -45,7 +47,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CrowdBackground/PeopleFront:position")
+tracks/2/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -62,7 +64,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CrowdBackground/PeopleBack:position")
+tracks/0/path = NodePath("CrowdBackground/BackOffset/PeopleBack:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,7 +76,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CrowdBackground/PeopleMiddle:position")
+tracks/1/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +88,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CrowdBackground/PeopleFront:position")
+tracks/2/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -101,6 +103,162 @@ _data = {
 &"RESET": SubResource("Animation_pj0wo"),
 &"crowd": SubResource("Animation_u55wb")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p01d"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(0, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62710"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(433, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgcm7"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(866, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s8ec"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(1299, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57l1k"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(0, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnqc4"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(433, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sase"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(866, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpokv"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(1299, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srkxk"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(0, 1378, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww2lk"]
+atlas = ExtResource("17_3klq5")
+region = Rect2(433, 1378, 433, 689)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ce4st"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p01d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62710")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgcm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s8ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57l1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnqc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sase")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpokv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srkxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww2lk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3klq5"]
+atlas = ExtResource("16_80gks")
+region = Rect2(0, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mugt"]
+atlas = ExtResource("16_80gks")
+region = Rect2(433, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndg5e"]
+atlas = ExtResource("16_80gks")
+region = Rect2(866, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jout"]
+atlas = ExtResource("16_80gks")
+region = Rect2(1299, 0, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8utpb"]
+atlas = ExtResource("16_80gks")
+region = Rect2(0, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ivm"]
+atlas = ExtResource("16_80gks")
+region = Rect2(433, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51rvc"]
+atlas = ExtResource("16_80gks")
+region = Rect2(866, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p45su"]
+atlas = ExtResource("16_80gks")
+region = Rect2(1299, 689, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53jcx"]
+atlas = ExtResource("16_80gks")
+region = Rect2(0, 1378, 433, 689)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jksqo"]
+atlas = ExtResource("16_80gks")
+region = Rect2(433, 1378, 433, 689)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p01d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3klq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mugt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndg5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jout")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8utpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ivm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51rvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p45su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53jcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jksqo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3r6j"]
 atlas = ExtResource("4_3m83f")
@@ -335,6 +493,64 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="Animation" id="Animation_3klq5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(198.00012, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(367, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7mugt"]
+resource_name = "walk"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(198.00012, 0, 0, 0.6555556, 0, 650, -0.6555556, 0, 0.67777777, 0, 198.00012, -0.67777777, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.9666667, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(393.77106, 0, 0, 0.22222224, 0, 362.20282, -0.22222224, 0, 0.12222221, 0, 395.8756, -0.12222221, 0, 0.14444447, 0, 361.15054, -0.14444447, 0, 0.11111109, 0, 389.56198, -0.11111109, 0, 0.22222225, 0, 355.8892, -0.22222225, 0, 0.09999999, 0, 386.40515, -0.09999999, 0, 0.15555558, 0, 351.68008, -0.15555558, 0, 0.25555557, 0, 393.77115, -0.25555557, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.46666667, 0.8666667, 1.3333334, 1.8, 2.3, 2.7666667, 3.3333333, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndg5e"]
+_data = {
+&"RESET": SubResource("Animation_3klq5"),
+&"walk": SubResource("Animation_7mugt")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxaw3"]
 atlas = ExtResource("2_fxaw3")
@@ -572,7 +788,10 @@ texture = ExtResource("10_j83x0")
 [node name="CrowdBackground" type="Node2D" parent="." unique_id=208353145]
 scale = Vector2(0.75, 0.75)
 
-[node name="PeopleBack" type="Sprite2D" parent="CrowdBackground" unique_id=266781899]
+[node name="BackOffset" type="Node2D" parent="CrowdBackground" unique_id=1429764398]
+position = Vector2(0, -9.333332)
+
+[node name="PeopleBack" type="Sprite2D" parent="CrowdBackground/BackOffset" unique_id=266781899]
 light_mask = 2
 position = Vector2(0, 45.333336)
 texture = ExtResource("5_qytba")
@@ -584,11 +803,24 @@ position = Vector2(0, -93.85193)
 texture = ExtResource("6_fbvyp")
 centered = false
 
-[node name="PeopleMiddle" type="Sprite2D" parent="CrowdBackground" unique_id=177781231]
+[node name="MiddleOffset" type="Node2D" parent="CrowdBackground" unique_id=600332430]
+position = Vector2(0, -17.333336)
+
+[node name="PeopleMiddle" type="Sprite2D" parent="CrowdBackground/MiddleOffset" unique_id=177781231]
 light_mask = 2
 position = Vector2(0, 160.88907)
 texture = ExtResource("7_or5qt")
 centered = false
+
+[node name="Flower" type="AnimatedSprite2D" parent="CrowdBackground" unique_id=26010467]
+modulate = Color(0.30055997, 0.2856, 0.51, 1)
+light_mask = 2
+position = Vector2(2020.0001, 105.33333)
+rotation = -0.092077166
+scale = Vector2(0.94437087, 0.94437087)
+sprite_frames = SubResource("SpriteFrames_ce4st")
+autoplay = "default"
+frame_progress = 0.3292962
 
 [node name="SmokeMiddle" type="Sprite2D" parent="CrowdBackground" unique_id=1457276161]
 light_mask = 2
@@ -596,7 +828,10 @@ position = Vector2(0, 76.14807)
 texture = ExtResource("8_c7ruy")
 centered = false
 
-[node name="PeopleFront" type="Sprite2D" parent="CrowdBackground" unique_id=389662525]
+[node name="FrontOffset" type="Node2D" parent="CrowdBackground" unique_id=1637442553]
+position = Vector2(0, -102.66667)
+
+[node name="PeopleFront" type="Sprite2D" parent="CrowdBackground/FrontOffset" unique_id=389662525]
 light_mask = 2
 position = Vector2(0, 289.14807)
 texture = ExtResource("9_ksmc0")
@@ -610,9 +845,18 @@ centered = false
 
 [node name="Individuals" type="Node2D" parent="." unique_id=1893485815]
 
+[node name="Demon" type="AnimatedSprite2D" parent="Individuals" unique_id=23329520]
+position = Vector2(329, 344)
+rotation = -0.092077166
+scale = Vector2(1.1509315, 1.1509315)
+sprite_frames = SubResource("SpriteFrames_4p01d")
+autoplay = "default"
+frame_progress = 0.039447412
+
 [node name="HornGuy" type="AnimatedSprite2D" parent="Individuals" unique_id=1535574454]
+self_modulate = Color(0.85249996, 0.85, 1, 1)
 position = Vector2(1166, 371)
-scale = Vector2(0.7901786, 0.79017866)
+scale = Vector2(0.6922478, 0.69224787)
 sprite_frames = SubResource("SpriteFrames_v14r1")
 autoplay = "default"
 frame_progress = 0.93349075
@@ -620,7 +864,7 @@ frame_progress = 0.93349075
 [node name="VirgiDorian" type="AnimatedSprite2D" parent="Individuals" unique_id=543441884]
 position = Vector2(830.00006, 371)
 rotation = 0.11173559
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(1.07569, 1.07569)
 sprite_frames = SubResource("SpriteFrames_3uncr")
 autoplay = "default"
 
@@ -630,6 +874,11 @@ scale = Vector2(0.84, 0.84)
 sprite_frames = SubResource("SpriteFrames_pa7di")
 autoplay = "default"
 frame_progress = 0.06212054
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Individuals/Sam" unique_id=1020175338]
+libraries/ = SubResource("AnimationLibrary_ndg5e")
+autoplay = &"walk"
+speed_scale = 1.5
 
 [node name="ArmsupGirl" type="AnimatedSprite2D" parent="Individuals" unique_id=2030152269]
 position = Vector2(1473.9999, 283)
@@ -647,9 +896,9 @@ autoplay = "default"
 frame_progress = 0.9523188
 
 [node name="Romain" type="AnimatedSprite2D" parent="Individuals" unique_id=164300098]
-position = Vector2(463.00003, 361.00003)
+position = Vector2(484, 361.00003)
 rotation = -0.092077166
-scale = Vector2(0.92, 0.92)
+scale = Vector2(0.85009885, 0.85009885)
 sprite_frames = SubResource("SpriteFrames_q7u0p")
 autoplay = "default"
 frame_progress = 0.53643614
