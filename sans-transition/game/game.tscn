@@ -84,7 +84,6 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
 scoring_curve = SubResource("Curve_4fuuu")
-max_range = 20.0
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
 visible = false

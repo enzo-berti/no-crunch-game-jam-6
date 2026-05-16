@@ -12,7 +12,7 @@ point_count = 3
 [sub_resource type="LabelSettings" id="LabelSettings_bsvus"]
 font_size = 80
 
-[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("scoring_label", "ambiance_progress_bar")]
+[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("scoring_label", "total_track_time_pb")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,8 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1486f")
+total_track_time_seconds = 120.0
 scoring_label = NodePath("Label")
-ambiance_progress_bar = NodePath("AmbianceBar")
+total_track_time_pb = NodePath("TotalTrackTimeProgressBar")
 scoring_curve = SubResource("Curve_bsvus")
 
 [node name="Label" type="Label" parent="." unique_id=119026626]
@@ -33,7 +34,7 @@ offset_bottom = 125.0
 text = "TEST"
 label_settings = SubResource("LabelSettings_bsvus")
 
-[node name="AmbianceBar" type="TextureProgressBar" parent="." unique_id=627944683]
+[node name="TotalTrackTimeProgressBar" type="TextureProgressBar" parent="." unique_id=627944683]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
