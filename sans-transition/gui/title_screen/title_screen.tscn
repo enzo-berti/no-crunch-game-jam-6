@@ -329,6 +329,7 @@ script = ExtResource("19_dswg1")
 
 [node name="ButtonPressedAudio" type="AudioStreamPlayer" parent="." unique_id=238223111]
 stream = SubResource("AudioStreamOggVorbis_2kqy5")
+volume_db = 9.918
 
 [node name="Credits" parent="." unique_id=1293935610 instance=ExtResource("5_k7v1h")]
 layout_mode = 1
