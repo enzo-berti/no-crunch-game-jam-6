@@ -12,6 +12,9 @@ extends Node
 @export var scoring_label : Label
 @export var scoring_curve: Curve
 @export var max_range_scoring: float = 7
+@export var labelContainer : Control
+@export var excitment_bar_containter : Control
+
 
 
 var _track_time: float
@@ -39,6 +42,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if _track_time <= 0:
+		labelContainer.hide()
+		excitment_bar_containter.hide()
 		mix_set_finished.emit(current_score)
 		set_process(false)
 	
