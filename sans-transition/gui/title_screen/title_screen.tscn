@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cmtdkd6dr640x" path="res://gui/title_screen/CREDITS.png" id="18_2kqy5"]
 [ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="18_6v1uu"]
 [ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="19_6v6pk"]
+[ext_resource type="Script" uid="uid://fv6nbjxa5f0n" path="res://gui/title_screen/button_with_focus.gd" id="19_dswg1"]
 [ext_resource type="Texture2D" uid="uid://dteceu8cknirf" path="res://gui/title_screen/quitter.png" id="19_yx2uf"]
 [ext_resource type="BitMap" uid="uid://dcd4b1ypsp8bl" path="res://gui/title_screen/quitter_mask.png" id="20_xm0uo"]
 [ext_resource type="Texture2D" uid="uid://dqv51htcosb47" path="res://gui/title_screen/logo.png" id="21_yx2uf"]
@@ -278,10 +279,13 @@ offset_right = 181.0
 offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../CreditsButton")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_2kqy5")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("19_dswg1")
 
 [node name="CreditsButton" type="TextureButton" parent="Buttons" unique_id=492561544]
 custom_minimum_size = Vector2(0, 175)
@@ -297,10 +301,13 @@ offset_right = 181.0
 offset_bottom = 268.75
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../../QuitButton")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("18_2kqy5")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("19_dswg1")
 
 [node name="QuitButton" type="TextureButton" parent="." unique_id=646063367]
 custom_minimum_size = Vector2(0, 100)
@@ -311,11 +318,14 @@ offset_right = 1131.0
 offset_bottom = 980.0
 scale = Vector2(3, 3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_neighbor_top = NodePath("../Buttons/CreditsButton")
+focus_neighbor_bottom = NodePath(".")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("19_yx2uf")
 texture_click_mask = ExtResource("20_xm0uo")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("19_dswg1")
 
 [node name="ButtonPressedAudio" type="AudioStreamPlayer" parent="." unique_id=238223111]
 stream = SubResource("AudioStreamOggVorbis_2kqy5")
@@ -360,6 +370,7 @@ parameters/looping = true
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="quitted" from="Credits" to="." method="_on_credits_quitted"]
 
 [editable path="Visual/DiskLeft"]
 [editable path="Visual/DiskRight"]

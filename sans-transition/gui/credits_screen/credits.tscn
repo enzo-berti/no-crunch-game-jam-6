@@ -5,6 +5,13 @@
 [ext_resource type="FontFile" uid="uid://cgfbdjse0dath" path="res://gui/credits_screen/Micro5-Regular.ttf" id="1_t6a7l"]
 [ext_resource type="Texture2D" uid="uid://cqv6dbefymt27" path="res://gui/credits_screen/ecran.png" id="3_uhutt"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_5cr7q"]
+action = &"ui_cancel"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_75mie"]
+events = [SubResource("InputEventAction_5cr7q")]
+
 [sub_resource type="LabelSettings" id="LabelSettings_c05bu"]
 font = ExtResource("1_t6a7l")
 font_size = 64
@@ -50,6 +57,7 @@ offset_right = 533.0
 offset_bottom = -168.43945
 grow_horizontal = 2
 grow_vertical = 2
+shortcut = SubResource("Shortcut_75mie")
 texture_normal = ExtResource("1_i8qro")
 ignore_texture_size = true
 stretch_mode = 5

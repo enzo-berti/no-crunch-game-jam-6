@@ -7,6 +7,7 @@ extends Control
 
 func _ready() -> void:
 	buttons.append(credits_scene.x_button)
+	buttons[0].grab_focus()
 
 func _process(_delta: float) -> void:
 	for button in buttons:
@@ -35,9 +36,14 @@ func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("uid://cq3inuaup1vaf")
 
 func _on_credits_button_pressed() -> void:
+	$Buttons/CreditsButton.release_focus()
 	var tween = create_tween()
 	tween.tween_property(credits_scene, "scale", Vector2(1, 1), 0.1).set_ease(Tween.EASE_IN_OUT)
 
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit() 
+
+
+func _on_credits_quitted() -> void:
+	$Buttons/CreditsButton.grab_focus()
