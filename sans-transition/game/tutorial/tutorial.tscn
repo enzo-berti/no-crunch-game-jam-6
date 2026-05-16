@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://o60sycglbmqn"]
+
+[ext_resource type="Script" uid="uid://bq5kg0jumm0xu" path="res://game/tutorial/tutorial.gd" id="1_tsfot"]
+
+[node name="Tutorial" type="Node2D" unique_id=1104037385 node_paths=PackedStringArray("sync_button")]
+script = ExtResource("1_tsfot")
+sync_button = NodePath("SyncShadow")
+
+[node name="SyncShadow" type="Node2D" parent="." unique_id=1400652830]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SyncShadow" unique_id=1379468874]
+offset_top = 634.0
+offset_right = 810.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.45882353)
+
+[node name="ColorRect2" type="ColorRect" parent="SyncShadow" unique_id=1326779943]
+offset_left = 1179.0
+offset_top = 634.0
+offset_right = 1971.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.45882353)
+
+[node name="ColorRect3" type="ColorRect" parent="SyncShadow" unique_id=858596744]
+offset_right = 1920.0
+offset_bottom = 634.0
+color = Color(0, 0, 0, 0.45882353)
+
+[node name="ColorRect4" type="ColorRect" parent="SyncShadow" unique_id=587313281]
+offset_left = 810.0
+offset_top = 727.0
+offset_right = 1179.0
+offset_bottom = 1100.0
+color = Color(0, 0, 0, 0.45882353)
