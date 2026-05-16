@@ -12,7 +12,7 @@ point_count = 3
 [sub_resource type="LabelSettings" id="LabelSettings_bsvus"]
 font_size = 80
 
-[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("scoring_label", "total_track_time_pb")]
+[node name="Scoring" type="Control" unique_id=1948326297 node_paths=PackedStringArray("total_track_time_pb", "scoring_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,12 +20,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1486f")
-total_track_time_seconds = 120.0
-scoring_label = NodePath("Label")
 total_track_time_pb = NodePath("TotalTrackTimeProgressBar")
+scoring_label = NodePath("ScoringLabel")
 scoring_curve = SubResource("Curve_bsvus")
 
-[node name="Label" type="Label" parent="." unique_id=119026626]
+[node name="ScoringLabel" type="Label" parent="." unique_id=119026626]
 layout_mode = 0
 offset_left = 1725.0
 offset_top = 9.0

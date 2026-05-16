@@ -1,13 +1,20 @@
 extends Node
 
+
+
+@export_group("Mix Set")
 @export var total_mix_set_time_seconds: float
-
-@export var scoring_label : Label
 @export var total_track_time_pb: TextureProgressBar
-var _track_time: float
 
+
+@export_group("Scoring")
+@export var scoring_label : Label
 @export var scoring_curve: Curve
 @export var max_range_scoring: float = 7
+
+
+var _track_time: float
+
 
 
 signal mix_set_finished(score: float)
