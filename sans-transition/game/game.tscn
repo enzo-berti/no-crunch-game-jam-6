@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve" id="Curve_4fuuu"]
 _limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0, 100), 0.0, -2.0124125, 0, 0, Vector2(0.38028166, 8.724831), 0.0, 0.0, 0, 0, Vector2(1, 0.71047974), -2.5219033, 0.0, 0, 0]
+_data = [Vector2(0, 100), 0.0, -2.0124125, 0, 0, Vector2(0.250996, 8.407341), 0.0, 0.0, 0, 0, Vector2(1, 0.71047974), -2.5219033, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]
