@@ -1,62 +1,16 @@
 [gd_scene format=3 uid="uid://dm60efldoto52"]
 
-[ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="1_8tdos"]
 [ext_resource type="Script" uid="uid://by3dnwvymgtse" path="res://gui/game_over_screen/game_over_screen.gd" id="1_l8ydd"]
-[ext_resource type="Texture2D" uid="uid://bmvfdga6fm2wi" path="res://game/mix_table/sprites/tablette solo.png" id="1_yr2dc"]
-[ext_resource type="Texture2D" uid="uid://cmgamc84bc4b1" path="res://game/mix_table/sprites/boutons.png" id="2_4tf1v"]
-[ext_resource type="Texture2D" uid="uid://6q3ctacsihgk" path="res://game/mix_table/sprites/From selection.png" id="3_j3btv"]
-[ext_resource type="PackedScene" uid="uid://g1brdqbxheyh" path="res://game/mix_table/hologram/variants/hologram_cat.tscn" id="4_l8ydd"]
-[ext_resource type="PackedScene" uid="uid://dwnwcpclgwdy1" path="res://game/mix_table/hologram/variants/hologram_airhorn.tscn" id="5_due1m"]
-[ext_resource type="PackedScene" uid="uid://d4if86e5tyjp" path="res://game/mix_table/hologram/variants/hologram_dog.tscn" id="6_htedh"]
-[ext_resource type="PackedScene" uid="uid://bv30pwrxrbn77" path="res://game/mix_table/hologram/variants/hologram_gnome.tscn" id="7_q6nxm"]
-[ext_resource type="PackedScene" uid="uid://biai1icv3vglg" path="res://game/mix_table/hologram/variants/hologram_sean.tscn" id="8_6yofv"]
-[ext_resource type="PackedScene" uid="uid://dm50vwr31np2b" path="res://game/mix_table/hologram/variants/hologram_yoda.tscn" id="9_ovu5l"]
+[ext_resource type="FontFile" uid="uid://b36gkt5ev50lt" path="res://gui/Tektur-Regular.ttf" id="5_ew513"]
 [ext_resource type="Texture2D" uid="uid://bcmmyi2hocxhc" path="res://game/mix_table/sprites/Layer 53.png" id="10_o67gx"]
-[ext_resource type="PackedScene" uid="uid://qbeuen8f6unh" path="res://game/disc/disc.tscn" id="11_nxioo"]
-[ext_resource type="Shader" uid="uid://bka51qe4nb3p2" path="res://game/disc/disc.gdshader" id="12_aisvf"]
-[ext_resource type="Texture2D" uid="uid://bddvg5tcv1f3p" path="res://game/mix_table/sprites/disk_mask.png" id="13_42ysl"]
-[ext_resource type="Texture2D" uid="uid://b5livefm3uc8m" path="res://game/mix_table/sprites/billance_one.png" id="14_gste6"]
 [ext_resource type="Texture2D" uid="uid://vebmjn3kcrqt" path="res://gui/REJOUER.png" id="16_j3btv"]
 [ext_resource type="Texture2D" uid="uid://cmtdkd6dr640x" path="res://gui/title_screen/CREDITS.png" id="17_l8ydd"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_sy3ps"]
-action = &"sfx_cat"
-
-[sub_resource type="InputEventAction" id="InputEventAction_l1xnx"]
-action = &"sfx_airhorn"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_pn3ws"]
-action = &"sfx_dog"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_xfdky"]
-action = &"sfx_gnome"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_vbcyo"]
-action = &"sfx_sean"
-pressed = true
-
-[sub_resource type="InputEventAction" id="InputEventAction_ckoat"]
-action = &"sfx_yoda"
-pressed = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qdvj"]
-shader = ExtResource("12_aisvf")
-shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
-shader_parameter/angle = 0.0
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vaf70"]
-blend_mode = 1
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jjq8"]
-shader = ExtResource("12_aisvf")
-shader_parameter/positions = PackedFloat32Array(1, 3.16, 1.35, 1.315)
-shader_parameter/angle = 0.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_j3btv"]
-font_size = 80
+font = ExtResource("5_ew513")
+font_size = 137
+shadow_size = 70
+shadow_offset = Vector2(1, 9.875)
 
 [node name="GameOverScreen" type="Control" unique_id=1808835221 node_paths=PackedStringArray("score_label")]
 layout_mode = 3
@@ -68,119 +22,12 @@ grow_vertical = 2
 script = ExtResource("1_l8ydd")
 score_label = NodePath("HBoxContainer/Label")
 
-[node name="Room" parent="." unique_id=2059625280 instance=ExtResource("1_8tdos")]
-scale = Vector2(0.75, 0.75)
-
 [node name="Visual" type="Node2D" parent="." unique_id=1377746113]
 scale = Vector2(0.75, 0.75)
-
-[node name="Base" type="Sprite2D" parent="Visual" unique_id=1041209183]
-position = Vector2(1281.3334, 1112)
-texture = ExtResource("1_yr2dc")
-
-[node name="Boutons" type="Sprite2D" parent="Visual" unique_id=1931533731]
-position = Vector2(1252, 894.6666)
-texture = ExtResource("2_4tf1v")
-
-[node name="Platines" type="Sprite2D" parent="Visual" unique_id=1915837026]
-position = Vector2(1301.3334, 1209.3334)
-texture = ExtResource("3_j3btv")
-
-[node name="HologramCat" parent="Visual" unique_id=876305959 instance=ExtResource("4_l8ydd")]
-position = Vector2(188, 649.3334)
-input_action = SubResource("InputEventAction_sy3ps")
-
-[node name="HologramAirhorn" parent="Visual" unique_id=1344369166 instance=ExtResource("5_due1m")]
-position = Vector2(390.6667, 650.6667)
-input_action = SubResource("InputEventAction_l1xnx")
-
-[node name="HologramDog" parent="Visual" unique_id=1495183638 instance=ExtResource("6_htedh")]
-position = Vector2(593.3334, 637.3334)
-input_action = SubResource("InputEventAction_pn3ws")
-
-[node name="HologramGnome" parent="Visual" unique_id=1265783598 instance=ExtResource("7_q6nxm")]
-position = Vector2(1905.3334, 653.3333)
-input_action = SubResource("InputEventAction_xfdky")
-
-[node name="HologramSean" parent="Visual" unique_id=901757149 instance=ExtResource("8_6yofv")]
-position = Vector2(2272, 660)
-input_action = SubResource("InputEventAction_vbcyo")
-
-[node name="HologramYoda" parent="Visual" unique_id=1762325072 instance=ExtResource("9_ovu5l")]
-position = Vector2(2104, 648)
-input_action = SubResource("InputEventAction_ckoat")
 
 [node name="Stand" type="Sprite2D" parent="Visual" unique_id=353976452]
 position = Vector2(1290.6666, 904)
 texture = ExtResource("10_o67gx")
-
-[node name="DiskLeft" parent="Visual" unique_id=1586880461 instance=ExtResource("11_nxioo")]
-texture_filter = 4
-texture_repeat = 1
-position = Vector2(540, 757.3334)
-scale = Vector2(5.713333, 5.4466667)
-direction = 1.0
-
-[node name="MeshInstance2D" parent="Visual/DiskLeft" index="0" unique_id=1036466809]
-material = SubResource("ShaderMaterial_3qdvj")
-position = Vector2(-2.1276588, 18.723427)
-scale = Vector2(0.99760795, 1.0041887)
-
-[node name="DiskMask" type="Sprite2D" parent="Visual/DiskLeft" unique_id=1689806287]
-self_modulate = Color(1, 0.32, 0.32, 0.48235294)
-clip_children = 1
-position = Vector2(-20.536755, 70.991425)
-scale = Vector2(0.38188186, 0.399)
-texture = ExtResource("13_42ysl")
-
-[node name="BillanceOne" type="Sprite2D" parent="Visual/DiskLeft/DiskMask" unique_id=1286102771]
-modulate = Color(0.28, 0.28, 0.28, 1)
-material = SubResource("CanvasItemMaterial_vaf70")
-position = Vector2(70.84514, -9.202932)
-scale = Vector2(0.6451613, 0.4706592)
-texture = ExtResource("14_gste6")
-
-[node name="BillanceOne2" type="Sprite2D" parent="Visual/DiskLeft/DiskMask" unique_id=1976121690]
-modulate = Color(0.6635353, 0.31162292, 0.49430537, 1)
-material = SubResource("CanvasItemMaterial_vaf70")
-position = Vector2(-94.06331, -9.202932)
-scale = Vector2(0.6451613, 0.4706592)
-texture = ExtResource("14_gste6")
-flip_h = true
-
-[node name="DiskRight" parent="Visual" unique_id=1719125957 instance=ExtResource("11_nxioo")]
-texture_filter = 4
-texture_repeat = 1
-position = Vector2(2062.6667, 761.3334)
-rotation = 3.1415927
-scale = Vector2(5.713333, -5.4466667)
-direction = -1.0
-
-[node name="MeshInstance2D" parent="Visual/DiskRight" index="0" unique_id=1036466809]
-material = SubResource("ShaderMaterial_8jjq8")
-position = Vector2(-2.1276588, 18.723427)
-
-[node name="DiskMask" type="Sprite2D" parent="Visual/DiskRight" unique_id=1622610508]
-self_modulate = Color(1, 0.32, 0.32, 0.48235294)
-clip_children = 1
-position = Vector2(-20.664019, 70.991425)
-scale = Vector2(0.3769989, 0.399)
-texture = ExtResource("13_42ysl")
-
-[node name="BillanceOne" type="Sprite2D" parent="Visual/DiskRight/DiskMask" unique_id=762973624]
-modulate = Color(0.28, 0.28, 0.28, 1)
-material = SubResource("CanvasItemMaterial_vaf70")
-position = Vector2(70.84514, -9.202932)
-scale = Vector2(0.6451613, 0.4706592)
-texture = ExtResource("14_gste6")
-
-[node name="BillanceOne2" type="Sprite2D" parent="Visual/DiskRight/DiskMask" unique_id=1011092035]
-modulate = Color(1, 1, 1, 0.3019608)
-material = SubResource("CanvasItemMaterial_vaf70")
-position = Vector2(-94.06331, -9.202932)
-scale = Vector2(0.6451613, 0.4706592)
-texture = ExtResource("14_gste6")
-flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="Visual" unique_id=1964202020]
 anchors_preset = 8
@@ -235,8 +82,7 @@ offset_bottom = 280.0
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1210190094]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "TEST"
+text = "SCORE"
 label_settings = SubResource("LabelSettings_j3btv")
 
-[editable path="Visual/DiskLeft"]
-[editable path="Visual/DiskRight"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -23,6 +23,7 @@
 [ext_resource type="BitMap" uid="uid://dcd4b1ypsp8bl" path="res://gui/title_screen/quitter_mask.png" id="20_xm0uo"]
 [ext_resource type="Texture2D" uid="uid://dqv51htcosb47" path="res://gui/title_screen/logo.png" id="21_yx2uf"]
 [ext_resource type="FontFile" uid="uid://b36gkt5ev50lt" path="res://gui/Tektur-Regular.ttf" id="23_kdfbj"]
+[ext_resource type="AudioStream" uid="uid://bve1k5shckvs3" path="res://gui/title_screen/music.ogg" id="24_fnlf2"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_xm0uo"]
 action = &"dummy"
@@ -234,9 +235,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -461.0
-offset_top = -790.0
+offset_top = -799.0
 offset_right = 461.0
-offset_bottom = 309.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -305,9 +306,9 @@ stretch_mode = 4
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
 offset_left = 769.0
-offset_top = 889.0
+offset_top = 880.0
 offset_right = 1131.0
-offset_bottom = 989.0
+offset_bottom = 980.0
 scale = Vector2(3, 3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_default_cursor_shape = 2
@@ -316,7 +317,7 @@ texture_click_mask = ExtResource("20_xm0uo")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ButtonPressedAudio" type="AudioStreamPlayer2D" parent="." unique_id=579407206]
+[node name="ButtonPressedAudio" type="AudioStreamPlayer" parent="." unique_id=238223111]
 stream = SubResource("AudioStreamOggVorbis_2kqy5")
 
 [node name="Credits" parent="." unique_id=1293935610 instance=ExtResource("5_k7v1h")]
@@ -348,6 +349,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "CHARGEMENT"
 label_settings = SubResource("LabelSettings_fnlf2")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=92380416]
+stream = ExtResource("24_fnlf2")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="focus_exited" from="Buttons/StartButton" to="." method="_on_start_button_focus_exited"]
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]

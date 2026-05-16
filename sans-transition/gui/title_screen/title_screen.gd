@@ -1,6 +1,6 @@
 extends Control
 
-@export var sfx_button_pressed: AudioStreamPlayer2D
+@export var sfx_button_pressed: AudioStreamPlayer
 @export var buttons: Array[BaseButton]
 
 @export var credits_scene: Credits

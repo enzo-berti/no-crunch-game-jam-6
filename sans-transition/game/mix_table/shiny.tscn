@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bp20pdq1778br"]
+
+[ext_resource type="Texture2D" uid="uid://c1vfwnkok3nb4" path="res://game/mix_table/sprites/shiny.png" id="1_q7465"]
+
+[node name="ShinyA" type="Node2D" unique_id=1083634189]
+
+[node name="ShinyLeft" type="Sprite2D" parent="." unique_id=248568378]
+position = Vector2(-383.2648, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_q7465")
+region_enabled = true
+region_rect = Rect2(0, 0, 188.57907, 312)
+
+[node name="ShinyCenter" type="Sprite2D" parent="." unique_id=963579653]
+position = Vector2(-33.630108, -1.1649914e-05)
+scale = Vector2(2.1507244, 0.75)
+texture = ExtResource("1_q7465")
+region_enabled = true
+region_rect = Rect2(388.29733, 0, 259.3743, 312)
+
+[node name="ShinyRight" type="Sprite2D" parent="." unique_id=1359618877]
+position = Vector2(355.24234, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_q7465")
+region_enabled = true
+region_rect = Rect2(730.6714, 0, 293.3286, 312)
