@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8vpi72jiko6" path="res://game/crowd/lights/Layer 71.png" id="3_qytba"]
 [ext_resource type="Texture2D" uid="uid://cb8abks32ia8q" path="res://game/crowd/people/horn_guy.png" id="4_3m83f"]
 [ext_resource type="Texture2D" uid="uid://c1c6yjlopdu0f" path="res://game/room/sprites/people3.png" id="5_qytba"]
+[ext_resource type="Script" uid="uid://bn55k3nxdgc8q" path="res://game/crowd/people.gd" id="6_7mugt"]
 [ext_resource type="Texture2D" uid="uid://dbcsry2prced5" path="res://game/room/sprites/fumee_entre2et3.png" id="6_fbvyp"]
 [ext_resource type="Texture2D" uid="uid://ccklp4j18f17d" path="res://game/crowd/lights/Layer 69.png" id="6_jqxed"]
 [ext_resource type="Texture2D" uid="uid://c0rcgqbifd8bv" path="res://game/room/sprites/people2.png" id="7_or5qt"]
@@ -23,38 +24,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CrowdBackground/BackOffset/PeopleBack:position")
+tracks/0/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:jump_amount")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 45.333336)]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:position")
+tracks/1/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:jump_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 160.88907)]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:position")
+tracks/2/path = NodePath("CrowdBackground/BackOffset/PeopleBack:jump_amount")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 289.14807)]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_u55wb"]
@@ -64,38 +65,38 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CrowdBackground/BackOffset/PeopleBack:position")
+tracks/0/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:jump_amount")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19999999),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector2(0, 53.173), Vector2(0, 10.082)]
+"values": [0.0, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CrowdBackground/MiddleOffset/PeopleMiddle:position")
+tracks/1/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:jump_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.10000001, 0.3),
+"times": PackedFloat32Array(0.06666667, 0.33333334),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector2(0, 123.614), Vector2(0, 100)]
+"values": [0.0, 1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CrowdBackground/FrontOffset/PeopleFront:position")
+tracks/2/path = NodePath("CrowdBackground/BackOffset/PeopleBack:jump_amount")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.4),
+"times": PackedFloat32Array(0.13333334, 0.40000004),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector2(0, 245.433), Vector2(0, 199.318)]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jqxed"]
@@ -758,10 +759,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="BaseCrowd" type="Node2D" unique_id=1718517280 node_paths=PackedStringArray("animations", "animationPlayer")]
+[node name="BaseCrowd" type="Node2D" unique_id=1718517280 node_paths=PackedStringArray("animations", "animationPlayer", "crowd_layers")]
 script = ExtResource("1_wtg0n")
 animations = [NodePath("Individuals/ArmsupGirl"), NodePath("Individuals/MetalGuy"), NodePath("Individuals/HornGuy")]
 animationPlayer = NodePath("CrowdAnimationPlayer")
+crowd_layers = [NodePath("CrowdBackground/BackOffset/PeopleBack"), NodePath("CrowdBackground/MiddleOffset/PeopleMiddle"), NodePath("CrowdBackground/FrontOffset/PeopleFront")]
 
 [node name="CrowdAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1241285829]
 libraries/ = SubResource("AnimationLibrary_jqxed")
@@ -793,9 +795,12 @@ position = Vector2(0, -9.333332)
 
 [node name="PeopleBack" type="Sprite2D" parent="CrowdBackground/BackOffset" unique_id=266781899]
 light_mask = 2
-position = Vector2(0, 45.333336)
+position = Vector2(0, -7.7311935)
 texture = ExtResource("5_qytba")
 centered = false
+script = ExtResource("6_7mugt")
+jump_height = 100.0
+jump_scale = 0.1
 
 [node name="SmokeBack" type="Sprite2D" parent="CrowdBackground" unique_id=423070594]
 light_mask = 2
@@ -804,13 +809,16 @@ texture = ExtResource("6_fbvyp")
 centered = false
 
 [node name="MiddleOffset" type="Node2D" parent="CrowdBackground" unique_id=600332430]
-position = Vector2(0, -17.333336)
+position = Vector2(0, 49.333332)
 
 [node name="PeopleMiddle" type="Sprite2D" parent="CrowdBackground/MiddleOffset" unique_id=177781231]
 light_mask = 2
-position = Vector2(0, 160.88907)
+position = Vector2(0, -0.8181443)
 texture = ExtResource("7_or5qt")
 centered = false
+script = ExtResource("6_7mugt")
+jump_height = 100.0
+jump_scale = 0.1
 
 [node name="Flower" type="AnimatedSprite2D" parent="CrowdBackground" unique_id=26010467]
 modulate = Color(0.30055997, 0.2856, 0.51, 1)
@@ -829,13 +837,16 @@ texture = ExtResource("8_c7ruy")
 centered = false
 
 [node name="FrontOffset" type="Node2D" parent="CrowdBackground" unique_id=1637442553]
-position = Vector2(0, -102.66667)
+position = Vector2(0, 120)
 
 [node name="PeopleFront" type="Sprite2D" parent="CrowdBackground/FrontOffset" unique_id=389662525]
 light_mask = 2
-position = Vector2(0, 289.14807)
+position = Vector2(0, -4.193037)
 texture = ExtResource("9_ksmc0")
 centered = false
+script = ExtResource("6_7mugt")
+jump_height = 100.0
+jump_scale = 0.1
 
 [node name="SmokeFront" type="Sprite2D" parent="CrowdBackground" unique_id=1396455696]
 light_mask = 2
@@ -868,14 +879,16 @@ scale = Vector2(1.07569, 1.07569)
 sprite_frames = SubResource("SpriteFrames_3uncr")
 autoplay = "default"
 
-[node name="Sam" type="AnimatedSprite2D" parent="Individuals" unique_id=353637451]
+[node name="SamContainer" type="Node2D" parent="Individuals" unique_id=536885323]
+
+[node name="Sam" type="AnimatedSprite2D" parent="Individuals/SamContainer" unique_id=353637451]
 position = Vector2(198.00012, 367)
 scale = Vector2(0.84, 0.84)
 sprite_frames = SubResource("SpriteFrames_pa7di")
 autoplay = "default"
 frame_progress = 0.06212054
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Individuals/Sam" unique_id=1020175338]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Individuals/SamContainer/Sam" unique_id=1020175338]
 libraries/ = SubResource("AnimationLibrary_ndg5e")
 autoplay = &"walk"
 speed_scale = 1.5
