@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cq3inuaup1vaf"]
 
+[ext_resource type="Script" uid="uid://b4glvlh285d74" path="res://game/game.gd" id="1_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://bjhc6mbk2n4n1" path="res://game/mix_table/mix_table.tscn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://dm60efldoto52" path="res://gui/game_over_screen/game_over_screen.tscn" id="2_dakft"]
 [ext_resource type="PackedScene" uid="uid://dvwnigme1oj1e" path="res://game/crowd/base_crowd.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c4smthvekc2f4" path="res://game/room/room.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
@@ -74,6 +76,8 @@ _data = {
 }
 
 [node name="Game" type="Node" unique_id=61779973]
+script = ExtResource("1_dxrkv")
+game_over_scene = ExtResource("2_dakft")
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_vasa2")]
 scale = Vector2(0.75, 0.75)
@@ -83,6 +87,7 @@ scale = Vector2(0.75, 0.75)
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
+total_mix_set_time_seconds = 120.0
 scoring_curve = SubResource("Curve_4fuuu")
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=515294651]
@@ -101,3 +106,4 @@ libraries/ = SubResource("AnimationLibrary_dxrkv")
 
 [connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
+[connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]
