@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c3p0w1j3q6lke" path="res://game/scoring/scoring.tscn" id="4_4fuuu"]
 
 [sub_resource type="Curve" id="Curve_4fuuu"]
-_limits = [0.0, 50.0, 0.0, 1.0]
-_data = [Vector2(0, 49.999996), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.5219033, 0.0, 0, 0]
-point_count = 2
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 100), 0.0, -2.0124125, 0, 0, Vector2(0.23505975, 16.316132), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.5219033, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7iqs"]
 blend_mode = 1
@@ -83,6 +83,7 @@ scale = Vector2(0.75, 0.75)
 [node name="MixTable" parent="." unique_id=438255488 instance=ExtResource("1_l1rk1")]
 
 [node name="Scoring" parent="." unique_id=1867024691 instance=ExtResource("4_4fuuu")]
+z_index = 5
 scoring_curve = SubResource("Curve_4fuuu")
 max_range = 20.0
 

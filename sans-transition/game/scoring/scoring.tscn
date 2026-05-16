@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwny3kv5dpuat" path="res://game/scoring/assets/bottom.png" id="2_bsvus"]
 [ext_resource type="Texture2D" uid="uid://dry5cwcr2ekd2" path="res://game/scoring/assets/top.png" id="3_71r88"]
 [ext_resource type="Texture2D" uid="uid://c2fxm3by1jm5q" path="res://game/scoring/assets/inside.png" id="4_d14sx"]
+[ext_resource type="Texture2D" uid="uid://bjh4tua15cc67" path="res://gui/game_screen/bouton_nude.png" id="5_71r88"]
 
 [sub_resource type="Curve" id="Curve_bsvus"]
 _data = [Vector2(0.026109666, 1), 0.0, -0.1496677, 0, 0, Vector2(0.42819846, 0.22782332), 0.0, 0.0, 0, 0, Vector2(1, 0.0042984486), -0.05053714, 0.0, 0, 0]
@@ -25,13 +26,16 @@ ambiance_progress_bar = NodePath("AmbianceBar")
 scoring_curve = SubResource("Curve_bsvus")
 
 [node name="Label" type="Label" parent="." unique_id=119026626]
+z_index = 5
 layout_mode = 0
-offset_left = 1725.0
-offset_top = 9.0
-offset_right = 1904.0
-offset_bottom = 125.0
+offset_left = 1733.9999
+offset_top = 32.000015
+offset_right = 1912.9999
+offset_bottom = 148.00002
+scale = Vector2(0.7, 0.7)
 text = "TEST"
 label_settings = SubResource("LabelSettings_bsvus")
+horizontal_alignment = 2
 
 [node name="AmbianceBar" type="TextureProgressBar" parent="." unique_id=627944683]
 layout_mode = 1
@@ -42,7 +46,7 @@ offset_left = -348.5
 offset_right = 348.5
 offset_bottom = 162.0
 grow_horizontal = 2
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 pivot_offset_ratio = Vector2(0.5, 0)
 max_value = 1.0
 step = 0.01
@@ -50,3 +54,9 @@ value = 1.0
 texture_under = ExtResource("2_bsvus")
 texture_over = ExtResource("4_d14sx")
 texture_progress = ExtResource("3_71r88")
+
+[node name="BoutonNude" type="Sprite2D" parent="." unique_id=645334120]
+z_as_relative = false
+position = Vector2(1730, 77.00001)
+scale = Vector2(0.44315064, 0.3039772)
+texture = ExtResource("5_71r88")
