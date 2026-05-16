@@ -1,3 +1,4 @@
+class_name Scoring
 extends Node
 
 

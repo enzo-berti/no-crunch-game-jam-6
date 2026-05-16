@@ -76,9 +76,11 @@ _data = {
 &"transition": SubResource("Animation_4fuuu")
 }
 
-[node name="Game" type="Node" unique_id=61779973]
+[node name="Game" type="Node" unique_id=61779973 node_paths=PackedStringArray("scoring", "base_crowd")]
 script = ExtResource("1_dxrkv")
 game_over_scene = ExtResource("2_dakft")
+scoring = NodePath("Scoring")
+base_crowd = NodePath("BaseCrowd")
 
 [node name="Room" parent="." unique_id=2059625280 instance=ExtResource("2_vasa2")]
 scale = Vector2(0.75, 0.75)
@@ -113,8 +115,8 @@ libraries/ = SubResource("AnimationLibrary_dxrkv")
 [connection signal="track_switched" from="MixTable" to="Scoring" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Tutorial" method="_on_mix_table_track_switched"]
 [connection signal="track_switched" from="MixTable" to="Transition/AnimationPlayer" method="play" binds= [&"transition"]]
+[connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]
 [connection signal="ended" from="Tutorial" to="BaseCrowd" method="_on_tutorial_ended"]
 [connection signal="ended" from="Tutorial" to="MixTable" method="_on_tutorial_ended"]
 [connection signal="started" from="Tutorial" to="MixTable" method="_on_tutorial_started"]
 [connection signal="started" from="Tutorial" to="Tutorial" method="_on_started"]
-[connection signal="mix_set_finished" from="Scoring" to="." method="_on_scoring_mix_set_finished"]
